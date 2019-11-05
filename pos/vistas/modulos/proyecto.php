@@ -260,7 +260,7 @@ MODAL AGREGAR Proyectos
 
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                <input type="file" class="form-control input-lg" name="nuevoformato" placeholder="Ingresar formato" required>
+                                <input type="file" class="form-control input-lg" name="nuevoformato" placeholder="Ingresar formato" >
 
                             </div>
 

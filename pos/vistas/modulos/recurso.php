@@ -19,7 +19,7 @@
         <div class="box">
 
             <div class="box-header with-border">
-                <button class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarrol">
+                <button class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarRecurso">
                     Agregar recurso
                 </button>
             </div>
@@ -58,8 +58,8 @@
                             <td>'.$value["id_proyecto"].'</td>
                             <td>
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-primary btnEditarRecursos" Recursoid="'.$value["id_recurso"].'" data-toggle="modal" data-target="#modaleditarrecurso"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btnEliminarRecursos" id_recurso="'.$value["id_recurso"].'" rubro="'.$value["rubro"].'"><i class="fa fa-times"></i></button>
+                                <button type="button" class="btn btn-primary btnEditarRecursos" Recursosid="'.$value["id_recurso"].'" data-toggle="modal" data-target="#modaleditarrecurso"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger btnEliminarRecursos" idRecurso="'.$value["id_recurso"].'"><i class="fa fa-times"></i></button>
                                  <a href="autor" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
                                 </div>
                             </td>
@@ -86,7 +86,7 @@ MODAL EDITAR RECURSO
                 ======================================-->
                 <div class="modal-header" style="background:#222d32; color:white">
                     <button type="button" class="close"  data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Agregar recurso</h4>
+                    <h4 class="modal-title">Editar recurso</h4>
                 </div>
 
                 <!--=====================================
@@ -98,35 +98,35 @@ MODAL EDITAR RECURSO
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" name="editarid_recurso" >
+                                <input type="text" class="form-control" name="editarid_recurso" id="editarid_recurso" readonly>
                             </div>
                         </div>
                         <!-- ENTRADA PARA EL RUBRO -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarrubro" required>
+                                <input type="text" class="form-control input-lg" name="editarrubro" id="editarrubro" required>
                             </div>
                         </div>
                         <!-- ENTRADA PARA EL CONCEPTO -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarconcepto" required>
+                                <input type="text" class="form-control input-lg" name="editarconcepto" id="editarconcepto" required>
                             </div>
                         </div>
                         <!-- ENTRADA PARA EL VALOR DEL RUBRO -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarvalor_rubro"  required>
+                                <input type="text" class="form-control input-lg" name="editarvalor_rubro"  id="editarvalor_rubro" required>
                             </div>
                         </div>
                         <!-- ENTRADA PARA EL VALOR DEL PROYECTO -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarvalor_proyecto" required>
+                                <input type="text" class="form-control input-lg" name="editarvalor_proyecto" id="editarvalor_proyecto" required>
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE PROYECTO -->
@@ -160,8 +160,8 @@ MODAL EDITAR RECURSO
                     <button type="submit" class="btn btn-primary">Guardar recursos</button>
                 </div>
                 <?php
-                $crearRecurso = new recursocontroller();
-                $crearRecurso -> ctrCrearRecurso();
+                $editarRecurso = new recursocontroller();
+                $editarRecurso -> ctrEditarRecursos();
                 ?>
             </form>
         </div>
@@ -171,7 +171,7 @@ MODAL EDITAR RECURSO
 <!--=====================================
 MODAL AGREGAR RECURSO
 ======================================-->
-<div id="modalAgregarrol" class="modal fade" role="dialog">
+<div id="modalAgregarRecurso" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <form role="form" method="post" enctype="multipart/form-data">
@@ -248,7 +248,7 @@ MODAL AGREGAR RECURSO
                 </div>
                 <?php
                 $crearRecurso = new recursocontroller();
-                $crearRecurso -> ctrCrearRecurso();
+                $crearRecurso -> ctrCrearRecursos();
                 ?>
             </form>
         </div>

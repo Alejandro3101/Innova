@@ -4,7 +4,7 @@ require_once "../modelos/tareas.modelo.php";
 
 class AjaxTareas{
     /*=============================================
-    EDITAR TAREAS
+        EDITAR TAREAS
     =============================================*/
 
     public $Tareaid;

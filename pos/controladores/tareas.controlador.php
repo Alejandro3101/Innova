@@ -59,11 +59,11 @@ class ControladorTareas{
     =============================================*/
     static public function ctrMostrarTareas($item, $valor){
 
-        $tareas = "tareas";
+      $tareas = "tareas";
 
-        $respuesta = ModeloTareas::mdlMostrarTareas($tareas, $item, $valor);
+      $respuesta = ModeloTareas::mdlMostrarTareas($tareas, $item, $valor);
 
-        return $respuesta;
+      return $respuesta;
     }
 
     /*=============================================
