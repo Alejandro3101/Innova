@@ -2,45 +2,45 @@
 require_once "../controladores/usuarios.controlador.php";
 require_once "../modelos/usuarios.modelo.php";
 
-class AjaxGastos{
+class AjaxUsuario{
 
     /*=============================================
-    EDITAR GASTOS
+    EDITAR USURIOS
     =============================================*/
 
-    public $Gastosid;
+    public $Usuarioid;
 
-    public function ajaxEditarGastos(){
+    public function ajaxEditarUsuario(){
 
-        $item = "id_gasto";
-        $valor = $this->Gastosid;
+        $item = "id_persona";
+        $valor = $this->Usuarioid;
 
-        $respuesta = gastocontroller::ctrMostrarGastos($item, $valor);
+        $respuesta = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
         echo json_encode($respuesta);
     }
 
     /*=============================================
-    ELIMINAR GASTOS
+    ELIMINAR USURIOS
     =============================================*/
-    public function EliminarDatos($idE){
-        $oBJECT_ELIM = gastocontroller::CrtEliminarGastos($idE);
+    public function EliminarDatosUsuario($idE){
+        $oBJECT_ELIM = ControladorUsuarios::CrtEliminarUsuario($idE);
     }
 }
 
 /*=============================================
-EDITAR GASTOS
+EDITAR USURIOS
 =============================================*/
-if(isset($_POST["Gastosid"])){
+if(isset($_POST["Usuarioid"])){
 
-    $editar = new AjaxGastos();
-    $editar ->Gastosid = $_POST["Gastosid"];
-    $editar -> ajaxEditarGastos();
+    $editar = new AjaxUsuario();
+    $editar ->Usuarioid = $_POST["Usuarioid"];
+    $editar -> ajaxEditarUsuario();
 }
 
 /*=============================================
-ELIMINAR GASTOS
+ELIMINAR USURIOS
 =============================================*/
 if(isset($_GET["d"])){
-    $oBJECT_ELIM = new AjaxGastos();
-    $oBJECT_ELIM ->EliminarDatos($_GET["d"]);
+    $oBJECT_ELIM = new AjaxUsuario();
+    $oBJECT_ELIM ->EliminarDatosUsuario($_GET["d"]);
 }

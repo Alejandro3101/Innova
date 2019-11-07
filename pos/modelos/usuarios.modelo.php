@@ -81,7 +81,7 @@ class ModeloUsuarios{
     /*=============================================
         EDITAR USUARIO
     =============================================*/
-    static public function mdlEditarTarea($tabla, $datos){
+    static public function mdlEditarUsuario($tabla, $datos){
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombres =:nombres,apellidos =:apellidos,tipo_documento =:tipo_documento,documento =:documento,celular =:celular,email =:email,profesion =:profesion,tipo_vinculacion =:tipo_vinculacion,id_rol =:id_rol,cvlac =:cvlac,cargo =:cargo,ficha =:ficha,fecha_vinculacion =:fecha_vinculacion,fecha_desvinculacion =:fecha_desvinculacion,estado_vinculacion =:estado_vinculacion,contrasena =:contrasena,id_programa =:id_programa  WHERE id_persona =:id_persona");
 
         $stmt->bindParam(":id_persona", $datos["id_persona"], PDO::PARAM_STR);
@@ -111,8 +111,20 @@ class ModeloUsuarios{
         $stmt -> close();
         $stmt = null;
     }
+    /*=============================================
+	    BORRAR USUARIOS
+    =============================================*/
+    public static function MdlEliminarUsuario($id){
 
+        $oBJECT_INSE = Conexion::conectar()->prepare("DELETE FROM persona WHERE id_persona=:id");
+        $oBJECT_INSE -> bindParam(":id", $id, PDO::PARAM_INT);
+        $cVMSN_ERRO = null;
+        if ($oBJECT_INSE -> execute()) {
+            $cVMSN_ERRO = true;
+        }else{
+            $cVMSN_ERRO = false;
+        }
 
-
-
+        echo json_encode($cVMSN_ERRO);
+    }
 }

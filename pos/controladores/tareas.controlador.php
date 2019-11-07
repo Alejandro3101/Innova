@@ -67,8 +67,8 @@ class ControladorTareas{
     }
 
     /*=============================================
-      EDITAR TAREA
-      =============================================*/
+    EDITAR TAREA
+    =============================================*/
 
     static public function ctrEditarTarea(){
         if (isset($_POST["editarid_tarea"])) {
@@ -84,11 +84,11 @@ class ControladorTareas{
             $tareas = "tareas";
 
             $datos = array("id_tarea" => $_POST["editarid_tarea"],
-                "nombre_tarea" => $_POST["editarnombre_tarea"],
-                "descripcion" => $_POST["editardescripcion"],
-                "estado" => $_POST["editarestado"],
-                "id_actividad" => $_POST["editarid_actividad"],
-                "id_integrante" => $_POST["editarid_integrante"]);
+              "nombre_tarea" => $_POST["editarnombre_tarea"],
+              "descripcion" => $_POST["editardescripcion"],
+              "estado" => $_POST["editarestado"],
+              "id_actividad" => $_POST["editarid_actividad"],
+              "id_integrante" => $_POST["editarid_integrante"]);
 
             $respuesta = ModeloTareas::mdlEditarTarea($tareas, $datos);
 
