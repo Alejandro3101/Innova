@@ -54,7 +54,7 @@ Agregar Usuario
     <th>Gmail</th>
     <th>Profeción</th>
     <th>Tipo Vinculación</th>
-    <th>cvlac</th>
+    
     <th>Cargo</th>
     <th>Ficha</th>
     <th>Fecha Vinculacion</th>
@@ -91,7 +91,7 @@ Agregar Usuario
                                 <td>'.$value["profesion"].'</td>';
                         echo '               
                                 <td>'.$value["tipo_vinculacion"].'</td>
-                                <td>'.$value["cvlac"].'</td>
+                                
                                 <td>'.$value["cargo"].'</td>
                                 <td>'.$value["ficha"].'</td>
                                 <td>'.$value["fecha_vinculacion"].'</td>
