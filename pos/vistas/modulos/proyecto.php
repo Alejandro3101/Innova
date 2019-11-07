@@ -173,12 +173,12 @@ MODAL AGREGAR Proyectos
 
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                                <select class="form-control input-lg" name="nuevoTproyecto">
+                                <select class="form-control input-lg tipoProyecto" name="nuevoTproyecto">
 
                                     <option value="">Selecionar Tipo Vinculacion</option>
 
                                     <option value="Con Recursos">Con Recursos</option>
-                                   <option value="Sin Recursos">Sin Recursos</option>
+                                    <option value="Sin Recursos">Sin Recursos</option>
 
                                 </select>
 
@@ -189,7 +189,7 @@ MODAL AGREGAR Proyectos
 
                         <!-- ENTRADA PARA Codigo -->
 
-                        <div class="form-group">
+                        <div class="form-group invisible nuevocodigodiv">
 
                             <div class="input-group">
 
@@ -203,7 +203,7 @@ MODAL AGREGAR Proyectos
 
                         <!-- ENTRADA PARA SELECCIONAR SU linea programatica -->
 
-                        <div class="form-group">
+                        <div class="form-group nuevaLineaPv">
 
                             <div class="input-group">
 
