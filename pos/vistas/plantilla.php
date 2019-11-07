@@ -221,5 +221,6 @@ CUERPO DOCUMENTO
   <script src="vistas/js/tareas.js"></script>
   <script src="vistas/js/rol.js"></script>
   <script src="vistas/js/proyecto.js"></script>
+  <script src="vistas/js/usuario.js"></script>
 </body>
 </html>

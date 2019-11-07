@@ -196,11 +196,11 @@ MODAL AGREGAR USUARIO
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="nuevoid_rol">
+                                <select class="form-control nuevoid_rol" name="nuevoid_rol">
                                     <option>Seleccione Rol</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                        echo '<option value='.$xVVAL_DATA["id_rol"].'>'.$xVVAL_DATA["nombre"]." ".$xVVAL_DATA["rol"].'</option>';
+                                        echo '<option nom='.$xVVAL_DATA["nombre"].' value='.$xVVAL_DATA["id_rol"].'>'.$xVVAL_DATA["nombre"].'</option>';
                                     }
                                     ?>
                                 </select>
@@ -269,7 +269,7 @@ MODAL AGREGAR USUARIO
                             </div>
 
                         </div>
-                        <!-- ENTRADA PARA LA Profesion -->
+                        <!-- ENTRADA PARA LA contraseña -->
 
                         <div class="form-group">
 
@@ -277,99 +277,14 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevaprofesion" placeholder="Ingresar Profesion" required>
+                                <input type="text" class="form-control input-lg" name="nuevacontrasena" placeholder="Ingresar contraseña" required>
 
                             </div>
-
-                        </div>
-                    </div>
-
-                    <!-- ENTRADA PARA SELECCIONAR SU tipo_vinculacion -->
-
-                        <div class="form-group">
-
-                            <div class="input-group">
-
-                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                                <select class="form-control input-lg" name="nuevoTvinculacion">
-
-                                    <option value="">Selecionar Tipo Vinculacion</option>
-
-                                    <option value="Contratista">Contratista</option>
-
-                                    <option value="Planta">Planta</option>
-
-                                    <option value="Planta provisional">Planta provisional</option>
-
-                                    <option value="Planta temporal">Planta temporal</option>
-
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-
-                    <!-- ENTRADA PARA LA cvlac -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" name="nuevoCvlac" placeholder="Ingresar cvlac" required>
-
-                        </div>
-
-                    </div>
-
-                    <!-- ENTRADA PARA SELECCIONAR SU cargo -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                            <select class="form-control input-lg" name="nuevoCargo">
-
-                                <option value="">Selecionar Cargo</option>
-
-                                <option value="Voluntario">Voluntario</option>
-
-                                <option value="Monitor">Monitor</option>
-
-                                <option value="Apoyo de sostenimiento">Apoyo Sostenimiento<option>
-
-                                <option value="Practicante">Practicante</option>
-
-                                <option value="Pasantia">Pasantia</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-                    <!-- ENTRADA PARA LA Ficha -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" name="nuevaFicha" placeholder="Ingresar Ficha" required>
-
-                        </div>
 
                         </div>
                         <!-- ENTRADA PARA LA fecha_vinculacion -->
 
-                        <div class="form-group">
+                        <div class="form-group nuevaFechaVinculacionv invisible">
 
                             <label>Fecha vinculación</label><br>
 
@@ -380,11 +295,11 @@ MODAL AGREGAR USUARIO
                                 <input type="date" class="form-control input-lg" name="nuevaFechaVinculacion"  required>
 
                             </div>
-                        </div>
+                            </div>
 
                             <!-- ENTRADA PARA LA fecha_desvinculacion -->
 
-                            <div class="form-group">
+                            <div class="form-group nuevafechaDesvinculacionv invisible">
                                 <label>Fecha desvinculacion</label><br>
 
                                 <div class="input-group">
@@ -397,11 +312,11 @@ MODAL AGREGAR USUARIO
                                 </div>
                             </div>
 
-                    <!-- ENTRADA PARA SELECCIONAR SU estado -->
+                            <!-- ENTRADA PARA SELECCIONAR SU estado -->
 
-                    <div class="form-group">
+                            <div class="form-group nuevoestadov invisible">
 
-                        <div class="input-group">
+                            <div class="input-group">
 
                             <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
@@ -417,45 +332,129 @@ MODAL AGREGAR USUARIO
 
                             </select>
 
+                            </div>
+
+                            </div>
+                        <!-- ENTRADA PARA LA Profesion -->
+
+                        <div class="form-group nuevaprofesionv invisible">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+
+                                <input type="text" class="form-control input-lg" name="nuevaprofesion" placeholder="Ingresar Profesion" required>
+
+                            </div>
+
+                        </div>
+                    
+                        <!-- ENTRADA PARA SELECCIONAR SU tipo_vinculacion -->
+
+                            <div class="form-group nuevoTvinculacionv invisible">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                                    <select class="form-control input-lg" name="nuevoTvinculacion">
+
+                                        <option value="">Selecionar Tipo Vinculacion</option>
+
+                                        <option value="Contratista">Contratista</option>
+
+                                        <option value="Planta">Planta</option>
+
+                                        <option value="Planta provisional">Planta provisional</option>
+
+                                        <option value="Planta temporal">Planta temporal</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                        <!-- ENTRADA PARA LA cvlac -->
+
+                        <div class="form-group nuevoCvlacv invisible">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+
+                                <input type="text" class="form-control input-lg" name="nuevoCvlac" placeholder="Ingresar cvlac" required>
+
+                            </div>
+
                         </div>
 
-                    </div>
+                        <!-- ENTRADA PARA SELECCIONAR SU cargo -->
 
-                    <!-- ENTRADA PARA LA contraseña -->
+                        <div class="form-group nuevoCargov">
 
-                    <div class="form-group">
+                            <div class="input-group nuevoCargov invisible">
 
-                        <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <select class="form-control input-lg" name="nuevoCargo">
 
-                            <input type="text" class="form-control input-lg" name="nuevacontrasena" placeholder="Ingresar contraseña" required>
+                                    <option value="">Selecionar Cargo</option>
+
+                                    <option value="Voluntario">Voluntario</option>
+
+                                    <option value="Monitor">Monitor</option>
+
+                                    <option value="Apoyo de sostenimiento">Apoyo Sostenimiento<option>
+
+                                    <option value="Practicante">Practicante</option>
+
+                                    <option value="Pasantia">Pasantia</option>
+
+                                </select>
+
+                            </div>
 
                         </div>
 
-                    </div>
-                    <!-- ENTRADA PARA LA LLAVE FORANEA DE PROGRAMA -->
-                    <div class="form-group">
-                        <label>Programa</label><br>
-                        <div class="input-group">
+                        <!-- ENTRADA PARA LA Ficha -->
 
-                            <?php
-                            $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM programa");
-                            $OBJ_DATA-> execute();
-                            $aVECT_DATA = $OBJ_DATA->fetchALL();
-                            ?>
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <select class="form-control" name="nuevoid_programa">
-                                <option>Seleccione</option>
+                        <div class="form-group nuevaFichav invisible">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+
+                                <input type="text" class="form-control input-lg" name="nuevaFicha" placeholder="Ingresar Ficha" required>
+
+                            </div>
+
+                            </div>
+
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE PROGRAMA -->
+                        <div class="form-group nuevoid_programav invisible">
+                            <label>Programa</label><br>
+                            <div class="input-group">
+
                                 <?php
-                                foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                    echo '<option value='.$xVVAL_DATA["id_programa"].'>'.$xVVAL_DATA["nombre_programa"]." ".$xVVAL_DATA[""].'</option>';
-                                }
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM programa");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
-                            </select>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="nuevoid_programa">
+                                    <option>Seleccione</option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_programa"].'>'.$xVVAL_DATA["nombre_programa"]." ".$xVVAL_DATA[""].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-
+                </div>
 
 
 

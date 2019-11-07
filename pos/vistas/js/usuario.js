@@ -1,0 +1,54 @@
+function ocultar() {
+    $(".nuevaprofesionv").addClass('invisible');
+    $(".nuevoTvinculacionv").addClass('invisible');
+    $(".nuevoCvlacv").addClass('invisible');
+    $(".nuevoCargov").addClass('invisible');
+    $(".nuevaFichav").addClass('invisible');
+    $(".nuevaFechaVinculacionv").addClass('invisible');
+    $(".nuevafechaDesvinculacionv").addClass('invisible');
+    $(".nuevoestadov").addClass('invisible');
+    $(".nuevoid_programav").addClass('invisible');
+    $(".nuevaprofesionv").height(0);
+    $(".nuevoTvinculacionv").height(0);
+    $(".nuevoCvlacv").height(0);
+    $(".nuevoCargov").height(0);
+    $(".nuevaFichav").height(0);
+    $(".nuevaFechaVinculacionv").height(0);
+    $(".nuevafechaDesvinculacionv").height(0);
+    $(".nuevoestadov").height(0);
+    $(".nuevoid_programav").height(0);
+}
+ocultar();
+$(".nuevoid_rol").change(function(){
+    ocultar();
+    if($('.nuevoid_rol option:selected').attr("nom")=='Administrador'||$('.nuevoid_rol option:selected').attr("nom")=='Instructor'){
+        $(".nuevaprofesionv").removeClass('invisible');
+        $(".nuevoTvinculacionv").removeClass('invisible');
+        $(".nuevoCvlacv").removeClass('invisible');
+        $(".nuevaFechaVinculacionv").removeClass('invisible');
+        $(".nuevafechaDesvinculacionv").removeClass('invisible');
+        $(".nuevoestadov").removeClass('invisible');
+        $(".nuevaprofesionv").height(45.5);
+        $(".nuevoTvinculacionv").height(45.5);
+        $(".nuevoCvlacv").height(45.5);
+        $(".nuevaFechaVinculacionv").height(69.4);
+        $(".nuevafechaDesvinculacionv").height(69.4);
+        $(".nuevoestadov").height(45.5);
+    }else if ($('.nuevoid_rol option:selected').attr("nom")=='Aprendiz'){
+        $(".nuevoCargov").removeClass('invisible');
+        $(".nuevaFichav").removeClass('invisible');
+        $(".nuevaFechaVinculacionv").removeClass('invisible');
+        $(".nuevafechaDesvinculacionv").removeClass('invisible');
+        $(".nuevoestadov").removeClass('invisible');
+        $(".nuevoid_programav").removeClass('invisible');
+        $(".nuevoCargov").height(45.5);
+        $(".nuevaFichav").height(45.5);
+        $(".nuevoCvlacv").height(45.5);
+        $(".nuevaFechaVinculacionv").height(69.4);
+        $(".nuevafechaDesvinculacionv").height(69.4);
+        $(".nuevoestadov").height(45.5);
+        $(".nuevoid_programav").height(58.3);
+    }else{
+        ocultar();
+    }
+});
