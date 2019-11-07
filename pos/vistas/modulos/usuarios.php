@@ -188,7 +188,7 @@ MODAL AGREGAR USUARIO
                         </div>
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE ROL -->
                         <div class="form-group">
-                            <label>Rol</label><br>
+                            
                             <div class="input-group">
                                 <?php
                                 $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM rol");
@@ -197,7 +197,7 @@ MODAL AGREGAR USUARIO
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="nuevoid_rol">
-                                    <option>Seleccione</option>
+                                    <option>Seleccione Rol</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_rol"].'>'.$xVVAL_DATA["nombre"]." ".$xVVAL_DATA["rol"].'</option>';
