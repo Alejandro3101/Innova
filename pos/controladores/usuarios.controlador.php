@@ -148,10 +148,10 @@ class ControladorUsuarios{
     }
 
     /*=============================================
-	MOSTRAR Usuario
+	MOSTRAR USUARIO
 	=============================================*/
 
-    static public function ctrMostrarusuario($item, $valor){
+    static public function ctrMostrarUsuario($item, $valor){
 
         $tabla = "persona";
 
@@ -159,12 +159,113 @@ class ControladorUsuarios{
 
         return $respuesta;
     }
+    /*=============================================
+        EDITAR USUARIO
+    =============================================*/
 
+    static public function ctrEditarUsuario(){
+        if (isset($_POST["editarid_persona"])) {
+            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarid_persona"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarnombres"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarapellidos"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_documento"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editardocumento"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarcelular"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editaremail"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarprofesion"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_vinculacion"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarid_rol"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarcvlac"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarcargo"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarficha"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarfecha_vinculacion"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarfecha_desvinculacion"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarestado_vinculacion"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarcontrasena"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarid_programa"])) {
+            }
+            $tabla = "persona";
 
+            $datos = array("id_persona" => $_POST["editarid_persona"],
+              "nombres" => $_POST["editarnombres"],
+              "apellidos" => $_POST["editarapellidos"],
+              "tipo_documento" => $_POST["editartipo_documento"],
+              "documento" => $_POST["editardocumento"],
+              "celular" => $_POST["editarcelular"],
+              "email" => $_POST["editaremail"],
+              "profesion" => $_POST["editarprofesion"],
+              "tipo_vinculacion" => $_POST["editartipo_vinculacion"],
+              "id_rol" => $_POST["editarid_rol"],
+              "cvlac" => $_POST["editarcvlac"],
+              "cargo" => $_POST["editarcargo"],
+              "ficha" => $_POST["editarficha"],
+              "fecha_vinculacion" => $_POST["editarfecha_vinculacion"],
+              "fecha_desvinculacion" => $_POST["editarfecha_desvinculacion"],
+              "estado_vinculacion" => $_POST["editarestado_vinculacion"],
+              "contrasena" => $_POST["editarcontrasena"],
+              "id_programa" => $_POST["editarid_programa"]);
+            $respuesta = ModeloUsuarios::mdlEditarUsuario($tabla, $datos);
+            if ($respuesta == "ok") {
+                echo '<script>
+                    swal({
+                    type: "success",
+                    title: "¡El Usuario ha sido Actualizada correctamente!",
+                    showConfirmButton: true,
+                    confirmButtonText: "Cerrar"
 
+                    }).then(function(result){
+                    if(result.value){
+                        window.location = "usuarios";
+                    }
+                });
+                </script>';
 
+            }else{
+                echo '<script>
+					swal({
+						type: "error",
+						title: "¡El Usuario no puede ir vacío o llevar caracteres especiales!",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar"
 
+					}).then(function(result){
 
+						if(result.value){
+							window.location = "usuarios";
+						}
+
+					});
+				</script>';
+            }
+        }
+    }
+    /*=============================================
+    Eliminar TAREAS
+    =============================================*/
+    public static function CrtEliminarUsuario($idU){
+        $oBJECT_RESP = ModeloUsuarios::MdlEliminarUsuario($idU);
+
+        if ($oBJECT_RESP == "ok") {
+
+            echo '<script>
+
+			swal({
+				type: "success",
+				title: "El Gasto ha sido borrado correctamente",
+				showConfirmButton: true,
+				confirmButtonText: "Cerrar",
+				closeOnConfirm: false
+				}).then(function(result) {
+					if (result.value) {
+
+					window.location = "usuarios";
+
+				}
+			})
+
+			</script>';
+        }
+    }
 }
 	
 

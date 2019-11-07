@@ -47,13 +47,20 @@ Agregar Usuario
     <th>#</th>
     <th>Nombres</th>
     <th>Apellidos</th>
+    <th>Rol</th>
+    <th>Tipo de Documento</th>
     <th>Documento</th>
-    <th>Email</th>
-    <th>Profesion</th>
+    <th>Celular</th>
+    <th>Gmail</th>
+    <th>Profeción</th>
+    <th>Tipo Vinculación</th>
+    <th>cvlac</th>
     <th>Cargo</th>
     <th>Ficha</th>
-    <th>F_Vinculacion</th>
+    <th>Fecha Vinculacion</th>
+    <th>Fecha Desvinculacion</th>
     <th>Estado</th>
+    <th>Programa</th>
     <th>Acciones</th>
 
 
@@ -72,45 +79,38 @@ Agregar Usuario
 
 
                    foreach ($persona as $key => $value){
-
-          echo ' <tr>
-                  <td>'.($key+1).'</td>
-                  <td>'.$value["nombres"].'</td>
-                  <td>'.$value["apellidos"].'</td>';
-
-
-
-           echo '
-                    <td>'.$value["documento"].'</td>   
-                    <td>'.$value["email"].'</td>  
-                     <td>'.$value["profesion"].'</td> 
-                      <td>'.$value["cargo"].'</td> 
-                      <td>'.$value["ficha"].'</td> 
-                      <td>'.$value["fecha_vinculacion"].'</td> 
-           
-           
-           
-           
-               <td><button class="btn btn-success btn-xs">Activo</button></td>
-               
-               <td>
-                   <i class="btn-group">
-
-                       <button class="btn btn-primary"><i class="fa fa-pencil"></i></button>
-                       <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-                       
-                   
-
-
-
-                   </div>
-
-
-
-               </td>
-           </tr>';
-
-                   }?>
+                       echo ' <tr>
+                                <td>'.($key+1).'</td>
+                                <td>'.$value["nombres"].'</td>
+                                <td>'.$value["apellidos"].'</td>
+                                <td>'.$value["id_rol"].'</td>
+                                <td>'.$value["tipo_documento"].'</td>
+                                <td>'.$value["documento"].'</td>
+                                <td>'.$value["celular"].'</td>
+                                <td>'.$value["email"].'</td>
+                                <td>'.$value["profesion"].'</td>';
+                        echo '               
+                                <td>'.$value["tipo_vinculacion"].'</td>
+                                <td>'.$value["cvlac"].'</td>
+                                <td>'.$value["cargo"].'</td>
+                                <td>'.$value["ficha"].'</td>
+                                <td>'.$value["fecha_vinculacion"].'</td>
+                                <td>'.$value["fecha_desvinculacion"].'</td>
+                                <td>'.$value["estado_vinculacion"].'</td>
+                                <td>'.$value["id_programa"].'</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary btnEditarUsuario" Usuarioid="'.$value["id_persona"].'" data-toggle="modal" data-target="#modaleditartarea"><i class="fa fa-pencil"></i></button>
+                                       
+                                        <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id_persona"].'"><i class="fa fa-times"></i></button>
+                                    
+                                    <a href="evidencia" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
+                                    
+                                    </div>
+                                </td>
+                            </tr>';
+                   }
+            ?>
 
 
            </tbody>
