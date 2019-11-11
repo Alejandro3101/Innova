@@ -47,18 +47,16 @@ Agregar Usuario
     <th>#</th>
     <th>Nombres</th>
     <th>Apellidos</th>
-    <th>Rol</th>
-    <th>Tipo de Documento</th>
+
     <th>Documento</th>
-    <th>Celular</th>
-    <th>Gmail</th>
+
+
     <th>Profeción</th>
     <th>Tipo Vinculación</th>
-    
+
     <th>Cargo</th>
     <th>Ficha</th>
-    <th>Fecha Vinculacion</th>
-    <th>Fecha Desvinculacion</th>
+
     <th>Estado</th>
     <th>Programa</th>
     <th>Acciones</th>
@@ -83,19 +81,17 @@ Agregar Usuario
                                 <td>'.($key+1).'</td>
                                 <td>'.$value["nombres"].'</td>
                                 <td>'.$value["apellidos"].'</td>
-                                <td>'.$value["id_rol"].'</td>
-                                <td>'.$value["tipo_documento"].'</td>
+                                
                                 <td>'.$value["documento"].'</td>
-                                <td>'.$value["celular"].'</td>
-                                <td>'.$value["email"].'</td>
+                             
+                          
                                 <td>'.$value["profesion"].'</td>';
                         echo '               
                                 <td>'.$value["tipo_vinculacion"].'</td>
                                 
                                 <td>'.$value["cargo"].'</td>
                                 <td>'.$value["ficha"].'</td>
-                                <td>'.$value["fecha_vinculacion"].'</td>
-                                <td>'.$value["fecha_desvinculacion"].'</td>
+                              
                                 <td>'.$value["estado_vinculacion"].'</td>
                                 <td>'.$value["id_programa"].'</td>
                                 <td>

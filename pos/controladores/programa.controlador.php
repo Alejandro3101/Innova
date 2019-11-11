@@ -148,7 +148,7 @@ class programacontroller{
 
 			swal({
 				type: "success",
-				title: "El Gasto ha sido borrado correctamente",
+				title: "El programa ha sido borrado correctamente",
 				showConfirmButton: true,
 				confirmButtonText: "Cerrar",
 				closeOnConfirm: false

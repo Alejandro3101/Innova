@@ -75,8 +75,6 @@
                   <td>'.$value["nombre_actividad"].'</td>
                   <td>'.$value["descripcion"].'</td>';
 
-
-
                   echo '
                   <td>'.$value["fecha_inicio"].'</td>
                   <td>'.$value["fecha_limite"].'</td>

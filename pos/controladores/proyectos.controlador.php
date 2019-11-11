@@ -108,8 +108,48 @@ class Proyectocontroller
         return $respuesta;
     }
 
+    /*--------------------------------------------
+    Eliminar Prestamo
+    ---------------------------------------------*/
 
-    /*=============================================
+    static public function ctrBorrarProyecto()
+    {
+
+        if (isset($_GET["id_proyecto"])) {
+
+            $tabla = "proyectos";
+            $datos = $_GET["id_proyecto"];
+
+
+            $respuesta = ModeloProyecto::mdlBorrarProyecto($tabla, $datos);
+
+            if ($respuesta == "ok") {
+
+                echo '<script>
+
+				swal({
+					  type: "success",
+					  title: "El proyecto ha sido borrado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "proyecto";
+
+								}
+							})
+
+				</script>';
+
+            }
+
+        }
+    }
+
+
+        /*=============================================
 	DESCARGAR EXCEL
 	=============================================*/
 
@@ -164,3 +204,41 @@ class Proyectocontroller
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>

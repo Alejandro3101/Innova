@@ -7,11 +7,12 @@ class integrantecontroller
         REGISTRO DE Actividades
      =============================================*/
 
-    static public function ctrCrearIntegrantes(){
+    static public function ctrCrearIntegrantes()
+    {
 
-        if(isset($_POST["nuevorol"])){
+        if (isset($_POST["nuevorol"])) {
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevorol"]) &&
+            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevorol"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoestado"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoid_persona"])) {
 
@@ -27,7 +28,7 @@ class integrantecontroller
 
                 $respuesta = ModeloIntegrantes::mdlIngresarIntegrantes($tabla, $datos);
 
-                if($respuesta == "ok"){
+                if ($respuesta == "ok") {
 
                     echo '<script>
 
@@ -55,7 +56,7 @@ class integrantecontroller
                 }
 
 
-            }else{
+            } else {
 
                 echo '<script>
 
@@ -91,7 +92,8 @@ class integrantecontroller
 	MOSTRAR integrante
 	=============================================*/
 
-    static public function ctrMostrarIntegrantes($item, $valor){
+    static public function ctrMostrarIntegrantes($item, $valor)
+    {
 
         $tabla = "integrantes";
 
@@ -101,4 +103,45 @@ class integrantecontroller
 
 
     }
+
+    /*--------------------------------------------
+        Eliminar Integrantes
+    ---------------------------------------------*/
+
+    static public function ctrBorrarIntegrantes()
+    {
+        if (isset($_GET["id_integrante"])) {
+
+            $tabla = "integrantes";
+            $datos = $_GET["id_integrante"];
+
+
+            $respuesta = ModeloIntegrantes::mdlBorrarIntegrante($tabla, $datos);
+
+            if ($respuesta == "ok") {
+
+                echo '<script>
+
+				swal({
+					  type: "success",
+					  title: "El integrante ha sido borrada correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "integrante";
+
+								}
+							})
+
+				</script>';
+
+            }
+
+        }
+    }
 }
+
+?>

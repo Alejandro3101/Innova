@@ -71,7 +71,7 @@
 </div>
 
 <!--=====================================
-MODAL AGREGAR RECURSO
+MODAL editar RECURSO
 ======================================-->
 <div id="modaleditarautor" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -167,7 +167,7 @@ MODAL AGREGAR RECURSO
 
 
 <!--=====================================
-MODAL AGREGAR RECURSO
+MODAL AGREGAR autor
 ======================================-->
 <div id="modalAgregarrol" class="modal fade" role="dialog">
     <div class="modal-dialog">

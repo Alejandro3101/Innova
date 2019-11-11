@@ -7,20 +7,19 @@ class empresascontroller
         REGISTRO DE Empresas
         =============================================*/
 
-    static public function ctrCrearEmpresas(){
+    static public function ctrCrearEmpresas()
+    {
 
-        if(isset($_POST["nuevoNombreE"])){
+        if (isset($_POST["nuevoNombreE"])) {
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreE"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevotipo_empresa"])&&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevonit"])&&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevadireccion"])&&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevotelefono"])&&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoencargado"])&&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevocelular"])&&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevosector"])){
-
-
+            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreE"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevotipo_empresa"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevonit"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevadireccion"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevotelefono"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoencargado"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevocelular"]) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevosector"])) {
 
 
                 $tabla = "empresas";
@@ -32,12 +31,12 @@ class empresascontroller
                     "telefono" => $_POST["nuevotelefono"],
                     "encargado" => $_POST["nuevoencargado"],
                     "celular" => $_POST["nuevocelular"],
-                    "sector" => $_POST["nuevosector"] );
+                    "sector" => $_POST["nuevosector"]);
 
 
                 $respuesta = ModeloEmpresa::mdlIngresarEmpresas($tabla, $datos);
 
-                if($respuesta == "ok"){
+                if ($respuesta == "ok") {
 
                     echo '<script>
 
@@ -65,7 +64,7 @@ class empresascontroller
                 }
 
 
-            }else{
+            } else {
 
                 echo '<script>
 
@@ -101,7 +100,8 @@ class empresascontroller
    MOSTRAR Rol
    =============================================*/
 
-    static public function ctrMostrarEmpresa($item, $valor){
+    static public function ctrMostrarEmpresa($item, $valor)
+    {
 
         $tabla = "empresas";
 
@@ -137,7 +137,6 @@ class empresascontroller
                 "encargado" => $_POST["editarencargado"],
                 "celular" => $_POST["editarcelular"],
                 "sector" => $_POST["editarsector"]);
-
 
 
             $respuesta = ModeloEmpresa::mdlEditarEmpresa($tabla, $datos);
@@ -197,38 +196,44 @@ class empresascontroller
     }
 
 
-    /*=============================================
-    Eliminar Empresas
-    =============================================*/
-    public static function CrtEliminarEmpresas($idU){
-        $oBJECT_RESP = ModeloEmpresa::MdlEliminarEmpresas($idU);
+    /*--------------------------------------------
+    Eliminar Empresa
+    ---------------------------------------------*/
 
-        if ($oBJECT_RESP == "ok") {
+    static public function ctrBorrarEmpresa()
+    {
 
-            echo '<script>
+        if (isset($_GET["id_empresa"])) {
 
-            swal({
-                type: "success",
-                title: "La Empresa ha sido borrada correctamente",
-                showConfirmButton: true,
-                confirmButtonText: "Cerrar",
-                closeOnConfirm: false
-                }).then(function(result) {
-                    if (result.value) {
+            $tabla = "empresas";
+            $datos = $_GET["id_empresa"];
 
-                    window.location = "empresas";
 
-                }
-            })
+            $respuesta = ModeloEmpresa::mdlBorrarEmpresa($tabla, $datos);
 
-            </script>';
+            if ($respuesta == "ok") {
+
+                echo '<script>
+
+				swal({
+					  type: "success",
+					  title: "La Empresa ha sido borrada correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "empresas";
+
+								}
+							})
+
+				</script>';
+
+            }
+
         }
     }
-
 }
-
-
-
-
-
-?>
+    ?>
