@@ -164,7 +164,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
+                                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" >
 
                             </div>
 
@@ -177,7 +177,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoApellido" placeholder="Ingresar Apellido" required>
+                                <input type="text" class="form-control input-lg" name="nuevoApellido" placeholder="Ingresar Apellido" >
 
                             </div>
 
@@ -233,7 +233,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoDocumento" placeholder="Ingresar Documento" id="nuevodocumento" required>
+                                <input type="text" class="form-control input-lg" name="nuevoDocumento" placeholder="Ingresar Documento" id="nuevodocumento" >
 
                             </div>
 
@@ -247,7 +247,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevocelular" placeholder="Ingresar Telefono" required>
+                                <input type="text" class="form-control input-lg" name="nuevocelular" placeholder="Ingresar Telefono" >
 
                             </div>
 
@@ -260,7 +260,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoemail" placeholder="Ingresar Email" required>
+                                <input type="text" class="form-control input-lg" name="nuevoemail" placeholder="Ingresar Email" >
 
                             </div>
 
@@ -273,7 +273,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevacontrasena" placeholder="Ingresar contraseña" required>
+                                <input type="text" class="form-control input-lg" name="nuevacontrasena" placeholder="Ingresar contraseña" >
 
                             </div>
 
@@ -288,7 +288,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="date" class="form-control input-lg" name="nuevaFechaVinculacion"  required>
+                                <input type="date" class="form-control input-lg" name="nuevaFechaVinculacion"  >
 
                             </div>
                             </div>
@@ -303,7 +303,7 @@ MODAL AGREGAR USUARIO
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
 
-                                    <input type="date" class="form-control input-lg" name="nuevafechaDesvinculacion" required>
+                                    <input type="date" class="form-control input-lg" name="nuevafechaDesvinculacion" >
 
                                 </div>
                             </div>
@@ -339,7 +339,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevaprofesion" placeholder="Ingresar Profesion" required>
+                                <input type="text" class="form-control input-lg" name="nuevaprofesion" placeholder="Ingresar Profesion" >
 
                             </div>
 
@@ -381,7 +381,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoCvlac" placeholder="Ingresar cvlac" required>
+                                <input type="text" class="form-control input-lg" name="nuevoCvlac" placeholder="Ingresar cvlac" >
 
                             </div>
 
@@ -423,7 +423,7 @@ MODAL AGREGAR USUARIO
 
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevaFicha" placeholder="Ingresar Ficha" required>
+                                <input type="text" class="form-control input-lg" name="nuevaFicha" placeholder="Ingresar Ficha" >
 
                             </div>
 
@@ -465,6 +465,7 @@ MODAL AGREGAR USUARIO
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
                     <button type="submit" class="btn btn-primary">Guardar usuario</button>
+
 
                 </div>
 
