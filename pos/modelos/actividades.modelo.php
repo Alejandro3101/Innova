@@ -72,4 +72,33 @@ class ModeloActividades{
         $stmt = null;
 
     }
+
+    /*=============================================
+  BORRAR actividades
+  =============================================*/
+
+    static public function mdlBorrarActividades($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_actividad = :id_actividad");
+
+        $stmt->bindParam(":id_actividad", $datos, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+
+
+    }
+
 }

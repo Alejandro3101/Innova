@@ -6,7 +6,7 @@ $(".btnEliminarIntegrantes").click(function () {
     var id_integrante = $(this).attr("id_integrante");
 
     swal({
-        title: '¿Está seguro de borrar el integrante?',
+        title: '¿Está seguro de borrar Integrante?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,

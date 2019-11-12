@@ -26,32 +26,29 @@ $(".btnEditarPrograma").click(function () {
 })
 
 /*=============================================
-ELIMINAR PROGRAMA
+ELIMINAR Programas
 =============================================*/
 $(".btnEliminarPrograma").click(function () {
 
-    var id_programa = $(this).attr("idPrograma");
+    var id_programa = $(this).attr("id_programa");
 
     swal({
-        title: '¿Está seguro de borrar el usuario?',
+        title: '¿Está seguro de borrar el Programa?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar usuario!'
+        confirmButtonText: 'Si, borrar Programa!'
     }).then((result)=>{
-        if (result.value) {
-            
-            $.ajax({
-                url:"ajax/programa.ajax.php?d="+id_programa,
-                method:"GET",
-                dataType: "json",
-                success : function(respuesta){
-                    window.location = "programa";      
-                }
-            });
+
+        if(result.value){
+
+            window.location = "index.php?ruta=programa&id_programa="+id_programa;
+
         }
+
     })
+
 })

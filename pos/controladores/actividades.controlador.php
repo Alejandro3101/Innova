@@ -103,10 +103,45 @@ class actividadescontroller{
     }
 
 
+    /*--------------------------------------------
+    Eliminar Actividades
+    ---------------------------------------------*/
 
+    static public function ctrBorrarActividades()
+    {
+
+        if (isset($_GET["id_actividad"])) {
+
+            $tabla = "actividades";
+            $datos = $_GET["id_actividad"];
+
+
+            $respuesta = ModeloActividades::mdlBorrarActividades($tabla, $datos);
+
+            if ($respuesta == "ok") {
+
+                echo '<script>
+
+				swal({
+					  type: "success",
+					  title: "La Actividad ha sido borrada correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "actividades";
+
+								}
+							})
+
+				</script>';
+
+            }
+
+        }
+    }
 }
-
-
-
-
 ?>
+

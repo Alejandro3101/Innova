@@ -66,7 +66,7 @@ class programacontroller{
 
         $programa = "programa";
 
-        $respuesta = ModelPrograma::mdlMostrarPrograma($programa, $item, $valor);
+        $respuesta = ModeloPrograma::mdlMostrarPrograma($programa, $item, $valor);
 
         return $respuesta;
     }
@@ -135,32 +135,43 @@ class programacontroller{
             }
         }
     }
+    /*--------------------------------------------
+        Eliminar programa
+        ---------------------------------------------*/
 
-    /*=============================================
-    ELIMINAR PROGRAMA
-	=============================================*/
-    public static function CrtEliminarPrograma($idU){
-        $oBJECT_RESP = ModelPrograma::MdlEliminarPrograma($idU);
+    static public function ctrBorrarPrograma()
+    {
+        if (isset($_GET["id_programa"])) {
 
-        if ($oBJECT_RESP == "ok") {
+            $tabla = "programa";
+            $datos = $_GET["id_programa"];
 
-            echo '<script>
 
-			swal({
-				type: "success",
-				title: "El programa ha sido borrado correctamente",
-				showConfirmButton: true,
-				confirmButtonText: "Cerrar",
-				closeOnConfirm: false
-				}).then(function(result) {
-					if (result.value) {
+            $respuesta = ModeloPrograma::mdlBorrarPrograma($tabla, $datos);
 
-					window.location = "programa";
+            if ($respuesta == "ok") {
 
-				}
-			})
+                echo '<script>
 
-			</script>';
+				swal({
+					  type: "success",
+					  title: "El programa ha sido borrado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "programa";
+
+								}
+							})
+
+				</script>';
+
+            }
+
         }
     }
 }
+?>

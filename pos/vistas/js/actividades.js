@@ -1,31 +1,27 @@
 /*=============================================
-ELIMINAR TAREAS
+ELIMINAR Actividades
 =============================================*/
 $(".btnEliminarActividades").click(function () {
 
-    var id_empresa = $(this).attr("id_empresa");
+    var id_actividad = $(this).attr("id_actividad");
 
     swal({
-        title: '¿Está seguro de borrar el Integrante?',
+        title: '¿Está seguro de borrar la Actividad?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar Integrante!'
+        confirmButtonText: 'Si, borrar Actividades!'
     }).then((result)=>{
-        if (result.value) {
 
-            $.ajax({
-                url:"ajax/empresas.ajax.php?d="+id_empresa,
-                method:"GET",
-                dataType: "json",
-                success : function(respuesta){
-                    window.location = "integrante";
-                }
-            });
+        if(result.value){
+
+            window.location = "index.php?ruta=actividades&id_actividad="+id_actividad;
+
         }
-    })
-})
 
+    })
+
+})

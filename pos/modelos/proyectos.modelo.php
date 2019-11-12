@@ -93,7 +93,7 @@ class ModeloProyecto{
 
 
 /*=============================================
-   BORRAR empresa
+   BORRAR Proyecto
    =============================================*/
 
     static public function mdlBorrarProyecto($tabla, $datos)
