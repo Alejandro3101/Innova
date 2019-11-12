@@ -53,7 +53,6 @@ $(".nuevoid_rol").change(function(){
     }
 });
 
-
 $(".btnEditarUsuario").click(function () {
     var Usuarioid = $(this).attr("Usuarioid");
 

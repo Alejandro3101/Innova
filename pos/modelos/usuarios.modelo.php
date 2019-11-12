@@ -43,6 +43,12 @@ class ModeloUsuarios{
     static public function mdlIngresarUsuario($tabla, $datos){
 
         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombres,apellidos,tipo_documento,documento,celular,email,profesion,tipo_vinculacion,cvlac,cargo,ficha,fecha_vinculacion,fecha_desvinculacion,estado_vinculacion,contrasena,id_programa,id_rol ) VALUES (:nombres,:apellidos,:tipo_documento,:documento,:celular,:email,:profesion,:tipo_vinculacion,:cvlac,:cargo,:ficha,:fecha_vinculacion,:fecha_desvinculacion,:estado_vinculacion,:contrasena,:id_programa,:id_rol)");
+        $p=null;
+        if($datos["id_programa"]=="NULL"){
+            $p=null;
+        }else{
+            $p=$datos["id_programa"];
+        }
 
         $stmt->bindParam(":nombres", $datos["nombres"], PDO::PARAM_STR);
         $stmt->bindParam(":apellidos", $datos["apellidos"], PDO::PARAM_STR);
@@ -59,10 +65,9 @@ class ModeloUsuarios{
         $stmt->bindParam(":fecha_desvinculacion", $datos["fecha_desvinculacion"], PDO::PARAM_STR);
         $stmt->bindParam(":estado_vinculacion", $datos["estado_vinculacion"], PDO::PARAM_STR);
         $stmt->bindParam(":contrasena", $datos["contrasena"], PDO::PARAM_STR);
-        $stmt->bindParam(":id_programa", $datos["id_programa"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_programa", $p, PDO::PARAM_STR);
         $stmt->bindParam(":id_rol", $datos["id_rol"], PDO::PARAM_STR);
-
-
+        
         if($stmt->execute()){
 
             return "ok";
