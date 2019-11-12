@@ -72,8 +72,8 @@
 
                         echo ' <tr>
                   <td>'.($key+1).'</td>
-                  <td>'.$value["id_persona"].'</td>
-                  <td>'.$value["id_proyecto"].'</td>';
+                  <td>'.$value["nombres"].'</td>
+                  <td>'.$value["nombre_proyecto"].'</td>';
 
 
 

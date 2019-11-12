@@ -81,7 +81,7 @@
                   <td>'.$value["fecha_inicio"].'</td>
                   <td>'.$value["fecha_limite"].'</td>
                   <td>'.$value["estado"].'</td>
-                  <td>'.$value["id_proyecto"].'</td>
+                  <td>'.$value["nombre_proyecto"].'</td>
                   <td>
 
                     <div class="btn-group">
