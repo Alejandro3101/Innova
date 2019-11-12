@@ -4,6 +4,7 @@ class autorescontroller{
         REGISTRO DE autores
     =============================================*/
     static public function ctrCrearAutores(){
+
         if(isset($_POST["nuevonombres"])){
             if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevonombres"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoapellidos"]) &&
@@ -19,6 +20,7 @@ class autorescontroller{
                     "documento" => $_POST["nuevodocumento"],
                     "email" => $_POST["nuevoemail"],
                     "celular" => $_POST["nuevocelular"]);
+
                 $respuesta = ModeloAutor::mdlIngresarAutores($autores, $datos);
 
                 if($respuesta == "ok"){

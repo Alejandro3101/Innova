@@ -20,7 +20,7 @@ class ModeloIntegrantes
 
         }else{
 
-            $stmt = Conexion::conectar()->prepare("SELECT rol,estado_integrante, persona.nombres, proyectos.nombre_proyecto FROM `integrantes` INNER JOIN persona ON persona.id_persona = integrantes.id_persona INNER JOIN proyectos on proyectos.id_proyecto = integrantes.id_proyecto");
+            $stmt = Conexion::conectar()->prepare("SELECT id_integrante,rol,estado_integrante, persona.nombres, proyectos.nombre_proyecto FROM `integrantes` INNER JOIN persona ON persona.id_persona = integrantes.id_persona INNER JOIN proyectos on proyectos.id_proyecto = integrantes.id_proyecto");
 
             $stmt -> execute();
 

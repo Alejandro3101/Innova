@@ -3,18 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c5884164-6041-4fdd-a6d1-327d9d9bfcd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/controladores/actividades.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/controladores/actividades.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/controladores/programa.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/controladores/programa.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/controladores/autores.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/controladores/autores.controlador.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/controladores/usuarios.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/controladores/usuarios.controlador.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pos/modelos/actividades.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/modelos/actividades.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/modelos/programa.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/modelos/programa.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/modelos/proyectos.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/modelos/proyectos.modelo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/js/actividades.js" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/js/actividades.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/js/integrantes.js" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/js/integrantes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/js/programa.js" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/js/programa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/actividades.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/actividades.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/integrante.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/integrante.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/programa.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/programa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/plantilla.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/plantilla.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/modelos/autores.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/modelos/autores.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/modelos/integrantes.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/modelos/integrantes.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/modelos/usuarios.modelo.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/modelos/usuarios.modelo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/vistas/js/empresa.js" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/js/empresa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/vistas/js/usuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/js/usuario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/empresas.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/empresas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/usuarios.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,40 +23,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pos/controladores/programa.controlador.php">
+        <entry file="file://$PROJECT_DIR$/pos/vistas/js/empresa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/programa.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="46" column="98" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos/vistas/js/programa.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="47" column="66" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
+            <state relative-caret-position="255">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos/modelos/programa.modelo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="71" column="38" selection-start-line="71" selection-start-column="38" selection-end-line="71" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -71,27 +42,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pos/vistas/modulos/usuarios.php" />
-        <option value="$PROJECT_DIR$/pos/controladores/usuarios.controlador.php" />
         <option value="$PROJECT_DIR$/pos/vistas/modulos/autor.php" />
-        <option value="$PROJECT_DIR$/pos/controladores/autores.controlador.php" />
         <option value="$PROJECT_DIR$/pos/controladores/tareas.controlador.php" />
         <option value="$PROJECT_DIR$/pos/vistas/js/recursos.js" />
-        <option value="$PROJECT_DIR$/pos/vistas/js/usuario.js" />
-        <option value="$PROJECT_DIR$/pos/vistas/js/empresa.js" />
         <option value="$PROJECT_DIR$/pos/modelos/empresas.modelo.php" />
         <option value="$PROJECT_DIR$/pos/vistas/js/proyecto.js" />
         <option value="$PROJECT_DIR$/pos/controladores/empresas.controlador.php" />
-        <option value="$PROJECT_DIR$/pos/vistas/modulos/empresas.php" />
         <option value="$PROJECT_DIR$/pos/controladores/proyectos.controlador.php" />
         <option value="$PROJECT_DIR$/pos/vistas/modulos/proyecto.php" />
-        <option value="$PROJECT_DIR$/pos/modelos/integrantes.modelo.php" />
         <option value="$PROJECT_DIR$/pos/controladores/integrantes.controlador.php" />
         <option value="$PROJECT_DIR$/pos/vistas/modulos/integrante.php" />
-        <option value="$PROJECT_DIR$/pos/vistas/modulos/actividades.php" />
         <option value="$PROJECT_DIR$/pos/vistas/js/actividades.js" />
         <option value="$PROJECT_DIR$/pos/controladores/actividades.controlador.php" />
-        <option value="$PROJECT_DIR$/pos/modelos/actividades.modelo.php" />
         <option value="$PROJECT_DIR$/pos/modelos/proyectos.modelo.php" />
         <option value="$PROJECT_DIR$/pos/vistas/plantilla.php" />
         <option value="$PROJECT_DIR$/pos/vistas/js/integrantes.js" />
@@ -99,14 +61,25 @@
         <option value="$PROJECT_DIR$/pos/vistas/js/programa.js" />
         <option value="$PROJECT_DIR$/pos/modelos/programa.modelo.php" />
         <option value="$PROJECT_DIR$/pos/controladores/programa.controlador.php" />
+        <option value="$PROJECT_DIR$/pos/vistas/modulos/actividades.php" />
+        <option value="$PROJECT_DIR$/pos/modelos/actividades.modelo.php" />
+        <option value="$PROJECT_DIR$/pos/vistas/modulos/empresas.php" />
+        <option value="$PROJECT_DIR$/pos/modelos/integrantes.modelo.php" />
+        <option value="$PROJECT_DIR$/pos/vistas/js/usuario.js" />
+        <option value="$PROJECT_DIR$/pos/modelos/usuarios.modelo.php" />
+        <option value="$PROJECT_DIR$/pos/controladores/usuarios.controlador.php" />
+        <option value="$PROJECT_DIR$/pos/vistas/modulos/usuarios.php" />
+        <option value="$PROJECT_DIR$/pos/modelos/autores.modelo.php" />
+        <option value="$PROJECT_DIR$/pos/controladores/autores.controlador.php" />
+        <option value="$PROJECT_DIR$/pos/vistas/js/empresa.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1943" />
-    <option name="height" value="1103" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1944" />
+    <option name="height" value="1104" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -138,13 +111,6 @@
               <item name="vistas" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Innova" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Innova" type="462c0819:PsiDirectoryNode" />
-              <item name="pos" type="462c0819:PsiDirectoryNode" />
-              <item name="vistas" type="462c0819:PsiDirectoryNode" />
-              <item name="modulos" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -154,7 +120,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Prestamos_Aulas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -182,18 +148,19 @@
       <updated>1573156338959</updated>
       <workItem from="1573156341472" duration="5159000" />
       <workItem from="1573245081966" duration="8671000" />
-      <workItem from="1573506260323" duration="10027000" />
+      <workItem from="1573506260323" duration="11401000" />
+      <workItem from="1573571507007" duration="3272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23857000" />
+    <option name="totallyTimeSpent" value="28503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26153848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -218,41 +185,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/usuarios.controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="245" column="45" selection-start-line="245" selection-start-column="45" selection-end-line="245" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/autor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="847">
-          <caret line="245" column="41" selection-start-line="245" selection-start-column="41" selection-end-line="245" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/autores.controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/modelos/autores.modelo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pos/vistas/js/tareas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -260,20 +192,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/modelos/usuarios.modelo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1377">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/js/usuario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="3" selection-start-line="98" selection-start-column="3" selection-end-line="98" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -298,13 +216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/evidencia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3295">
-          <caret line="224" column="6" lean-forward="true" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/recurso.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -324,20 +235,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pos/modelos/gastos.modelo.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/usuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/evidencias.controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="120" column="34" lean-forward="true" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pos/vistas/js/proyecto.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -360,30 +257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pos/modelos/empresas.modelo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="115" column="3" selection-start-line="115" selection-start-column="3" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/empresas.controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="238" column="6" lean-forward="true" selection-start-line="198" selection-start-column="4" selection-end-line="238" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/js/empresa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="71" column="2" lean-forward="true" selection-start-line="45" selection-end-line="71" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pos/vistas/js/actividades.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -394,59 +267,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pos/modelos/actividades.modelo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="86" column="31" lean-forward="true" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/actividades.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="273" column="33" selection-start-line="273" selection-start-column="33" selection-end-line="273" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/empresas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/actividades.controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pos/modelos/proyectos.modelo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="98" column="44" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/modelos/integrantes.modelo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/integrantes.controlador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="110" column="47" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/integrante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="90" column="91" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="91" />
         </state>
       </provider>
     </entry>
@@ -464,6 +288,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1074">
           <caret line="219" column="45" lean-forward="true" selection-start-line="219" selection-start-column="45" selection-end-line="219" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/programa.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="73" column="51" lean-forward="true" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -491,10 +322,174 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pos/controladores/programa.controlador.php">
+    <entry file="file://$PROJECT_DIR$/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/modelos/actividades.modelo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/empresas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="101" column="20" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/actividades.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="90" column="98" lean-forward="true" selection-start-line="90" selection-start-column="98" selection-end-line="90" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/evidencia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/evidencias.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/modelos/evidencias.modelo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/actividades.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/integrante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="90" column="91" selection-start-line="90" selection-start-column="78" selection-end-line="90" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/integrantes.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="99" column="46" lean-forward="true" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/modelos/integrantes.modelo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/ajax/usuario.ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/empresas.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="238" column="6" lean-forward="true" selection-start-line="198" selection-start-column="4" selection-end-line="238" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/js/usuario.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="98" column="45" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/modelos/empresas.modelo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="115" column="3" selection-start-line="115" selection-start-column="3" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/modelos/usuarios.modelo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="27" selection-end-line="116" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/usuarios.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="245" column="43" selection-start-line="245" selection-start-column="27" selection-end-line="245" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/usuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="488" column="36" selection-start-line="488" selection-start-column="36" selection-end-line="488" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/ajax/autores.ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/controladores/autores.controlador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/modelos/autores.modelo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/autor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="199" column="94" selection-start-line="199" selection-start-column="94" selection-end-line="199" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/js/empresa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

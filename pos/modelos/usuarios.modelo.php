@@ -114,17 +114,28 @@ class ModeloUsuarios{
     /*=============================================
 	    BORRAR USUARIOS
     =============================================*/
-    public static function MdlEliminarUsuario($id){
+    static public function mdlBorrarUsuarios($tabla, $datos)
+    {
 
-        $oBJECT_INSE = Conexion::conectar()->prepare("DELETE FROM persona WHERE id_persona=:id");
-        $oBJECT_INSE -> bindParam(":id", $id, PDO::PARAM_INT);
-        $cVMSN_ERRO = null;
-        if ($oBJECT_INSE -> execute()) {
-            $cVMSN_ERRO = true;
-        }else{
-            $cVMSN_ERRO = false;
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_persona = :id_persona");
+
+        $stmt->bindParam(":id_persona", $datos, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
         }
 
-        echo json_encode($cVMSN_ERRO);
+        $stmt->close();
+
+        $stmt = null;
+
+
     }
+
 }

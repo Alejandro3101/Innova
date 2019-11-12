@@ -98,7 +98,7 @@ Agregar Usuario
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary btnEditarUsuario" Usuarioid="'.$value["id_persona"].'" data-toggle="modal" data-target="#modaleditartarea"><i class="fa fa-pencil"></i></button>
                                        
-                                        <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id_persona"].'"><i class="fa fa-times"></i></button>
+                                        <button class="btn btn-danger btnEliminarUsuario" id_persona="'.$value["id_persona"].'"><i class="fa fa-times"></i></button>
                                     
                                     <a href="evidencia" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
                                     
@@ -482,4 +482,11 @@ MODAL AGREGAR USUARIO
     </div>
 
 </div>
+
+<?php
+
+$EliminarUsuario = new ControladorUsuarios();
+$EliminarUsuario -> ctrBorrarUsuario();
+
+?>
 

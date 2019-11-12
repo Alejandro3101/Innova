@@ -242,31 +242,44 @@ class ControladorUsuarios{
     /*=============================================
     Eliminar Usuarios
     =============================================*/
-    public static function CrtEliminarUsuario($idU){
-        $oBJECT_RESP = ModeloUsuarios::MdlEliminarUsuario($idU);
 
-        if ($oBJECT_RESP == "ok") {
+    static public function ctrBorrarUsuario()
+    {
 
-            echo '<script>
+        if (isset($_GET["id_persona"])) {
 
-			swal({
-				type: "success",
-				title: "El Usuario ha sido borrado correctamente",
-				showConfirmButton: true,
-				confirmButtonText: "Cerrar",
-				closeOnConfirm: false
-				}).then(function(result) {
-					if (result.value) {
+            $tabla = "persona";
+            $datos = $_GET["id_persona"];
 
-					window.location = "usuarios";
 
-				}
-			})
+            $respuesta = ModeloUsuarios::mdlBorrarUsuarios($tabla, $datos);
 
-			</script>';
+            if ($respuesta == "ok") {
+
+                echo '<script>
+
+				swal({
+					  type: "success",
+					  title: "El Usuario ha sido borrado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar",
+					  closeOnConfirm: false
+					  }).then(function(result) {
+								if (result.value) {
+
+								window.location = "usuarios";
+
+								}
+							})
+
+				</script>';
+
+            }
+
         }
     }
 }
+?>
 	
 
 

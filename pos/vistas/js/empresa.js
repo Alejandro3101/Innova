@@ -32,8 +32,6 @@ $(".btnEditarEmpresa").click(function () {
             $("#editarcelular").val(respuesta["celular"]);
 
 
-
-
             $("#editarsector").html(respuesta["sector"]);
             $("#editarsector").val(respuesta["sector"]);
 

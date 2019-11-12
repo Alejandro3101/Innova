@@ -23,7 +23,7 @@ class ModeloActividades{
 
         }else{
 
-            $stmt = Conexion::conectar()->prepare("select nombre_actividad,descripcion,fecha_inicio,fecha_limite,estado,proyectos.nombre_proyecto from `actividades` INNER JOIN proyectos on proyectos.id_proyecto = actividades.id_proyecto");
+            $stmt = Conexion::conectar()->prepare("select id_actividad,nombre_actividad,descripcion,fecha_inicio,fecha_limite,estado,proyectos.nombre_proyecto from `actividades` INNER JOIN proyectos on proyectos.id_proyecto = actividades.id_proyecto");
 
             $stmt -> execute();
 

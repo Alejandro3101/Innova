@@ -99,7 +99,7 @@
                        <button class="btn btn-danger btnEliminarEmpresa" id_empresa="'.$value["id_empresa"].'"><i class="fa fa-times"></i></button>
                        
                        
-                       <button class="btn btn-warning"><i class="fa fa-arrow-right"></i></button>
+                    
 
 
 
