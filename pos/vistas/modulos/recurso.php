@@ -52,10 +52,10 @@
                             <td>'.($key+1).'</td>
                             <td>'.$value["rubro"].'</td>
                             <td>'.$value["concepto"].'</td>
-                            <td>'.$value["valor_rubro"].'</td>
-                            <td>'.$value["valor_proyecto"].'</td>';
+                            <td>$ '.$value["valor_rubro"].'</td>
+                            <td> $ '.$value["valor_proyecto"].'</td>';
                         echo '               
-                            <td>'.$value["id_proyecto"].'</td>
+                            <td>'.$value["nombre_proyecto"].'</td>
                             <td>
                                 <div class="btn-group">
                                 <button type="button" class="btn btn-primary btnEditarRecursos" Recursosid="'.$value["id_recurso"].'" data-toggle="modal" data-target="#modaleditarrecurso"><i class="fa fa-pencil"></i></button>
@@ -227,7 +227,7 @@ MODAL AGREGAR RECURSO
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="nuevoid_proyecto">
-                                    <option>Seleccione</option>
+                                    <option>Seleccione Proyecto</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA["id_proyecto"]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';

@@ -27,11 +27,12 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nombre de la Tarea</th>
+                        <th>Nombre Tarea</th>
                         <th>Descripción</th>
                         <th>Estado</th>
                         <th>Actividad</th>
                         <th>Integrantes</th>
+                        <th>Proyecto</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -49,8 +50,9 @@
                         echo '               
                     
                                 <td>'.$value["estado"].'</td>
-                                <td>'.$value["id_actividad"].'</td>
-                                <td>'.$value["id_integrante"].'</td>
+                                <td>'.$value["nombre_actividad"].'</td>
+                                <td>'.$value["rol"].'</td>
+                                <td>'.$value["nombre_proyecto"].'</td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary btnEditarTareas" Tareaid="'.$value["id_tarea"].'" data-toggle="modal" data-target="#modaleditartarea"><i class="fa fa-pencil"></i></button>
@@ -200,6 +202,27 @@ MODAL AGREGAR RECURSO
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
+
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <?php
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
+                                ?>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="nuevoid_proyecto">
+                                    <option>Seleccione el Proyecto</option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
                         <!-- ENTRADA PARA EL NOMBRE DE LA TAREA -->
                         <div class="form-group">
                             <div class="input-group">

@@ -19,6 +19,7 @@ class autorescontroller{
                     "tipo_documento" => $_POST["nuevotipo_documento"],
                     "documento" => $_POST["nuevodocumento"],
                     "email" => $_POST["nuevoemail"],
+                    "id_proyecto" => $_POST["nuevoid_proyecto"],
                     "celular" => $_POST["nuevocelular"]);
 
                 $respuesta = ModeloAutor::mdlIngresarAutores($autores, $datos);

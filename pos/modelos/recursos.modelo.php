@@ -18,7 +18,7 @@ class ModeloRecurso{
 
             return $stmt -> fetch();
         }else{
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $recursos");
+            $stmt = Conexion::conectar()->prepare("SELECT id_recurso,rubro,concepto,valor_rubro,valor_proyecto, proyectos.nombre_proyecto FROM recursos inner JOIN `proyectos` on proyectos.id_proyecto = recursos.id_proyecto");
 
             $stmt -> execute();
 

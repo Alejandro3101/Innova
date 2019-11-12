@@ -14,7 +14,7 @@ class ModeloEvidencia{
             $stmt -> execute();
             return $stmt -> fetch();
         }else{
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $evidencias");
+            $stmt = Conexion::conectar()->prepare("select id_evidencia,tipo,evidencias ,tareas.nombre_tarea,proyectos.nombre_proyecto from evidencias inner join tareas on tareas.id_tarea = evidencias.id_tarea inner join proyectos on proyectos.id_proyecto = evidencias.id_proyecto");
             $stmt -> execute();
             return $stmt -> fetchAll();
         }
@@ -27,13 +27,13 @@ class ModeloEvidencia{
     =============================================*/
 
     static public function mdlIngresarEvidencia($evidencias, $datos){
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $evidencias(tipo,evidencias,id_tarea)
-        VALUES (:tipo,:evidencias,:id_tarea)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $evidencias(tipo,evidencias,id_tarea,id_proyecto)VALUES(:tipo,:evidencias,:id_tarea,:id_proyecto)");
 
 
         $stmt->bindParam(":tipo", $datos["tipo"], PDO::PARAM_STR);
         $stmt->bindParam(":evidencias", $datos["evidencias"], PDO::PARAM_STR);
         $stmt->bindParam(":id_tarea", $datos["id_tarea"], PDO::PARAM_INT);
+        $stmt->bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_INT);
 
         if ($stmt->execute()) {
 

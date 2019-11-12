@@ -233,7 +233,7 @@ MODAL AGREGAR USUARIO
                             ?>
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <select class="form-control" name="nuevoid_proyecto">
-                                <option>Seleccione</option>
+                                <option>Seleccione el Proyecto</option>
                                 <?php
                                 foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                     echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';

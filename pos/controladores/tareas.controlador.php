@@ -11,6 +11,7 @@ class ControladorTareas{
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevodescripcion"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoestado"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoid_actividad"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoid_proyecto"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoid_integrante"])) {
 
                 $tareas = "tareas";
@@ -19,6 +20,7 @@ class ControladorTareas{
                     "descripcion" => $_POST["nuevodescripcion"],
                     "estado" => $_POST["nuevoestado"],
                     "id_actividad" => $_POST["nuevoid_actividad"],
+                    "id_proyecto" => $_POST["nuevoid_proyecto"],
                     "id_integrante" => $_POST["nuevoid_integrante"]);
 
                 $respuesta = ModeloTareas::mdlIngresarTareas($tareas, $datos);

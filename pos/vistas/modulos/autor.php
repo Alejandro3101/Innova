@@ -187,6 +187,27 @@ MODAL AGREGAR autor
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
+
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <?php
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
+                                ?>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="nuevoid_proyecto">
+                                    <option>Seleccione el Proyecto</option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
                         <!-- ENTRADA PARA EL NOMBRE DE AUTORES -->
                         <div class="form-group">
                             <div class="input-group">

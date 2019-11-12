@@ -150,6 +150,7 @@ MODAL AGREGAR Actividad
 
                     <div class="box-body">
 
+
                         <!-- ENTRADA PARA EL NOMBRE -->
 
                         <div class="form-group">
@@ -208,19 +209,30 @@ MODAL AGREGAR Actividad
                             </div>
                         </div>
 
-                        <!-- ENTRADA PARA LA estado -->
 
-                        <div class="form-group">
+                            <!-- ENTRADA PARA EL estado -->
 
-                            <div class="input-group">
+                            <div class="form-group">
 
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <div class="input-group">
 
-                                <input type="text" class="form-control input-lg" name="nuevoestado" placeholder="Ingresar el estado" required>
+                                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                                    <select class="form-control input-lg" name="nuevoestado" required>
+
+                                        <option value="">Selecionar Estado</option>
+
+                                        <option value="Planeada">Planeada</option>
+                                        <option value="Ejecutada">Ejecutada</option>
+                                        <option value="Finalizada">Finalizada</option>
+                                        <option value="Cancelada">Cancelada</option>
+
+                                    </select>
+
+                                </div>
 
                             </div>
 
-                        </div>
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
                         <div class="form-group">
                             <div class="input-group">
@@ -231,7 +243,7 @@ MODAL AGREGAR Actividad
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="nuevoproyecto">
-                                    <option>Seleccione</option>
+                                    <option>Seleccione Proyecto</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]."".$xVVAL_DATA["nombre_proyecto"].'</option>';

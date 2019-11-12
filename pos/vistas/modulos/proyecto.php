@@ -315,7 +315,7 @@ MODAL AGREGAR Proyectos
                             ?>
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <select class="form-control" name="nuevoid_empresa">
-                                <option>Seleccione</option>
+                                <option>Seleccione Empresa</option>
                                 <?php
                                 foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                     echo '<option value='.$xVVAL_DATA["id_empresa"].'>'.$xVVAL_DATA["nombre_empresa"]." ".$xVVAL_DATA[""].'</option>';

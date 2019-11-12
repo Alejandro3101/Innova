@@ -25,7 +25,8 @@ class ModeloAutor{
     REGISTRO DE AUTORES
     =============================================*/
     static public function mdlIngresarAutores($autores, $datos){
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $autores (nombres,apellidos,tipo_documento,documento,email,celular)VALUES(:nombres,:apellidos,:tipo_documento,:documento,:email,:celular)");
+
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $autores (nombres,apellidos,tipo_documento,documento,email,celular,id_proyecto)VALUES(:nombres,:apellidos,:tipo_documento,:documento,:email,:celular,:id_proyecto)");
 
         $stmt->bindParam(":nombres", $datos["nombres"], PDO::PARAM_STR);
         $stmt->bindParam(":apellidos", $datos["apellidos"], PDO::PARAM_STR);
@@ -33,6 +34,7 @@ class ModeloAutor{
         $stmt->bindParam(":documento", $datos["documento"], PDO::PARAM_STR);
         $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
         $stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_INT);
+        $stmt->bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_INT);
 
         if ($stmt->execute()) {
 

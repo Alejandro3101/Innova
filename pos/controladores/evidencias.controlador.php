@@ -13,14 +13,16 @@ class evidenciacontroller{
 
                 $datos = array("tipo" => $_POST["nuevotipo"],
                     "evidencias" => $_POST["nuevoevidencias"],
+                    "id_proyecto" => $_POST["nuevoid_proyecto"],
                     "id_tarea" => $_POST["nuevoid_tarea"]);
-                $respuesta = ModeloEvidencia::mdlIngresarEvidencia($evidencias, $datos);
+
+                   $respuesta = ModeloEvidencia::mdlIngresarEvidencia($evidencias, $datos);
 
                 if($respuesta == "ok"){
                     echo '<script>
 					swal({
 						type: "success",
-						title: "¡El usuario ha sido guardado correctamente!",
+						title: "¡La Evidencia ha sido guardado correctamente!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 					}).then(function(result){
