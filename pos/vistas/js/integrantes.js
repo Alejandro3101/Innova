@@ -1,12 +1,12 @@
 /*=============================================
-ELIMINAR TAREAS
+ELIMINAR prestamo
 =============================================*/
 $(".btnEliminarIntegrantes").click(function () {
 
-    var id_empresa = $(this).attr("id_empresa");
+    var id_integrante = $(this).attr("id_integrante");
 
     swal({
-        title: '¿Está seguro de borrar el Integrante?',
+        title: '¿Está seguro de borrar Integrante?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,
@@ -15,17 +15,13 @@ $(".btnEliminarIntegrantes").click(function () {
         cancelButtonText: 'Cancelar',
         confirmButtonText: 'Si, borrar Integrante!'
     }).then((result)=>{
-        if (result.value) {
 
-            $.ajax({
-                url:"ajax/empresas.ajax.php?d="+id_empresa,
-                method:"GET",
-                dataType: "json",
-                success : function(respuesta){
-                    window.location = "integrante";
-                }
-            });
+        if(result.value){
+
+            window.location = "index.php?ruta=integrante&id_integrante="+id_integrante;
+
         }
-    })
-})
 
+    })
+
+})

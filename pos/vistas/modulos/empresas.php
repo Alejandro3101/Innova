@@ -474,10 +474,6 @@ MODAL AGREGAR empresa
                                     <option value="Comercio">Comercio</option>
 
 
-
-
-
-
                                 </select>
 
                             </div>
@@ -503,7 +499,6 @@ MODAL AGREGAR empresa
                         $crearEmpresa -> ctrCrearEmpresas();
 
                         ?>
-
             </form>
 
         </div>
@@ -511,4 +506,12 @@ MODAL AGREGAR empresa
     </div>
 
 </div>
+
+<?php
+
+$eliminarempresa = new empresascontroller();
+$eliminarempresa -> ctrBorrarEmpresa();
+
+?>
+
 

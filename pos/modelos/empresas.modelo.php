@@ -2,41 +2,42 @@
 
 require_once "conexion.php";
 
-class ModeloEmpresa{
+class ModeloEmpresa
+{
 
     /*=============================================
            MOSTRAR EMPRESA
          =============================================*/
 
-    static public function mdlMostrarEmpresa($tabla, $item, $valor){
+    static public function mdlMostrarEmpresa($tabla, $item, $valor)
+    {
 
-        if($item != null){
+        if ($item != null) {
 
             $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+            $stmt->bindParam(":" . $item, $valor, PDO::PARAM_STR);
 
-            $stmt -> execute();
+            $stmt->execute();
 
-            return $stmt -> fetch();
+            return $stmt->fetch();
 
-        }else{
+        } else {
 
             $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 
-            $stmt -> execute();
+            $stmt->execute();
 
-            return $stmt -> fetchAll();
+            return $stmt->fetchAll();
 
         }
 
 
-        $stmt -> close();
+        $stmt->close();
 
         $stmt = null;
 
     }
-
 
 
     /*=============================================
@@ -57,8 +58,6 @@ class ModeloEmpresa{
         $stmt->bindParam(":encargado", $datos["encargado"], PDO::PARAM_STR);
         $stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
         $stmt->bindParam(":sector", $datos["sector"], PDO::PARAM_STR);
-
-
 
 
         if ($stmt->execute()) {
@@ -82,53 +81,64 @@ class ModeloEmpresa{
    =============================================*/
 
 
-    static public function mdlEditarEmpresa($tabla, $datos){
+    static public function mdlEditarEmpresa($tabla, $datos)
+    {
 
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_empresa = :nombre_empresa,tipo_empresa = :tipo_empresa ,direccion = :direccion,telefono = :telefono,encargado = :encargado,celular = :celular,sector = :sector WHERE nit = :nit");
 
 
-        $stmt -> bindParam(":nombre_empresa", $datos["nombre_empresa"], PDO::PARAM_STR);
-        $stmt -> bindParam(":tipo_empresa", $datos["tipo_empresa"], PDO::PARAM_STR);
-        $stmt -> bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
-        $stmt -> bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
-        $stmt -> bindParam(":encargado", $datos["encargado"], PDO::PARAM_STR);
-        $stmt -> bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
-        $stmt -> bindParam(":sector", $datos["sector"], PDO::PARAM_STR);
-        $stmt -> bindParam(":nit", $datos["nit"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre_empresa", $datos["nombre_empresa"], PDO::PARAM_STR);
+        $stmt->bindParam(":tipo_empresa", $datos["tipo_empresa"], PDO::PARAM_STR);
+        $stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
+        $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+        $stmt->bindParam(":encargado", $datos["encargado"], PDO::PARAM_STR);
+        $stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
+        $stmt->bindParam(":sector", $datos["sector"], PDO::PARAM_STR);
+        $stmt->bindParam(":nit", $datos["nit"], PDO::PARAM_STR);
 
 
-
-        if($stmt -> execute()){
+        if ($stmt->execute()) {
 
             return "ok";
 
-        }else{
+        } else {
 
             return "error";
 
         }
 
-        $stmt -> close();
+        $stmt->close();
 
         $stmt = null;
 
     }
 
     /*=============================================
-	BORRAR AUTORES
-    =============================================*/
-    public static function MdlEliminarEmpresas($id){
+   BORRAR empresa
+   =============================================*/
 
-        $oBJECT_INSE = Conexion::conectar()->prepare("DELETE FROM empresas WHERE id_empresa=:id_empresa");
-        $oBJECT_INSE -> bindParam(":id", $id, PDO::PARAM_INT);
-        $cVMSN_ERRO = null;
-        if ($oBJECT_INSE -> execute()) {
-            $cVMSN_ERRO = true;
-        }else{
-            $cVMSN_ERRO = false;
+    static public function mdlBorrarEmpresa($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_empresa = :id_empresa");
+
+        $stmt->bindParam(":id_empresa", $datos, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
         }
 
-        echo json_encode($cVMSN_ERRO);
+        $stmt->close();
+
+        $stmt = null;
+
+
     }
 
 }

@@ -44,7 +44,7 @@
                                 <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary btnEditarPrograma" Programaid="'.$value["id_programa"].'" data-toggle="modal" data-target="#modaleditarPrograma"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btnEliminarPrograma" idPrograma="'.$value["id_programa"].'"><i class="fa fa-times"></i></button>
+                                    <button class="btn btn-danger btnEliminarPrograma" id_programa="'.$value["id_programa"].'"><i class="fa fa-times"></i></button>
                                 </div>
                             </td>
                             </tr>';
@@ -154,4 +154,9 @@ MODAL AGREGAR RECURSO
         </div>
     </div>
 </div>
+
+<?php
+$EliminarPrograma = new programacontroller();
+$EliminarPrograma -> ctrBorrarPrograma();
+?>
 

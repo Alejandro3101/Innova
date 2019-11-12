@@ -75,8 +75,6 @@
                   <td>'.$value["nombre_actividad"].'</td>
                   <td>'.$value["descripcion"].'</td>';
 
-
-
                   echo '
                   <td>'.$value["fecha_inicio"].'</td>
                   <td>'.$value["fecha_limite"].'</td>
@@ -88,7 +86,7 @@
                         
                         <button class="btn btn-primary" data-toggle="modal" data-target="#modalexample"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger btnEliminarActividades "><i class="fa fa-times"></i></button>
+                      <button class="btn btn-danger btnEliminarActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-times"></i></button>
                       
                         <a href="tarea" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
                       
@@ -270,3 +268,10 @@ MODAL AGREGAR Actividad
     </div>
 
 </div>
+
+<?php
+
+$eliminarActividad = new actividadescontroller();
+$eliminarActividad -> ctrBorrarActividades();
+
+?>

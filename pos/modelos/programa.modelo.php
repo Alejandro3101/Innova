@@ -1,7 +1,7 @@
 <?php
 require_once "conexion.php";
 
-class ModelPrograma{
+class ModeloPrograma{
     /*=============================================
     MOSTRAR PROGRAMA
     =============================================*/
@@ -61,19 +61,31 @@ class ModelPrograma{
     }
 
     /*=============================================
-	BORRAR PROGRAMA
-    =============================================*/
-    public static function MdlEliminarPrograma($id){
+     BORRAR Programa
+     =============================================*/
 
-        $oBJECT_INSE = Conexion::conectar()->prepare("DELETE FROM programa WHERE id_programa=:id");
-        $oBJECT_INSE -> bindParam(":id", $id, PDO::PARAM_INT);
-        $cVMSN_ERRO = null;
-        if ($oBJECT_INSE -> execute()) {
-            $cVMSN_ERRO = true;
-        }else{
-            $cVMSN_ERRO = false;
+    static public function mdlBorrarPrograma($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_programa = :id_programa");
+
+        $stmt->bindParam(":id_programa", $datos, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
         }
 
-        echo json_encode($cVMSN_ERRO);
+        $stmt->close();
+
+        $stmt = null;
+
+
     }
+
 }

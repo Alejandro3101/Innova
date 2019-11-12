@@ -64,7 +64,7 @@ class ControladorUsuarios{
 
                 $tabla = "persona";
 
-               // $encriptar = crypt($_POST["nuevacontrasena"],'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+                $encriptar = crypt($_POST["nuevacontrasena"],'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
 
                 $datos = array("nombres" => $_POST["nuevoNombre"],
@@ -81,7 +81,7 @@ class ControladorUsuarios{
                     "fecha_vinculacion" => $_POST["nuevaFechaVinculacion"],
                     "fecha_desvinculacion" => $_POST["nuevafechaDesvinculacion"],
                     "estado_vinculacion" => $_POST["nuevoestado"],
-                    "contrasena" => $_POST["nuevacontrasena"],
+                    "contrasena" => $encriptar,
                     "id_programa" => $_POST["nuevoid_programa"],
                     "id_rol" => $_POST["nuevoid_rol"]);
 
@@ -240,7 +240,7 @@ class ControladorUsuarios{
         }
     }
     /*=============================================
-    Eliminar TAREAS
+    Eliminar Usuarios
     =============================================*/
     public static function CrtEliminarUsuario($idU){
         $oBJECT_RESP = ModeloUsuarios::MdlEliminarUsuario($idU);
@@ -251,7 +251,7 @@ class ControladorUsuarios{
 
 			swal({
 				type: "success",
-				title: "El Gasto ha sido borrado correctamente",
+				title: "El Usuario ha sido borrado correctamente",
 				showConfirmButton: true,
 				confirmButtonText: "Cerrar",
 				closeOnConfirm: false

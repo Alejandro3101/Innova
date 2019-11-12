@@ -1,7 +1,7 @@
 <?php
 class autorescontroller{
     /*=============================================
-        REGISTRO DE RECURSOS
+        REGISTRO DE autores
     =============================================*/
     static public function ctrCrearAutores(){
         if(isset($_POST["nuevonombres"])){

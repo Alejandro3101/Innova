@@ -139,7 +139,7 @@ class ControladorTareas{
 
 			swal({
 				type: "success",
-				title: "El Gasto ha sido borrado correctamente",
+				title: "la Tarea ha sido borrado correctamente",
 				showConfirmButton: true,
 				confirmButtonText: "Cerrar",
 				closeOnConfirm: false

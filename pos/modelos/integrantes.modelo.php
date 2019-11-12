@@ -68,4 +68,34 @@ class ModeloIntegrantes
     }
 
 
+    /*=============================================
+   BORRAR Integrante
+   =============================================*/
+
+    static public function mdlBorrarIntegrante($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_integrante = :id_integrante");
+
+        $stmt->bindParam(":id_integrante", $datos, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+
+
+    }
+
+
+
 }

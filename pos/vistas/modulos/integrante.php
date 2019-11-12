@@ -75,17 +75,12 @@
                   <td>'.$value["nombres"].'</td>
                   <td>'.$value["nombre_proyecto"].'</td>';
 
-
-
                         echo '
                     <td>'.$value["rol"].'</td>   
-                    
-                   
+                                    
                       
-                
-           
-                     
-           
+                          
+                                
                <td><button class="btn btn-success btn-xs">Activo</button></td>
               
                <td>
@@ -93,7 +88,7 @@
 
                        <button class="btn btn-primary"><i class="fa fa-pencil"></i></button>
                        
-                       <button class="btn btn-danger btnEliminarIntegrantes" ><i class="fa fa-times"></i></button>
+                       <button class="btn btn-danger btnEliminarIntegrantes " id_integrante ="'.$value["id_integrante"].'"><i class="fa fa-times"></i></button>
                        
                        <a href="actividades" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
                        
@@ -276,3 +271,10 @@ MODAL AGREGAR USUARIO
     </div>
 
 </div>
+
+<?php
+
+$eliminarIntegrante = new integrantecontroller();
+$eliminarIntegrante -> ctrBorrarIntegrantes();
+
+?>

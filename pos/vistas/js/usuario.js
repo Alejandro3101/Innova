@@ -52,6 +52,8 @@ $(".nuevoid_rol").change(function(){
         ocultar();
     }
 });
+
+
 $(".btnEditarUsuario").click(function () {
     var Usuarioid = $(this).attr("Usuarioid");
 
@@ -93,27 +95,5 @@ $(".btnEditarUsuario").click(function () {
 =============================================*/
 $(".btnEliminarUsuario").click(function () {
 
-    var id_persona = $(this).attr("idUsuario");
 
-    swal({
-        title: '¿Está seguro de borrar el usuario?',
-        text: "¡Si no lo está puede cancelar la accíón!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar usuario!'
-    }).then((result)=>{
-        if (result.value) {
-            $.ajax({
-                url:"ajax/usuario.ajax.php?d="+id_persona,
-                method:"GET",
-                dataType: "json",
-                success : function(respuesta){
-                    window.location = "usuarios";      
-                }
-            });
-        }
-    })
 });
