@@ -222,7 +222,7 @@ CUERPO DOCUMENTO
   <script src="vistas/js/proyecto.js"></script>
   <script src="vistas/js/usuario.js"></script>
   <script src="vistas/js/integrantes.js"></script>
-  <script src="vistas/js/Actividades.js"></script>
+  <script src="vistas/js/actividades.js"></script>
   <script src="vistas/js/programa.js"></script>
 </body>
 </html>

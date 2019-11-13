@@ -25,7 +25,7 @@ class AjaxEmpresas{
 }
 
 /*=============================================
-EDITAR CATEGORÍA
+EDITAR empresa
 =============================================*/
 if(isset($_POST["id_empresa"])){
 

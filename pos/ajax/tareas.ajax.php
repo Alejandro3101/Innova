@@ -7,7 +7,7 @@ class AjaxTareas{
         EDITAR TAREAS
     =============================================*/
 
-    public $Tareaid;
+    public  $Tareaid;
 
     public function ajaxEditarTareas(){
 

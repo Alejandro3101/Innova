@@ -12,7 +12,7 @@ class programacontroller{
 
                 $datos = array("nombre_programa" => $_POST["nuevonombre_programa"]);
 
-                $respuesta = ModelPrograma::mdlIngresarPrograma($programa, $datos);
+                $respuesta = ModeloPrograma::mdlIngresarPrograma($programa, $datos);
 
                 if($respuesta == "ok"){
 
@@ -87,7 +87,7 @@ class programacontroller{
 
             $datos = array("id_programa" => $_POST["editarid_programa"],
                 "nombre_programa" => $_POST["editarnombre_programa"]);
-            $respuesta = ModelPrograma::mdlEditarPrograma($programa, $datos);
+            $respuesta = ModeloPrograma::mdlEditarPrograma($programa, $datos);
 
             if ($respuesta == "ok") {
 

@@ -15,7 +15,9 @@ $(".btnEditarTareas").click(function () {
         contentType:false,
         processData:false,
         dataType:"json",
-        success:function (respuesta) {  
+        success:function (respuesta) {
+
+
             $("#editarid_tarea").val(respuesta["id_tarea"]);
             $("#editarnombre_tarea").val(respuesta["nombre_tarea"]);
             $("#editardescripcion").val(respuesta["descripcion"]);
@@ -23,6 +25,7 @@ $(".btnEditarTareas").click(function () {
             $("#editarestado").val(respuesta["estado"]);
             $("#editarid_actividad").val(respuesta["id_actividad"]);
             $("#editarid_integrante").val(respuesta["id_integrante"]);
+
         }
     })
 })

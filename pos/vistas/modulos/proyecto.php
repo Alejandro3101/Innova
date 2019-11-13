@@ -195,7 +195,7 @@ MODAL AGREGAR Proyectos
 
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevocodigo" placeholder="Ingresar Codigo " required>
+                                <input type="text" class="form-control input-lg" name="nuevocodigo" placeholder="Ingresar Codigo " >
 
                             </div>
 

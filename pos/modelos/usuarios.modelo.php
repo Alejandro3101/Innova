@@ -43,6 +43,7 @@ class ModeloUsuarios{
     static public function mdlIngresarUsuario($tabla, $datos){
 
         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombres,apellidos,tipo_documento,documento,celular,email,profesion,tipo_vinculacion,cvlac,cargo,ficha,fecha_vinculacion,fecha_desvinculacion,estado_vinculacion,contrasena,id_programa,id_rol ) VALUES (:nombres,:apellidos,:tipo_documento,:documento,:celular,:email,:profesion,:tipo_vinculacion,:cvlac,:cargo,:ficha,:fecha_vinculacion,:fecha_desvinculacion,:estado_vinculacion,:contrasena,:id_programa,:id_rol)");
+
         $p=null;
         if($datos["id_programa"]=="NULL"){
             $p=null;

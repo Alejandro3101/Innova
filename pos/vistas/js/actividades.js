@@ -1,4 +1,53 @@
 /*=============================================
+EDITAR actividades
+=============================================*/
+$(".btnEditarActividades").click(function () {
+    var actividadesId = $(this).attr("actividadesId");
+
+
+    var datos = new FormData();
+
+    datos.append("actividadesId",actividadesId);
+
+    $.ajax({
+        url:"ajax/actividades.ajax.php",
+        method:"POST",
+        data: datos,
+        cache: false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success:function (respuesta) {
+
+            console.log("respuesta", respuesta);
+
+/*
+            $("#editarNombreAct").val(respuesta["nombre_actividad"]);
+
+            $("#editardescripcion").val(respuesta["nombre_tarea"]);
+
+            $("#editarFechainicio").val(respuesta["descripcion"]);
+
+            $("#editarfechalimite").val(respuesta["estado"]);
+
+            $("#editarestado").val(respuesta["estado"]);
+
+            $("#editarestado").html(respuesta["estado"]);
+
+            $("#editarproyecto").val(respuesta["id_actividad"]);
+
+*/
+
+
+
+
+        }
+    })
+})
+
+
+
+/*=============================================
 ELIMINAR Actividades
 =============================================*/
 $(".btnEliminarActividades").click(function () {

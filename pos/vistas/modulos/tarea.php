@@ -74,7 +74,7 @@
 </div>
 
 <!--=====================================
-MODAL EDITAR RECURSO
+MODAL EDITAR tarea
 ======================================-->
 <div id="modaleditartarea" class="modal fade" role="dialog">
     <div class="modal-dialog">
