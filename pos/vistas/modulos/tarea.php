@@ -74,7 +74,7 @@
 </div>
 
 <!--=====================================
-MODAL EDITAR tarea
+MODAL EDITAR TAREA
 ======================================-->
 <div id="modaleditartarea" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -296,8 +296,6 @@ MODAL AGREGAR RECURSO
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
                     <button type="submit" class="btn btn-primary">Guardar tareas</button>
-
-
                 </div>
                 <?php
                 $crearTareas = new ControladorTareas();
