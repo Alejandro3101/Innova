@@ -182,8 +182,8 @@ MODAL AGREGAR USUARIO
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                                 <select class="form-control input-lg" name="nuevoTdocumento">
                                     <option value="">Tipo Documento</option>
-                                    <option value="Cedula ciudadania">Cedula Ciudadania</option>
-                                    <option value="Tarjeta identidad">Tarjeta Identidad</option>
+                                    <option value="Cedula de ciudadania">Cedula Ciudadania</option>
+                                    <option value="Tarjeta de identidad">Tarjeta Identidad</option>
                                 </select>
                             </div>
                         </div>
@@ -270,8 +270,8 @@ MODAL AGREGAR USUARIO
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU cargo -->
-                        <div class="form-group nuevoCargov">
-                            <div class="input-group nuevoCargov invisible">
+                        <div class="form-group nuevoCargov invisible">
+                            <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                                 <select class="form-control input-lg" name="nuevoCargo">
                                     <option value="">Selecionar Cargo</option>
@@ -301,7 +301,7 @@ MODAL AGREGAR USUARIO
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control nuevoid_programa" name="nuevoid_programa">
-                                    <option value='NULL'>Seleccione</option>
+                                    <option value='NULL'>Selecionar Programa</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_programa"].'>'.$xVVAL_DATA["nombre_programa"].'</option>';
@@ -340,14 +340,14 @@ MODAL EDITAR USUARIO
 <div id="modaleditarUsuario" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" method="post" enctype="multipart/form-data">
+            <form role="form" method="post" id="formEdit" enctype="multipart/form-data">
 
                 <!--=====================================
                 CABEZA DEL MODAL
                 ======================================-->
                 <div class="modal-header" style="background:#222d32; color:white">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Agregar usuario</h4>
+                    <h4 class="modal-title">Editar usuario</h4>
                 </div>
 
                 <!--=====================================
@@ -355,13 +355,9 @@ MODAL EDITAR USUARIO
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA LA ID DE USUARIO -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" name="editarid_persona" id="editarid_persona" readonly>
-                            </div>
-                        </div>
+                                    
+                        <input type="hidden" name="editarid_persona" id="editarid_persona">
+
                         <!-- ENTRADA PARA EL NOMBRE -->
                         <div class="form-group">
                             <div class="input-group">
@@ -385,7 +381,8 @@ MODAL EDITAR USUARIO
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control nuevoid_rol" name="editartipo_documento" id="editartipo_documento">
+                                <select class="form-control nuevoid_rol" name="editartipo_rol" id="editartipo_rol">
+                                    <option>Seleccione Rol</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option nom='.$xVVAL_DATA["nombre"].' value='.$xVVAL_DATA["id_rol"].'>'.$xVVAL_DATA["nombre"].'</option>';
@@ -398,10 +395,10 @@ MODAL EDITAR USUARIO
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="editardocumento">
-                                    <option value="" id="editardocumento"></option>
-                                    <option value="Cedula ciudadania">Cedula Ciudadania</option>
-                                    <option value="Tarjeta identidad">Tarjeta Identidad</option>
+                                <select class="form-control input-lg" name="editartipo_documento" id ="editartipo_documento">
+                                    <option value="">Tipo Documento</option>
+                                    <option value="Cedula de ciudadania">Cedula Ciudadania</option>
+                                    <option value="Tarjeta de identidad">Tarjeta Identidad</option>
                                 </select>
                             </div>
                         </div>
@@ -409,68 +406,70 @@ MODAL EDITAR USUARIO
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarcelular" id="editarcelular">
+                                <input type="text" class="form-control input-lg" name="editardocumento" id="editardocumento">
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA Celular -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="editaremail" id="editaremail">
+                                <input type="text" class="form-control input-lg" name="editarcelular" id="editarcelular">
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA Email -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarprofesion" id="editarprofesion">
+                                <input type="text" class="form-control input-lg" name="editaremail" id="editaremail">
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA contraseña -->
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="editartipo_vinculacion" id="editartipo_vinculacion">
+                                <input type="text" class="form-control input-lg" name="editarcontrasena" id="editarcontrasena">
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA fecha_vinculacion -->
-                        <div class="form-group nuevaFechaVinculacionv invisible">
+                        <div class="form-group nuevaFechaVinculacionvEdit invisible">
                             <label>Fecha vinculación</label><br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="date" class="form-control input-lg" name="editarid_rol" id="editarid_rol">
+                                <input type="date" class="form-control input-lg" name="editarfecha_vinculacion" id="editarfecha_vinculacion">
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA fecha_desvinculacion -->
-                        <div class="form-group nuevafechaDesvinculacionv invisible">
+                        <div class="form-group nuevafechaDesvinculacionvEdit invisible">
                             <label>Fecha desvinculacion</label><br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="date" class="form-control input-lg" name="editarcvlac" id="editarcvlac">
+                                <input type="date" class="form-control input-lg" name="editarfecha_desvinculacion" id="editarfecha_desvinculacion">
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU estado -->
-                        <div class="form-group nuevoestadov invisible">
+                        <div class="form-group nuevoestadovEdit invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="editarcargo" id="editarcargo">
+                                <select class="form-control input-lg" name="editarestado_vinculacion" id="editarestado_vinculacion">
+                                    <option value="">Selecionar Estado</option>
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA Profesion -->
-                        <div class="form-group nuevaprofesionv invisible">
+                        <div class="form-group nuevaprofesionvEdit invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarficha" id="editarficha">
+                                <input type="text" class="form-control input-lg" name="editarprofesion" id="editarprofesion">
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU tipo_vinculacion -->
-                        <div class="form-group nuevoTvinculacionv invisible">
+                        <div class="form-group nuevoTvinculacionvEdit invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="editarfecha_vinculacion" id="editarfecha_vinculacion">
+                                <select class="form-control input-lg" name="editartipo_vinculacion" id="editartipo_vinculacion">
+                                    <option value="">Selecionar Tipo Vinculacion</option>
                                     <option value="Contratista">Contratista</option>
                                     <option value="Planta">Planta</option>
                                     <option value="Planta provisional">Planta provisional</option>
@@ -479,18 +478,18 @@ MODAL EDITAR USUARIO
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA cvlac -->
-                        <div class="form-group nuevoCvlacv invisible">
+                        <div class="form-group nuevoCvlacvEdit invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarfecha_desvinculacion" id="editarfecha_desvinculacion">
+                                <input type="text" class="form-control input-lg" name="editarcvlac" id="editarcvlac">
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU cargo -->
-                        <div class="form-group nuevoCargov">
-                            <div class="input-group nuevoCargov invisible">
+                        <div class="form-group nuevoCargovEdit invisible">
+                            <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="editarestado_vinculacion">
-                                    <option value="" id="editarestado_vinculacion"></option>
+                                <select class="form-control input-lg" name="editarcargo" id ="editarcargo">
+                                    <option value="">Selecionar Cargo</option>
                                     <option value="Voluntario">Voluntario</option>
                                     <option value="Monitor">Monitor</option>
                                     <option value="Apoyo de sostenimiento">Apoyo Sostenimiento<option>
@@ -500,14 +499,14 @@ MODAL EDITAR USUARIO
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA Ficha -->
-                        <div class="form-group nuevaFichav invisible">
+                        <div class="form-group nuevaFichavEdit invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarcontrasena" id="editarcontrasena">
+                                <input type="text" class="form-control input-lg" name="editarficha" id="editarficha">
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE PROGRAMA -->
-                        <div class="form-group nuevoid_programav invisible">
+                        <div class="form-group nuevoid_programavEdit invisible">
                             <label>Programa</label><br>
                             <div class="input-group">
                                 <?php
@@ -517,6 +516,7 @@ MODAL EDITAR USUARIO
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control nuevoid_programa" name="editarid_programa" id="editarid_programa">
+                                    <option value="NULL">Selecionar Programa</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_programa"].'>'.$xVVAL_DATA["nombre_programa"].'</option>';

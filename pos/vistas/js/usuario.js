@@ -20,6 +20,7 @@ function ocultar() {
 }
 ocultar();
 $(".nuevoid_rol").change(function(){
+    $("#nuevoid_programa").val("NULL");
     ocultar();
     if($('.nuevoid_rol option:selected').attr("nom")=='Administrador'||$('.nuevoid_rol option:selected').attr("nom")=='Instructor'){
         $(".nuevaprofesionv").removeClass('invisible');
@@ -52,10 +53,65 @@ $(".nuevoid_rol").change(function(){
         ocultar();
     }
 });
+function ocultarEdit() {
+    $(".nuevaprofesionvEdit").addClass('invisible');
+    $(".nuevoTvinculacionvEdit").addClass('invisible');
+    $(".nuevoCvlacvEdit").addClass('invisible');
+    $(".nuevoCargovEdit").addClass('invisible');
+    $(".nuevaFichavEdit").addClass('invisible');
+    $(".nuevaFechaVinculacionvEdit").addClass('invisible');
+    $(".nuevafechaDesvinculacionvEdit").addClass('invisible');
+    $(".nuevoestadovEdit").addClass('invisible');
+    $(".nuevoid_programavEdit").addClass('invisible');
+    $(".nuevaprofesionvEdit").height(0);
+    $(".nuevoTvinculacionvEdit").height(0);
+    $(".nuevoCvlacvEdit").height(0);
+    $(".nuevoCargovEdit").height(0);
+    $(".nuevaFichavEdit").height(0);
+    $(".nuevaFechaVinculacionvEdit").height(0);
+    $(".nuevafechaDesvinculacionvEdit").height(0);
+    $(".nuevoestadovEdit").height(0);
+    $(".nuevoid_programavEdit").height(0);
+}
+ocultarEdit();
+$("#editartipo_rol").change(function(){
+    $("#editarid_programa").val("NULL");
+    ocultarEdit();
+    if($('#editartipo_rol option:selected').attr("nom")=='Administrador'||$('#editartipo_rol option:selected').attr("nom")=='Instructor'){
+        $(".nuevaprofesionvEdit").removeClass('invisible');
+        $(".nuevoTvinculacionvEdit").removeClass('invisible');
+        $(".nuevoCvlacvEdit").removeClass('invisible');
+        $(".nuevaFechaVinculacionvEdit").removeClass('invisible');
+        $(".nuevafechaDesvinculacionvEdit").removeClass('invisible');
+        $(".nuevoestadovEdit").removeClass('invisible');
+        $(".nuevaprofesionvEdit").height(45.5);
+        $(".nuevoTvinculacionvEdit").height(45.5);
+        $(".nuevoCvlacvEdit").height(45.5);
+        $(".nuevaFechaVinculacionvEdit").height(69.4);
+        $(".nuevafechaDesvinculacionvEdit").height(69.4);
+        $(".nuevoestadovEdit").height(45.5);
+    }else if ($('#editartipo_rol option:selected').attr("nom")=='Aprendiz'){
+        $(".nuevoCargovEdit").removeClass('invisible');
+        $(".nuevaFichavEdit").removeClass('invisible');
+        $(".nuevaFechaVinculacionvEdit").removeClass('invisible');
+        $(".nuevafechaDesvinculacionvEdit").removeClass('invisible');
+        $(".nuevoestadovEdit").removeClass('invisible');
+        $(".nuevoid_programavEdit").removeClass('invisible');
+        $(".nuevoCargovEdit").height(45.5);
+        $(".nuevaFichavEdit").height(45.5);
+        $(".nuevoCvlacvEdit").height(45.5);
+        $(".nuevaFechaVinculacionvEdit").height(69.4);
+        $(".nuevafechaDesvinculacionvEdit").height(69.4);
+        $(".nuevoestadovEdit").height(45.5);
+        $(".nuevoid_programavEdit").height(58.3);
+    }else{
+        ocultarEdit();
+    }
+});
 
 $(".btnEditarUsuario").click(function () {
     var Usuarioid = $(this).attr("Usuarioid");
-
+    
     var  datos = new FormData();
     datos.append("Usuarioid",Usuarioid);
 
@@ -71,13 +127,13 @@ $(".btnEditarUsuario").click(function () {
             $("#editarid_persona").val(respuesta["id_persona"]);
             $("#editarnombres").val(respuesta["nombres"]);
             $("#editarapellidos").val(respuesta["apellidos"]);
-            $("#editartipo_documento").val(respuesta["tipo_documento"]);
+            $("#editartipo_rol option[value='"+respuesta["id_rol"]+"']").attr("selected",true);
+            $("#editartipo_documento option[value='"+respuesta["tipo_documento"]+"']").attr("selected",true);
             $("#editardocumento").val(respuesta["documento"]);
             $("#editarcelular").val(respuesta["celular"]);
             $("#editaremail").val(respuesta["email"]);
             $("#editarprofesion").val(respuesta["profesion"]);
             $("#editartipo_vinculacion").val(respuesta["tipo_vinculacion"]);
-            $("#editarid_rol").val(respuesta["id_rol"]);
             $("#editarcvlac").val(respuesta["cvlac"]);
             $("#editarcargo").val(respuesta["cargo"]);
             $("#editarficha").val(respuesta["ficha"]);
@@ -86,6 +142,37 @@ $(".btnEditarUsuario").click(function () {
             $("#editarestado_vinculacion").val(respuesta["estado_vinculacion"]);
             $("#editarcontrasena").val(respuesta["contrasena"]);
             $("#editarid_programa").val(respuesta["id_programa"]);
+            ocultarEdit();
+            if($('#editartipo_rol option:selected').attr("nom")=='Administrador'||$('.nuevoid_rol option:selected').attr("nom")=='Instructor'){
+                $(".nuevaprofesionvEdit").removeClass('invisible');
+                $(".nuevoTvinculacionvEdit").removeClass('invisible');
+                $(".nuevoCvlacvEdit").removeClass('invisible');
+                $(".nuevaFechaVinculacionvEdit").removeClass('invisible');
+                $(".nuevafechaDesvinculacionvEdit").removeClass('invisible');
+                $(".nuevoestadovEdit").removeClass('invisible');
+                $(".nuevaprofesionvEdit").height(45.5);
+                $(".nuevoTvinculacionvEdit").height(45.5);
+                $(".nuevoCvlacvEdit").height(45.5);
+                $(".nuevaFechaVinculacionvEdit").height(69.4);
+                $(".nuevafechaDesvinculacionvEdit").height(69.4);
+                $(".nuevoestadovEdit").height(45.5);
+            }else if ($('#editartipo_rol option:selected').attr("nom")=='Aprendiz'){
+                $(".nuevoCargovEdit").removeClass('invisible');
+                $(".nuevaFichavEdit").removeClass('invisible');
+                $(".nuevaFechaVinculacionvEdit").removeClass('invisible');
+                $(".nuevafechaDesvinculacionvEdit").removeClass('invisible');
+                $(".nuevoestadovEdit").removeClass('invisible');
+                $(".nuevoid_programavEdit").removeClass('invisible');
+                $(".nuevoCargovEdit").height(45.5);
+                $(".nuevaFichavEdit").height(45.5);
+                $(".nuevoCvlacvEdit").height(45.5);
+                $(".nuevaFechaVinculacionvEdit").height(69.4);
+                $(".nuevafechaDesvinculacionvEdit").height(69.4);
+                $(".nuevoestadovEdit").height(45.5);
+                $(".nuevoid_programavEdit").height(58.3);
+            }else{
+                ocultarEdit();
+            }
         }
     })
 })
