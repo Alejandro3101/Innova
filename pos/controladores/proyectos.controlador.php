@@ -1,23 +1,19 @@
 <?php
 
-class Proyectocontroller
-{
+class Proyectocontroller{
 
     /*===========================================
        REGISTRO DE proyecto
     =============================================*/
 
-    static public function ctrCrearProyecto()
-    {
+    static public function ctrCrearProyecto(){
 
         if (isset($_POST["nuevoNombre"])) {
 
             if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoestado"])) {
 
-
                 $tabla = "proyectos";
-
 
                 $datos = array("nombre_proyecto" => $_POST["nuevoNombre"],
                     "tipo_proyecto" => $_POST["nuevoTproyecto"],
@@ -28,7 +24,6 @@ class Proyectocontroller
                     "fecha_cierre" => $_POST["Fecha"],
                     "formatos" => $_POST["nuevoformato"],
                     "id_empresa" => $_POST["nuevoid_empresa"]);
-
 
                 $respuesta = ModeloProyecto::mdlIngresarProyecto($tabla, $datos);
 
@@ -52,15 +47,11 @@ class Proyectocontroller
 						}
 
 					});
-				
 
 					</script>';
 
-
                 }
-
-
-            } else {
+            }else{
 
                 echo '<script>
 
@@ -80,25 +71,74 @@ class Proyectocontroller
 						}
 
 					});
-				
 
 				</script>';
 
             }
-
-
         }
-
-
     }
+    // /*=============================================
+    //     EDITAR PROYECTO
+    // =============================================*/
+    // if (isset($_POST[""])) {
+    //     if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarnombre_proyecto"]) &&
+    //     preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_proyecto"])) {
 
+    //     }
+
+    //     $tabla = "proyectos";
+
+    //     $datos = array("id_proyecto" => $_POST["editarid_proyecto"],
+    //         "nombre_proyecto" => $_POST["editarnombre_proyecto"],
+    //         "tipo_proyecto" => $_POST["editartipo_proyecto"],
+    //         "codigo" => $_POST["editarcodigo"],
+    //         "linea_programatica" => $_POST["editarlinea_programatica"],
+    //         "clasificacion" => $_POST["editarclasificacion"],
+    //         "formatos" => $_POST["editarformatos"],
+    //         "estado_proyecto" => $_POST["editarestado_proyecto"],
+    //         "fecha_cierre" => $_POST["editarfecha_cierre"],
+    //         "id_empresa" => $_POST["editarid_empresa"]);
+
+    //     $respuesta = ModeloProyecto::mdlEditarProyecto($tabla, $datos);
+    //     if ($respuesta == "ok") {
+
+    //         echo '<script>
+    //         swal({
+    //         type: "success",
+    //         title: "¡La Tarea ha sido Actualizada correctamente!",
+    //         showConfirmButton: true,
+    //         confirmButtonText: "Cerrar"
+
+    //         }).then(function(result){
+    //         if(result.value){
+    //             window.location = "proyecto";
+    //         }
+    //         });
+    //         </script>';
+    //     }else{
+    //         echo '<script>
+    //             swal({
+    //                 type: "error",
+    //                 title: "¡El Aula no puede ir vacío o llevar caracteres especiales!",
+    //                 showConfirmButton: true,
+    //                 confirmButtonText: "Cerrar"
+
+    //                 }).then(function(result){
+
+    //                 if(result.value){
+    //                     window.location = "proyecto";
+    //                 }
+
+    //             });
+    //         </script>';
+    //     }
+    // }
 
     /*=============================================
-   MOSTRAR proyecto
-   =============================================*/
+        MOSTRAR PROYECTO
+    =============================================*/
 
-    static public function ctrMostrarproyecto($item, $valor)
-    {
+    static public function ctrMostrarproyecto($item, $valor){
 
         $tabla = "proyectos";
 
@@ -107,9 +147,9 @@ class Proyectocontroller
         return $respuesta;
     }
 
-    /*--------------------------------------------
-    Eliminar Prestamo
-    ---------------------------------------------*/
+    /*============================================
+        Eliminar PROYECTO
+    ==============================================*/
 
     static public function ctrBorrarProyecto()
     {
@@ -127,18 +167,18 @@ class Proyectocontroller
                 echo '<script>
 
 				swal({
-					  type: "success",
-					  title: "El proyecto ha sido borrado correctamente",
-					  showConfirmButton: true,
-					  confirmButtonText: "Cerrar",
-					  closeOnConfirm: false
-					  }).then(function(result) {
-								if (result.value) {
+                    type: "success",
+                    title: "El proyecto ha sido borrado correctamente",
+                    showConfirmButton: true,
+                    confirmButtonText: "Cerrar",
+                    closeOnConfirm: false
+                    }).then(function(result) {
+                    if (result.value) {
 
-								window.location = "proyecto";
+                    window.location = "proyecto";
 
-								}
-							})
+                    }
+                })
 
 				</script>';
 
@@ -147,13 +187,11 @@ class Proyectocontroller
         }
     }
 
-
-        /*=============================================
+    /*=============================================
 	DESCARGAR EXCEL
 	=============================================*/
 
-    public function ctrDescargarReporte()
-    {
+    public function ctrDescargarReporte(){
 
         if (isset($_GET["reporte"])) {
 
@@ -191,14 +229,14 @@ class Proyectocontroller
 
             echo utf8_decode("<table border='0'> 
 
-					<tr> 
-					<td style='font-weight:bold; border:1px solid #eee;'>CÓDIGO</td> 		
-					<td style='font-weight:bold; border:1px solid #eee;'>NOMBRE PROYECTO</td>
-					<td style='font-weight:bold; border:1px solid #eee;'>EMPRESA</td>
-					<td style='font-weight:bold; border:1px solid #eee;'>AUTOR</td>					
-					<td style='font-weight:bold; border:1px solid #eee;'>FECHA</td>	
-					<td style='font-weight:bold; border:1px solid #eee;'>ESTADO</td>			
-					</tr>");
+            <tr> 
+            <td style='font-weight:bold; border:1px solid #eee;'>CÓDIGO</td> 		
+            <td style='font-weight:bold; border:1px solid #eee;'>NOMBRE PROYECTO</td>
+            <td style='font-weight:bold; border:1px solid #eee;'>EMPRESA</td>
+            <td style='font-weight:bold; border:1px solid #eee;'>AUTOR</td>					
+            <td style='font-weight:bold; border:1px solid #eee;'>FECHA</td>	
+            <td style='font-weight:bold; border:1px solid #eee;'>ESTADO</td>			
+            </tr>");
 
         }
     }

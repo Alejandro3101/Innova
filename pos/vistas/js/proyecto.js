@@ -10,7 +10,7 @@ $(".tipoProyecto").change(function(){
 });
 
 /*=============================================
-ELIMINAR prestamo
+ELIMINAR PROYECTO
 =============================================*/
 $(".btnEliminarProyecto").click(function () {
 
