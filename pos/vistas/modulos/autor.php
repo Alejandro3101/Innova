@@ -71,7 +71,7 @@
 </div>
 
 <!--=====================================
-MODAL editar RECURSO
+MODAL editar autor
 ======================================-->
 <div id="modaleditarautor" class="modal fade" role="dialog">
     <div class="modal-dialog">

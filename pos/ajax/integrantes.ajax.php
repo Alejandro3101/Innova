@@ -2,45 +2,33 @@
 require_once "../controladores/integrantes.controlador.php";
 require_once "../modelos/integrantes.modelo.php";
 
-class AjaxGastos{
-
+class AjaxIntegrantes{
     /*=============================================
-    EDITAR GASTOS
+        EDITAR Integrantes
     =============================================*/
 
-    public $Gastosid;
+    public  $id_integrante;
 
-    public function ajaxEditarGastos(){
+    public function ajaxEditarIntegrantes(){
 
-        $item = "id_gasto";
-        $valor = $this->Gastosid;
+        $item = "id_integrante";
+        $valor = $this->id_integrante;
 
-        $respuesta = gastocontroller::ctrMostrarGastos($item, $valor);
+        $respuesta = integrantecontroller::ctrMostrarIntegrantes($item, $valor);
+
         echo json_encode($respuesta);
+
     }
 
-    /*=============================================
-    ELIMINAR GASTOS
-    =============================================*/
-    public function EliminarDatos($idE){
-        $oBJECT_ELIM = gastocontroller::CrtEliminarGastos($idE);
-    }
 }
 
 /*=============================================
-EDITAR GASTOS
+EDITAR TAREAS
 =============================================*/
-if(isset($_POST["Gastosid"])){
+if(isset($_POST["id_integrante"])){
 
-    $editar = new AjaxGastos();
-    $editar ->Gastosid = $_POST["Gastosid"];
-    $editar -> ajaxEditarGastos();
+    $editar = new AjaxIntegrantes();
+    $editar ->id_integrante=$_POST["id_integrante"];
+    $editar -> ajaxEditarIntegrantes();
 }
 
-/*=============================================
-ELIMINAR GASTOS
-=============================================*/
-if(isset($_GET["d"])){
-    $oBJECT_ELIM = new AjaxGastos();
-    $oBJECT_ELIM ->EliminarDatos($_GET["d"]);
-}

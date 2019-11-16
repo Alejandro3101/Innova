@@ -296,7 +296,8 @@ MODAL Editar empresa
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="submit" class="btn btn-primary">Actualizar Cambios</button>
+
             </div>
         </div>
         <?php

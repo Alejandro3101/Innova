@@ -18,6 +18,7 @@ $(".btnEditarEmpresa").click(function () {
         dataType:"json",
         success:function (respuesta) {
 
+            console.log("respuesta",respuesta);
 
             $("#editarNombreE").val(respuesta["nombre_empresa"]);
 

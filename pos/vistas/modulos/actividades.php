@@ -84,7 +84,7 @@
 
                     <div class="btn-group">
                         
-                        <button class="btn btn-primary btnEditarActividades" actividadesId="'.$value["id_actividad"].'" data-toggle="modal" data-target="#modalEditarActividad"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-primary btnEditarActividades" id_actividad="'.$value["id_actividad"].'" data-toggle="modal" data-target="#modalEditarActividad"><i class="fa fa-pencil"></i></button>
 
                       <button class="btn btn-danger btnEliminarActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-times"></i></button>
                       

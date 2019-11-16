@@ -2,12 +2,10 @@
 EDITAR actividades
 =============================================*/
 $(".btnEditarActividades").click(function () {
-    var actividadesId = $(this).attr("actividadesId");
-
+    var id_actividad = $(this).attr("id_actividad");
 
     var datos = new FormData();
-
-    datos.append("actividadesId",actividadesId);
+    datos.append("id_actividad",id_actividad);
 
     $.ajax({
         url:"ajax/actividades.ajax.php",
@@ -19,7 +17,7 @@ $(".btnEditarActividades").click(function () {
         dataType:"json",
         success:function (respuesta) {
 
-            console.log("respuesta", respuesta);
+            console.log("respuesta" ,respuesta);
 
 /*
             $("#editarNombreAct").val(respuesta["nombre_actividad"]);
@@ -40,10 +38,11 @@ $(".btnEditarActividades").click(function () {
 
 
 
-
         }
     })
 })
+
+
 
 
 

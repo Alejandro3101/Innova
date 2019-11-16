@@ -64,8 +64,6 @@ class ControladorUsuarios{
 
                 $tabla = "persona";
 
-                $encriptar = crypt($_POST["nuevacontrasena"],'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
-
 
                 $datos = array("nombres" => $_POST["nuevoNombre"],
                     "apellidos" => $_POST["nuevoApellido"],
@@ -81,7 +79,7 @@ class ControladorUsuarios{
                     "fecha_vinculacion" => $_POST["nuevaFechaVinculacion"],
                     "fecha_desvinculacion" => $_POST["nuevafechaDesvinculacion"],
                     "estado_vinculacion" => $_POST["nuevoestado"],
-                    "contrasena" => $encriptar,
+                    "contrasena" => $_POST["contrasena"],
                     "id_programa" => $_POST["nuevoid_programa"],
                     "id_rol" => $_POST["nuevoid_rol"]);
 
