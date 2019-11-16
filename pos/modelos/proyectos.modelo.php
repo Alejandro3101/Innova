@@ -90,11 +90,41 @@ class ModeloProyecto{
         $stmt = null;
 
     }
+    /*=============================================
+        EDITAR PROYECTO
+    =============================================*/
+    static public function mdlEditarProyecto($tabla, $datos){
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_proyecto =:nombre_proyecto,tipo_proyecto =:tipo_proyecto,codigo =:codigo,linea_programatica =:linea_programatica,clasificacion =:clasificacion,formatos =:formatos,estado_proyecto =:estado_proyecto,fecha_cierre =:fecha_cierre,id_empresa =:id_empresa WHERE id_proyecto =:id_proyecto");
 
+        $stmt->bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre_proyecto", $datos["nombre_proyecto"], PDO::PARAM_STR);
+        $stmt->bindParam(":tipo_proyecto", $datos["tipo_proyecto"], PDO::PARAM_STR);
+        $stmt->bindParam(":codigo", $codigo, PDO::PARAM_STR);
+        $stmt->bindParam(":linea_programatica", $datos["linea_programatica"], PDO::PARAM_STR);
+        $stmt->bindParam(":clasificacion", $datos["clasificacion"], PDO::PARAM_STR);
+        $stmt->bindParam(":formatos", $datos["formatos"], PDO::PARAM_STR);
+        $stmt->bindParam(":estado_proyecto", $datos["estado_proyecto"], PDO::PARAM_STR);
+        $stmt->bindParam(":fecha_cierre", $datos["fecha_cierre"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_empresa", $datos["id_empresa"], PDO::PARAM_STR);
 
-/*=============================================
-   BORRAR Proyecto
-   =============================================*/
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+
+    }
+    /*=============================================
+        BORRAR PROYECTO
+    =============================================*/
 
     static public function mdlBorrarProyecto($tabla, $datos)
     {
@@ -112,13 +142,10 @@ class ModeloProyecto{
             return "error";
 
         }
-
         $stmt->close();
 
         $stmt = null;
 
-
     }
-
 }
 

@@ -2,20 +2,20 @@
 require_once "../controladores/proyectos.controlador.php";
 require_once "../modelos/proyectos.modelo.php";
 
-class AjaxGastos{
+class AjaxProyecto{
 
     /*=============================================
-    EDITAR GASTOS
+        EDITAR PROYECTO
     =============================================*/
 
-    public $Gastosid;
+    public $Proyectoid;
 
-    public function ajaxEditarGastos(){
+    public function ajaxEditarProyecto(){
 
-        $item = "id_gasto";
-        $valor = $this->Gastosid;
+        $item = "id_proyecto";
+        $valor = $this->Proyectoid;
 
-        $respuesta = gastocontroller::ctrMostrarGastos($item, $valor);
+        $respuesta = Proyectocontroller::ctrMostrarproyecto($item, $valor);
         echo json_encode($respuesta);
     }
 
@@ -23,24 +23,24 @@ class AjaxGastos{
     ELIMINAR GASTOS
     =============================================*/
     public function EliminarDatos($idE){
-        $oBJECT_ELIM = gastocontroller::CrtEliminarGastos($idE);
+        $oBJECT_ELIM = Proyectocontroller::ctrBorrarProyecto($idE);
     }
 }
 
 /*=============================================
 EDITAR GASTOS
 =============================================*/
-if(isset($_POST["Gastosid"])){
+if(isset($_POST["Proyectoid"])){
 
-    $editar = new AjaxGastos();
-    $editar ->Gastosid = $_POST["Gastosid"];
-    $editar -> ajaxEditarGastos();
+    $editar = new AjaxProyecto();
+    $editar ->Proyectoid = $_POST["Proyectoid"];
+    $editar -> ajaxEditarProyecto();
 }
 
 /*=============================================
 ELIMINAR GASTOS
 =============================================*/
 if(isset($_GET["d"])){
-    $oBJECT_ELIM = new AjaxGastos();
+    $oBJECT_ELIM = new AjaxProyecto();
     $oBJECT_ELIM ->EliminarDatos($_GET["d"]);
 }

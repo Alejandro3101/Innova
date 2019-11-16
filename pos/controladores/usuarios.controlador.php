@@ -172,7 +172,7 @@ class ControladorUsuarios{
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editaremail"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarprofesion"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_vinculacion"]) &&
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarid_rol"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_rol"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarcvlac"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarcargo"]) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarficha"]) &&
@@ -193,7 +193,7 @@ class ControladorUsuarios{
               "email" => $_POST["editaremail"],
               "profesion" => $_POST["editarprofesion"],
               "tipo_vinculacion" => $_POST["editartipo_vinculacion"],
-              "id_rol" => $_POST["editarid_rol"],
+              "id_rol" => $_POST["editartipo_rol"],
               "cvlac" => $_POST["editarcvlac"],
               "cargo" => $_POST["editarcargo"],
               "ficha" => $_POST["editarficha"],
