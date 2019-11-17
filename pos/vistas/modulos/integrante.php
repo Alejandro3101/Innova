@@ -145,6 +145,8 @@ MODAL editar integrante
                 <div class="modal-body">
                     <div class="box-body">
 
+                        <input type="hidden" name="editarid_integrante" id="editarid_integrante">
+
                         <!-- ENTRADA PARA EL Rol -->
 
                         <div class="form-group">
@@ -153,10 +155,7 @@ MODAL editar integrante
 
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                                <select class="form-control input-lg" name="editarRol">
-
-                                    <option value="" id="EditarRol" ></option>
-
+                                <select class="form-control input-lg" name="editarol" id="editarol">
                                     <option value="Instructor Lider">Instructor Lider</option>
 
                                     <option value="Aprendiz Lider">Aprendiz Lider</option>
@@ -181,10 +180,8 @@ MODAL editar integrante
 
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                                <select class="form-control input-lg" name="nuevoestado">
-
-                                    <option value="" id="editarEstado"></option>
-
+                                <select class="form-control input-lg" name="editarestado" id="editarestado">
+                                
                                     <option value="">Selecionar Estado</option>
 
                                     <option value="Activo">Activo </option>
@@ -206,7 +203,7 @@ MODAL editar integrante
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editarid_persona">
+                                <select class="form-control" name="editarid_persona" id="editarid_persona">
                                     <option></option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
@@ -226,7 +223,7 @@ MODAL editar integrante
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editarid_proyecto">
+                                <select class="form-control" name="editarid_proyecto" id="editarid_proyecto">
                                     <option></option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
@@ -244,6 +241,12 @@ MODAL editar integrante
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
                     <button type="submit" class="btn btn-primary">Editar tareas</button>
                 </div>
+                <?php
+
+                    $editarIntegrantes = new integrantecontroller();
+                    $editarIntegrantes -> ctrEditarIntegrantes();
+
+                ?>
 
             </form>
         </div>

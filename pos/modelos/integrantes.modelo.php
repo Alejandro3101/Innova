@@ -1,5 +1,5 @@
 <?php
-
+require_once "conexion.php";
 class ModeloIntegrantes
 {
     /*=============================================
@@ -48,6 +48,39 @@ class ModeloIntegrantes
         $stmt->bindParam(":estado_integrante", $datos["estado_integrante"], PDO::PARAM_STR);
         $stmt->bindParam(":id_persona", $datos["id_persona"], PDO::PARAM_STR);
         $stmt->bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_STR);
+
+
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+
+    }
+
+    /*=============================================
+    EDITAR DE Actividad
+    =============================================*/
+
+    static public function mdlEditarIntegrantes($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("UPDATE  $tabla SET rol =:rol,estado_integrante =:estado_integrante,id_persona = :id_persona,id_proyecto = :id_proyecto WHERE id_integrante=:id_integrante");
+
+        $stmt->bindParam(":rol", $datos["rol"], PDO::PARAM_STR);
+        $stmt->bindParam(":estado_integrante", $datos["estado_integrante"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_persona", $datos["id_persona"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_integrante", $datos["id_integrante"], PDO::PARAM_STR);
 
 
 

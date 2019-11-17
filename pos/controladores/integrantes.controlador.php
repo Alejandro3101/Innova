@@ -89,6 +89,92 @@ class integrantecontroller
     }
 
     /*=============================================
+        EDITAR DE Actividades
+     =============================================*/
+
+     static public function ctrEditarIntegrantes()
+     {
+ 
+         if (isset($_POST["editarol"])) {
+ 
+             if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarol"]) &&
+                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarestado"]) &&
+                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarid_persona"])) {
+ 
+ 
+                 $tabla = "integrantes";
+ 
+ 
+                 $datos = array("id_integrante" => $_POST["editarid_integrante"],
+                     "rol" => $_POST["editarol"],
+                     "estado_integrante" => $_POST["editarestado"],
+                     "id_persona" => $_POST["editarid_persona"],
+                     "id_proyecto" => $_POST["editarid_proyecto"]);
+ 
+ 
+                 $respuesta = ModeloIntegrantes::mdlEditarIntegrantes($tabla, $datos);
+ 
+                 if ($respuesta == "ok") {
+ 
+                     echo '<script>
+ 
+                     swal({
+ 
+                         type: "success",
+                         title: "¡El integrante ha sido Actualizado correctamente!",
+                         showConfirmButton: true,
+                         confirmButtonText: "Cerrar"
+ 
+                     }).then(function(result){
+ 
+                         if(result.value){
+                         
+                             window.location = "integrante";
+ 
+                         }
+ 
+                     });
+                 
+ 
+                     </script>';
+ 
+ 
+                 }
+ 
+ 
+             } else {
+ 
+                 echo '<script>
+ 
+                     swal({
+ 
+                         type: "error",
+                         title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+                         showConfirmButton: true,
+                         confirmButtonText: "Cerrar"
+ 
+                     }).then(function(result){
+ 
+                         if(result.value){
+                         
+                             window.location = "integrante";
+ 
+                         }
+ 
+                     });
+                 
+ 
+                 </script>';
+ 
+             }
+ 
+ 
+         }
+ 
+ 
+     }
+
+    /*=============================================
 	MOSTRAR integrante
 	=============================================*/
 

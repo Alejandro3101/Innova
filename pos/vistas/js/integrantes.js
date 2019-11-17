@@ -3,12 +3,8 @@ EDITAR TAREAS
 =============================================*/
 $(".btnEditarIntegrante").click(function () {
     var id_integrante = $(this).attr("id_integrante");
-
-
-
     var  datos = new FormData();
     datos.append("id_integrante",id_integrante);
-
     $.ajax({
         url:"ajax/integrantes.ajax.php",
         method:"POST",
@@ -18,9 +14,12 @@ $(".btnEditarIntegrante").click(function () {
         processData:false,
         dataType:"json",
         success:function (respuesta) {
-
             console.log("respuesta",respuesta);
-
+            $("#editarid_integrante").val(respuesta["id_integrante"]);
+            $("#editarol option[value='"+respuesta["rol"]+"']").attr("selected",true);
+            $("#editarestado option[value='"+respuesta["estado_integrante"]+"']").attr("selected",true);
+            $("#editarid_persona option[value='"+respuesta["id_persona"]+"']").attr("selected",true);
+            $("#editarid_proyecto option[value='"+respuesta["id_proyecto"]+"']").attr("selected",true);
 
         }
     })
