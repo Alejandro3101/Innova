@@ -77,62 +77,64 @@ class Proyectocontroller{
             }
         }
     }
-    // /*=============================================
-    //     EDITAR PROYECTO
-    // =============================================*/
-    // if (isset($_POST[""])) {
-    //     if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarnombre_proyecto"]) &&
-    //     preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_proyecto"])) {
+/*=============================================
+     EDITAR PROYECTO
+=============================================*/
+    static public function ctrEditarProyecto(){
+        if (isset($_POST[""])) {
+            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarnombre_proyecto"]) &&
+            preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_proyecto"])) {
 
-    //     }
+            }
 
-    //     $tabla = "proyectos";
+            $tabla = "proyectos";
 
-    //     $datos = array("id_proyecto" => $_POST["editarid_proyecto"],
-    //         "nombre_proyecto" => $_POST["editarnombre_proyecto"],
-    //         "tipo_proyecto" => $_POST["editartipo_proyecto"],
-    //         "codigo" => $_POST["editarcodigo"],
-    //         "linea_programatica" => $_POST["editarlinea_programatica"],
-    //         "clasificacion" => $_POST["editarclasificacion"],
-    //         "formatos" => $_POST["editarformatos"],
-    //         "estado_proyecto" => $_POST["editarestado_proyecto"],
-    //         "fecha_cierre" => $_POST["editarfecha_cierre"],
-    //         "id_empresa" => $_POST["editarid_empresa"]);
+            $datos = array("id_proyecto" => $_POST["editarid_proyecto"],
+                "nombre_proyecto" => $_POST["editarnombre_proyecto"],
+                "tipo_proyecto" => $_POST["editartipo_proyecto"],
+                "codigo" => $_POST["editarcodigo"],
+                "linea_programatica" => $_POST["editarlinea_programatica"],
+                "clasificacion" => $_POST["editarclasificacion"],
+                "formatos" => $_POST["editarformatos"],
+                "estado_proyecto" => $_POST["editarestado_proyecto"],
+                "fecha_cierre" => $_POST["editarfecha_cierre"],
+                "id_empresa" => $_POST["editarid_empresa"]);
 
-    //     $respuesta = ModeloProyecto::mdlEditarProyecto($tabla, $datos);
-    //     if ($respuesta == "ok") {
+            $respuesta = ModeloProyecto::mdlEditarProyecto($tabla, $datos);
+            if ($respuesta == "ok") {
 
-    //         echo '<script>
-    //         swal({
-    //         type: "success",
-    //         title: "¡La Tarea ha sido Actualizada correctamente!",
-    //         showConfirmButton: true,
-    //         confirmButtonText: "Cerrar"
+                echo '<script>
+                swal({
+                type: "success",
+                title: "¡La Tarea ha sido Actualizada correctamente!",
+                showConfirmButton: true,
+                confirmButtonText: "Cerrar"
 
-    //         }).then(function(result){
-    //         if(result.value){
-    //             window.location = "proyecto";
-    //         }
-    //         });
-    //         </script>';
-    //     }else{
-    //         echo '<script>
-    //             swal({
-    //                 type: "error",
-    //                 title: "¡El Aula no puede ir vacío o llevar caracteres especiales!",
-    //                 showConfirmButton: true,
-    //                 confirmButtonText: "Cerrar"
+                }).then(function(result){
+                if(result.value){
+                    window.location = "proyecto";
+                }
+                });
+                </script>';
+            }else{
+                echo '<script>
+                    swal({
+                        type: "error",
+                        title: "¡El Aula no puede ir vacío o llevar caracteres especiales!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
 
-    //                 }).then(function(result){
+                        }).then(function(result){
 
-    //                 if(result.value){
-    //                     window.location = "proyecto";
-    //                 }
+                        if(result.value){
+                            window.location = "proyecto";
+                        }
 
-    //             });
-    //         </script>';
-    //     }
-    // }
+                    });
+                </script>';
+            }
+        }
+    }
 
     /*=============================================
         MOSTRAR PROYECTO

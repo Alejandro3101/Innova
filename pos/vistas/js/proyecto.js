@@ -10,6 +10,39 @@ $(".tipoProyecto").change(function(){
 });
 
 /*=============================================
+EDITAR PROYECTO
+=============================================*/
+$(".btnEditarProyecto").click(function () {
+    var Proyectoid = $(this).attr("Proyectoid");
+
+    var  datos = new FormData();
+    datos.append("Proyectoid",Proyectoid);
+
+    $.ajax({
+        url:"ajax/proyecto.ajax.php",
+        method:"POST",
+        data: datos,
+        cache: false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success:function (respuesta) {
+
+            $("#editarid_proyecto").val(respuesta["id_proyecto"]);
+            $("#editarnombre_proyecto").val(respuesta["nombre_proyecto"]);
+            $("#editartipo_proyecto").val(respuesta["tipo_proyecto"]);
+            $("#editarcodigo").val(respuesta["codigo"]);
+            $("#editarlinea_programatica").val(respuesta["linea_programatica"]);
+            $("#editarclasificacion").val(respuesta["clasificacion"]);
+            $("#editarformatos").val(respuesta["formatos"]);
+            $("#editarestado_proyecto").val(respuesta["estado_proyecto"]);
+            $("#editarfecha_cierre").val(respuesta["fecha_cierre"]);
+            $("#editarid_empresa").val(respuesta["id_empresa"]);
+        }
+    })
+})
+
+/*=============================================
 ELIMINAR PROYECTO
 =============================================*/
 $(".btnEliminarProyecto").click(function () {

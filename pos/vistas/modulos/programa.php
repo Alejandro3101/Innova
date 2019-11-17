@@ -59,7 +59,7 @@
 </div>
 
 <!--=====================================
-MODAL AGREGAR RECURSO
+MODAL EDITAR RECURSO
 ======================================-->
 <div id="modaleditarPrograma" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -122,7 +122,7 @@ MODAL AGREGAR RECURSO
                 ======================================-->
                 <div class="modal-header" style="background:#222d32; color:white">
                     <button type="button" class="close"  data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Agregar Tarea</h4>
+                    <h4 class="modal-title">Agregar Programa</h4>
                 </div>
                 <!--=====================================
                 CUERPO DEL MODAL
