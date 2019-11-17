@@ -20,18 +20,15 @@ class AjaxActividades
         $respuesta = actividadescontroller::ctrMostrarActividades($item, $valor);
 
         echo json_encode($respuesta);
-
-
-
-        /*=============================================
-    EDITAR actividades
-    =============================================*/
-        if (isset($_POST["id_actividad"])) {
-
-            $editar = new AjaxActividades();
-            $editar->id_actividad = $_POST["id_actividad"];
-            $editar->ajaxEditarActividades();
-        }
     }
 
 }
+/*=============================================
+    EDITAR actividades
+    =============================================*/
+    if (isset($_POST["id_actividad"])) {
+
+        $editar = new AjaxActividades();
+        $editar->id_actividad = $_POST["id_actividad"];
+        $editar->ajaxEditarActividades();
+    }

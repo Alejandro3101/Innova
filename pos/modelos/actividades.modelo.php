@@ -74,6 +74,42 @@ class ModeloActividades{
     }
 
     /*=============================================
+    EDITAR DE Actividad
+    =============================================*/
+
+    static public function mdlEditarActividades($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("UPDATE  $tabla SET nombre_actividad = :nombre_actividad,descripcion = :descripcion,fecha_inicio = :fecha_inicio,fecha_limite=:fecha_limite,estado=:estado,id_proyecto=:id_proyecto WHERE id_actividad=:id_actividad");
+
+        $stmt->bindParam(":nombre_actividad", $datos["nombre_actividad"], PDO::PARAM_STR);
+        $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+        $stmt->bindParam(":fecha_inicio", $datos["fecha_inicio"], PDO::PARAM_STR);
+        $stmt->bindParam(":fecha_limite", $datos["fecha_limite"], PDO::PARAM_STR);
+        $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_proyecto", $datos["id_proyecto"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_actividad", $datos["id_actividad"], PDO::PARAM_STR);
+
+
+
+        if ($stmt->execute()) {
+
+            return "ok";
+
+        } else {
+
+            return "error";
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+
+    }
+
+
+    /*=============================================
   BORRAR actividades
   =============================================*/
 

@@ -19,33 +19,22 @@ $(".btnEditarActividades").click(function () {
 
             console.log("respuesta" ,respuesta);
 
-/*
+            $("#editarIdAct").val(respuesta["id_actividad"]);
+
             $("#editarNombreAct").val(respuesta["nombre_actividad"]);
 
-            $("#editardescripcion").val(respuesta["nombre_tarea"]);
+            $("#editardescripcion").val(respuesta["descripcion"]);
 
-            $("#editarFechainicio").val(respuesta["descripcion"]);
+            $("#editarFechainicio").val(respuesta["fecha_inicio"]);
 
-            $("#editarfechalimite").val(respuesta["estado"]);
+            $("#editarfechalimite").val(respuesta["fecha_limite"]);
 
-            $("#editarestado").val(respuesta["estado"]);
+            $("#editarestado option[value='"+respuesta["estado"]+"']").attr("selected",true);
 
-            $("#editarestado").html(respuesta["estado"]);
-
-            $("#editarproyecto").val(respuesta["id_actividad"]);
-
-*/
-
-
-
+            $("#editarproyecto option[value='"+respuesta["id_proyecto"]+"']").attr("selected",true);
         }
     })
 })
-
-
-
-
-
 /*=============================================
 ELIMINAR Actividades
 =============================================*/

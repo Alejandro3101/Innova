@@ -63,7 +63,99 @@ class actividadescontroller{
 					swal({
 
 						type: "error",
-						title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+						title: "¡La Actividad no puede ir vacío o llevar caracteres especiales!",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar"
+
+					}).then(function(result){
+
+						if(result.value){
+						
+							window.location = "actividades";
+
+						}
+
+					});
+				
+
+				</script>';
+
+            }
+
+
+        }
+
+
+    }
+    
+    /*=============================================
+        EDITAR DE Actividades
+     =============================================*/
+    static public function ctrEditarActividades(){
+
+        if(isset($_POST["editarNombreAct"])){
+
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombreAct"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editardescripcion"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarestado"])) {
+
+
+                $tabla = "actividades";
+
+
+                $datos = array("id_actividad" => $_POST["editarIdAct"],
+                    "nombre_actividad" => $_POST["editarNombreAct"],
+                    "descripcion" => $_POST["editardescripcion"],
+                    "fecha_inicio" => $_POST["editarFechainicio"],
+                    "fecha_limite" => $_POST["editarfechalimite"],
+                    "estado" => $_POST["editarestado"],
+                    "id_proyecto" => $_POST["editarproyecto"]);
+
+
+                $respuesta = ModeloActividades::mdlEditarActividades($tabla, $datos);
+
+                if ($respuesta == "ok") {
+                    echo '<script>
+                        swal({
+                        type: "success",
+                        title: "¡La Actividad ha sido Actualizada correctamente!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+    
+                        }).then(function(result){
+                        if(result.value){
+                            window.location = "actividades";
+                        }
+                    });
+                    </script>';
+    
+                }else{
+                    echo '<script>
+                        swal({
+                            type: "error",
+                            title: "¡La Actividad no puede ir vacío o llevar caracteres especiales!",
+                            showConfirmButton: true,
+                            confirmButtonText: "Cerrar"
+    
+                        }).then(function(result){
+    
+                            if(result.value){
+                                window.location = "actividades";
+                            }
+    
+                        });
+                    </script>';
+                }
+
+
+            }else{
+
+                echo '<script>
+
+					swal({
+
+						type: "error",
+						title: "¡La Actividad no puede ir vacío o llevar caracteres especiales!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 

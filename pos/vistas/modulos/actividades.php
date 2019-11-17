@@ -153,6 +153,9 @@ MODAL Editar Actividad
 
                         <!-- ENTRADA PARA EL NOMBRE -->
 
+                        <input type="hidden" class="form-control input-lg" name="editarIdAct" id="editarIdAct" value="" >
+
+
                         <div class="form-group">
 
                             <div class="input-group">
@@ -218,9 +221,8 @@ MODAL Editar Actividad
 
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                                <select class="form-control input-lg" name="editarestado" >
+                                <select class="form-control input-lg" name="editarestado" id="editarestado" >
 
-                                    <option value="" id="editarestado" ></option>
                                     <option value="Planeada">Planeada</option>
                                     <option value="Ejecutada">Ejecutada</option>
                                     <option value="Finalizada">Finalizada</option>
@@ -241,7 +243,7 @@ MODAL Editar Actividad
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editarproyecto">
+                                <select class="form-control" name="editarproyecto" id="editarproyecto">
                                     <option>Seleccione Proyecto</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
@@ -264,6 +266,13 @@ MODAL Editar Actividad
                     <button type="submit" class="btn btn-primary">Guardar Actividades</button>
 
                 </div>
+
+                <?php
+
+                    $editarActividad = new actividadescontroller();
+                    $editarActividad -> ctrEditarActividades();
+
+                ?>
 
 
             </form>
