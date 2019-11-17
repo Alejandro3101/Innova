@@ -210,8 +210,7 @@ CUERPO DOCUMENTO
 
   ?>
 
-
-<script src="vistas/js/plantilla.js"></script>
+  <script src="vistas/js/plantilla.js"></script>
   <script src="vistas/js/empresa.js"></script>
   <script src="vistas/js/autores.js"></script>
   <script src="vistas/js/evidencias.js"></script>
@@ -224,5 +223,6 @@ CUERPO DOCUMENTO
   <script src="vistas/js/integrantes.js"></script>
   <script src="vistas/js/actividades.js"></script>
   <script src="vistas/js/programa.js"></script>
+
 </body>
 </html>

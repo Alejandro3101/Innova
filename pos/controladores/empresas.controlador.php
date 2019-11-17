@@ -125,8 +125,6 @@ class empresascontroller
 
 
             }
-
-
             $tabla = "empresas";
 
             $datos = array("nombre_empresa" => $_POST["editarNombreE"],

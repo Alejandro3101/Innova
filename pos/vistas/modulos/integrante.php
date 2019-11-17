@@ -86,7 +86,7 @@
                <td>
                    <i class="btn-group">
 
-                       <button class="btn btn-primary"><i class="fa fa-pencil"></i></button>
+                       <button class="btn btn-primary btnEditarIntegrante" id_integrante ="'.$value["id_integrante"].'" data-toggle="modal" data-target="#modalEditarIntegrante"><i class="fa fa-pencil"></i></button>
                        
                        <button class="btn btn-danger btnEliminarIntegrantes " id_integrante ="'.$value["id_integrante"].'"><i class="fa fa-times"></i></button>
                        
@@ -119,6 +119,136 @@
 
 </div>
 
+
+
+
+
+<!--=====================================
+MODAL editar integrante
+======================================-->
+<div id="modalEditarIntegrante" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form role="form" method="post" enctype="multipart/form-data">
+
+                <!--=====================================
+                CABEZA DEL MODAL
+                ======================================-->
+                <div class="modal-header" style="background:#222d32; color:white">
+                    <button type="button" class="close"  data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Agregar Autores</h4>
+                </div>
+
+                <!--=====================================
+                CUERPO DEL MODAL
+                ======================================-->
+                <div class="modal-body">
+                    <div class="box-body">
+
+                        <!-- ENTRADA PARA EL Rol -->
+
+                        <div class="form-group">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                                <select class="form-control input-lg" name="editarRol">
+
+                                    <option value="" id="EditarRol" ></option>
+
+                                    <option value="Instructor Lider">Instructor Lider</option>
+
+                                    <option value="Aprendiz Lider">Aprendiz Lider</option>
+
+                                    <option value="Instructor">Instructor </option>
+
+                                    <option value="Aprendiz">Aprendiz</option>
+
+
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ENTRADA PARA EL Estado -->
+
+                        <div class="form-group">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                                <select class="form-control input-lg" name="nuevoestado">
+
+                                    <option value="" id="editarEstado"></option>
+
+                                    <option value="">Selecionar Estado</option>
+
+                                    <option value="Activo">Activo </option>
+
+                                    <option value="Inactivo">Inactivo</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE persona -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <?php
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM persona");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
+                                ?>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="editarid_persona">
+                                    <option></option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_persona"].'>'.$xVVAL_DATA["nombres"]." ".$xVVAL_DATA["apellidos"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <?php
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
+                                ?>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="editarid_proyecto">
+                                    <option></option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                <!--=====================================
+                PIE DEL MODAL
+                ======================================-->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+                    <button type="submit" class="btn btn-primary">Editar tareas</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
 
 <!--=====================================
 MODAL AGREGAR USUARIO
