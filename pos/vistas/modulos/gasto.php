@@ -136,13 +136,9 @@ MODAL EDITAR GASTOS
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA EL id -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarid_gasto" id="editarid_gasto" readonly>
-                            </div>
-                        </div>
+                        
+                        <input type="hidden" class="form-control input-lg" name="editarid_gasto" id="editarid_gasto">
+
 
                         <!-- ENTRADA PARA EL CONCEPTO -->
                         <div class="form-group">

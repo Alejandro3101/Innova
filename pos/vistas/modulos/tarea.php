@@ -94,13 +94,8 @@ MODAL EDITAR TAREA
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA LA ID DE TAREA -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" name="editarid_tarea" id="editarid_tarea" readonly>
-                            </div>
-                        </div>
+                        
+                        <input type="hidden" class="form-control" name="editarid_tarea" id="editarid_tarea">
                         <!-- ENTRADA PARA EL NOMBRE DE LA TAREA -->
                         <div class="form-group">
                             <div class="input-group">

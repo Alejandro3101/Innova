@@ -86,13 +86,9 @@ MODAL EDITAR RECURSO
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA LA ID EVIDENCIA -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarid_evidencia" id="editarid_evidencia" readonly >
-                            </div>
-                        </div>
+                        
+                        <input type="hidden" class="form-control input-lg" name="editarid_evidencia" id="editarid_evidencia" >
+
                         <!-- ENTRADA PARA ESTADO -->
                         <div class="form-group">
                             <div class="input-group">

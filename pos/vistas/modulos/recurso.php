@@ -94,14 +94,9 @@ MODAL EDITAR RECURSO
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA LA ID DE RECURSO -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control" name="editarid_recurso" id="editarid_recurso" readonly>
-                            </div>
-                        </div>
-                        <!-- ENTRADA PARA EL RUBRO -->
+                        
+                        <input type="hidden" class="form-control" name="editarid_recurso" id="editarid_recurso">
+
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>

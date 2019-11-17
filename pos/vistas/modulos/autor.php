@@ -91,14 +91,10 @@ MODAL editar autor
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA EL ID DE AUTORES -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarid_autor" id="editarid_autor" readonly>
-                            </div>
-                        </div>
-                        <!-- ENTRADA PARA EL NOMBRE DE AUTORES -->
+                        
+                        <input type="hidden" class="form-control input-lg" name="editarid_autor" id="editarid_autor">
+                        
+                        
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>

@@ -77,13 +77,9 @@ MODAL EDITAR RECURSO
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA EL NOMBRE DEL PROGRAMA -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarid_programa" id="editarid_programa" readonly>
-                            </div>
-                        </div>
+                        
+                        <input type="hidden" class="form-control input-lg" name="editarid_programa" id="editarid_programa">
+
                         <!-- ENTRADA PARA EL NOMBRE DEL PROGRAMA -->
                         <div class="form-group">
                             <div class="input-group">
