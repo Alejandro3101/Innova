@@ -31,7 +31,6 @@ class AjaxProyecto{
 EDITAR GASTOS
 =============================================*/
 if(isset($_POST["Proyectoid"])){
-
     $editar = new AjaxProyecto();
     $editar ->Proyectoid = $_POST["Proyectoid"];
     $editar -> ajaxEditarProyecto();

@@ -109,14 +109,9 @@ MODAL EDITAR PROYECTOS
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <!-- ENTRADA PARA LA LLAVE FORANEA DE PROYECTO -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="text" class="form-control input-lg" name="editarid_proyecto" id="editarid_proyecto" readonly>
-                            </div>
-                        </div>
-                        <!-- ENTRADA PARA EL NOMBRE -->
+
+                        <input type="hidden" class="form-control input-lg" name="editarid_proyecto" id="editarid_proyecto">
+                        
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -202,7 +197,7 @@ MODAL EDITAR PROYECTOS
                                 <select class="form-control" name="editarid_empresa" id="editarid_empresa" >
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                        echo '<option value='.$xVVAL_DATA["id_empresa"].'>'.$xVVAL_DATA["nombre_empresa"]." ".$xVVAL_DATA[""].'</option>';
+                                        echo '<option value='.$xVVAL_DATA["id_empresa"].'>'.$xVVAL_DATA["nombre_empresa"].'</option>';
                                     }
                                     ?>
                                 </select>
@@ -335,7 +330,7 @@ MODAL AGREGAR Proyectos
                                     <option>Seleccione Empresa</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                        echo '<option value='.$xVVAL_DATA["id_empresa"].'>'.$xVVAL_DATA["nombre_empresa"]." ".$xVVAL_DATA[""].'</option>';
+                                        echo '<option value='.$xVVAL_DATA["id_empresa"].'>'.$xVVAL_DATA["nombre_empresa"].'</option>';
                                     }
                                     ?>
                                 </select>

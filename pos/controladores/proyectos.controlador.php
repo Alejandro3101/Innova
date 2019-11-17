@@ -81,7 +81,7 @@ class Proyectocontroller{
      EDITAR PROYECTO
 =============================================*/
     static public function ctrEditarProyecto(){
-        if (isset($_POST[""])) {
+        if (isset($_POST["editarnombre_proyecto"])) {
             if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarnombre_proyecto"]) &&
             preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_proyecto"])) {
 
