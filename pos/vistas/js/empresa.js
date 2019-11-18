@@ -21,19 +21,12 @@ $(".btnEditarEmpresa").click(function () {
             console.log("respuesta",respuesta);
 
             $("#editarNombreE").val(respuesta["nombre_empresa"]);
-
-            $("#editartipo_empresa").html(respuesta["tipo_empresa"]);
             $("#editartipo_empresa").val(respuesta["tipo_empresa"]);
-
-
             $("#editarnit").val(respuesta["nit"]);
             $("#editardireccion").val(respuesta["direccion"]);
             $("#editartelefono").val(respuesta["telefono"]);
             $("#editarencargado").val(respuesta["encargado"]);
             $("#editarcelular").val(respuesta["celular"]);
-
-
-            $("#editarsector").html(respuesta["sector"]);
             $("#editarsector").val(respuesta["sector"]);
 
         }

@@ -131,181 +131,119 @@
 
 
 <!--=====================================
-MODAL Editar empresa
+MODAL EDITAR EMPRESA
 ======================================-->
-
-<div class="modal fade" id="modalEditarEmpresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-    <div class="modal-dialog" role="document">
-
+<div id="modalEditarEmpresa" class="modal fade" role="dialog">
+    <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <form role="form" method="post" enctype="multipart/form-data">
+                <!--=====================================
+                CABEZA DEL MODAL
+                ======================================-->
+                <div class="modal-header" style="background:#222d32; color:white">
+                    <button type="button" class="close"  data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Editar Empresas</h4>
+                </div>
+                <!--=====================================
+                CUERPO DEL MODAL
+                ======================================-->
+                <div class="modal-body">
+                    <div class="box-body">
+                        <!-- ENTRADA PARA EL NOMBRE -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control input-lg" id="editarNombreE" name="editarNombreE" value="" readonly>
+                            </div>
+                        </div>
 
-                <h5 class="modal-title" id="exampleModalLabel">Editar Empresas</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+                        <!-- ENTRADA PARA EL tipo -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                <select class="form-control input-lg" name="editartipo_empresa" id="editartipo_empresa" readonly>
+                                    <option value="Microempresa">Microempresa</option>
+                                    <option value="Pequeña">Pequeña</option>
+                                    <option value="Mediana">Mediana</option>
+                                    <option value="Grande">Grande</option>
+                                </select>
+                            </div>
+                        </div>
 
+                        <!-- ENTRADA PARA  nit -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="text" class="form-control input-lg" id="editarnit" name="editarnit" value="" readonly>
+                            </div>
+                        </div>
 
-                <!-- ENTRADA PARA EL NOMBRE -->
+                        <!-- ENTRADA PARA LA direccion   -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="text" class="form-control input-lg" id="editardireccion" name="editardireccion" value="" required>
+                            </div>
+                        </div>
 
-                <div class="form-group">
+                        <!-- ENTRADA PARA LA telefono   -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="text" class="form-control input-lg" id="editartelefono" name="editartelefono" value="" required>
+                            </div>
+                        </div>
 
-                    <div class="input-group">
+                        <!-- ENTRADA PARA LA encargado   -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="text" class="form-control input-lg" id="editarencargado" name="editarencargado" value="" required>
+                            </div>
+                        </div>
 
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <!-- ENTRADA PARA LA celular   -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="text" class="form-control input-lg" id="editarcelular" name="editarcelular" value="" required>
+                            </div>
+                        </div>
 
-                        <input type="text" class="form-control input-lg" id="editarNombreE" name="editarNombreE" value="" readonly>
-
+                        <!-- ENTRADA PARA SELECCIONAR SU sector -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                <select class="form-control input-lg" name="editarsector" id="editarsector" >
+                                    <option value="Agricultura">Agricultura</option>
+                                    <option value="Ganaderia">Ganaderia</option>
+                                    <option value="Pesca">Pesca</option>
+                                    <option value="Mineria">Mineria</option>
+                                    <option value="Industria">Industria</option>
+                                    <option value="Artesania">Artesania</option>
+                                    <option value="Construccion">Construccion</option>
+                                    <option value="Servicioseducativos">Servicios educativos</option>
+                                    <option value="Transporte">Transporte</option>
+                                    <option value="Comercio">Comercio</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
-                <!-- ENTRADA PARA EL tipo -->
-
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                            <select class="form-control input-lg" name="editartipo_empresa" readonly>
-
-                                <option value="" id="editartipo_empresa"></option>
-
-                                <option value="Microempresa">Microempresa</option>
-                                <option value="Pequeña">Pequeña</option>
-                                <option value="Mediana">Mediana</option>
-                                <option value="Grande">Grande</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-                    <!-- ENTRADA PARA  nit -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" id="editarnit" name="editarnit" value="" readonly>
-
-                        </div>
-
-                    </div>
-
-                    <!-- ENTRADA PARA LA direccion   -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" id="editardireccion" name="editardireccion" value="" required>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ENTRADA PARA LA telefono   -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" id="editartelefono" name="editartelefono" value="" required>
-
-                        </div>
-
-                    </div>
-
-                    <!-- ENTRADA PARA LA encargado   -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" id="editarencargado" name="editarencargado" value="" required>
-
-                        </div>
-
-                    </div>
-
-                    <!-- ENTRADA PARA LA celular   -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-                            <input type="text" class="form-control input-lg" id="editarcelular" name="editarcelular" value="" required>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- ENTRADA PARA SELECCIONAR SU sector -->
-
-                    <div class="form-group">
-
-                        <div class="input-group">
-
-                            <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                            <select class="form-control input-lg" name="editarsector" >
-
-                                <option value="" id="editarsector"></option>
-
-                                <option value="Agricultura">Agricultura</option>
-                                <option value="Ganaderia">Ganaderia</option>
-                                <option value="Pesca">Pesca</option>
-                                <option value="Mineria">Mineria</option>
-                                <option value="Industria">Industria</option>
-                                <option value="Artesania">Artesania</option>
-                                <option value="Construccion">Construccion</option>
-                                <option value="Servicioseducativos">Servicios educativos</option>
-                                <option value="Transporte">Transporte</option>
-                                <option value="Comercio">Comercio</option>
-
-
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-            </div>
-
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Actualizar Cambios</button>
-
-            </div>
+                <!--=====================================
+                PIE DEL MODAL
+                ======================================-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+                    <button type="submit" class="btn btn-primary">Editar Empresas</button>
+                </div>
+                <?php
+                    $editarEmpresa = new empresascontroller();
+                    $editarEmpresa -> ctrEditarEmpresa();
+                ?>
+            </form>
         </div>
-        <?php
-
-        $editarEmpresa = new empresascontroller();
-        $editarEmpresa -> ctrEditarEmpresa();
-
-        ?>
     </div>
 </div>
 
