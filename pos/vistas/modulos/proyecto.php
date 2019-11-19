@@ -163,7 +163,7 @@ MODAL EDITAR PROYECTOS
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="file" class="form-control input-lg" name="editarformatos" id="editarformatos" >
+                                <input type="file" class="form-control input-lg" name="editarformatos" id="editarformatos" multiple>
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA estado -->
@@ -295,7 +295,7 @@ MODAL AGREGAR Proyectos
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="file" class="form-control input-lg" name="nuevoformato" placeholder="Ingresar formato" >
+                                <input type="file" class="form-control input-lg" name="nuevoformato[]" multiple>
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA estado -->

@@ -45,26 +45,29 @@ class ModeloProyecto{
      
         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_proyecto,tipo_proyecto,codigo,linea_programatica,clasificacion,formatos,estado_proyecto,fecha_cierre,id_empresa) VALUES (:nombre_proyecto,:tipo_proyecto,:codigo,:linea_programatica,:clasificacion,:formatos,:estado_proyecto,:fecha_cierre,:id_empresa)");
 
-        // ***************PRUEBA*************
-        $stm = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id_proyecto DESC LIMIT 1");
-        if ($stm->execute()){
-            $aVECT_DATA = $stm ->fetch();
-            $codigo = $aVECT_DATA["codigo"];
-    
-            // evaluar estructura de codigo
-            if (substr($codigo,0,1) != "G" || empty($codigo)){
-                $codigo = "G001_".date("Y");
-                $prueba = "ejecuta";
-                
-            }else{
-                $codigo = intval(substr($codigo,1,3)) + 1;
-                $codigo = strval(1000 + $codigo);
-                $codigo = "G".substr($codigo,1,3)."_".date("Y");
-                $prueba = " no ejecuta";
+        if($datos["tipo_proyecto"]=="Con Recursos"){
+            $codigo = $datos["codigo"];
+        }else{
+            // ***************PRUEBA*************
+            $stm = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id_proyecto DESC LIMIT 1");
+            if ($stm->execute()){
+                $aVECT_DATA = $stm ->fetch();
+                $codigo = $aVECT_DATA["codigo"];
+        
+                // evaluar estructura de codigo
+                if (substr($codigo,0,1) != "G" || empty($codigo)){
+                    $codigo = "G001_".date("Y");
+                    $prueba = "ejecuta";
+                    
+                }else{
+                    $codigo = intval(substr($codigo,1,3)) + 1;
+                    $codigo = strval(1000 + $codigo);
+                    $codigo = "G".substr($codigo,1,3)."_".date("Y");
+                    $prueba = " no ejecuta";
+                }
             }
+            // *****************FIN PRUEBA***********
         }
-        // *****************FIN PRUEBA***********
-
         $stmt->bindParam(":nombre_proyecto", $datos["nombre_proyecto"], PDO::PARAM_STR);
         $stmt->bindParam(":tipo_proyecto", $datos["tipo_proyecto"], PDO::PARAM_STR);
         $stmt->bindParam(":codigo", $codigo, PDO::PARAM_STR);

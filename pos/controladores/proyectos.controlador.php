@@ -14,6 +14,30 @@ class Proyectocontroller{
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoestado"])) {
 
                 $tabla = "proyectos";
+                $image = '';
+                if(isset($_FILES["nuevoformato"]) && !empty($_FILES["nuevoformato"]["tmp_name"])){
+                    if(!is_dir("vistas/formDocuments")){
+                      $dir = mkdir("vistas/formDocuments", 0777, true);
+                    }else{
+                      $dir=true;
+                    }
+                    $countfiles = count($_FILES["nuevoformato"]["tmp_name"]);
+ 
+                    for($i=0;$i<$countfiles;$i++){
+                        if($dir){
+                            $filename= time()."-".$_FILES["nuevoformato"]["name"][$i];
+                            $muf=move_uploaded_file($_FILES["nuevoformato"]["tmp_name"][$i], "vistas/formDocuments/".$filename);
+                            $image .='vistas/formDocuments/'.$filename.';';
+                            if($muf){
+                                $image_upload=true;
+                            }else{
+                                $image_upload=false;
+                                $error["image"]= "La imagen no se ha subido";
+                            }
+                        }
+                    }
+                }
+                $image = substr($image,0,-1);
 
                 $datos = array("nombre_proyecto" => $_POST["nuevoNombre"],
                     "tipo_proyecto" => $_POST["nuevoTproyecto"],
@@ -22,7 +46,7 @@ class Proyectocontroller{
                     "clasificacion" => $_POST["nuevaclasificacion"],
                     "estado_proyecto" => $_POST["nuevoestado"],
                     "fecha_cierre" => $_POST["Fecha"],
-                    "formatos" => $_POST["nuevoformato"],
+                    "formatos" => $image,
                     "id_empresa" => $_POST["nuevoid_empresa"]);
 
                 $respuesta = ModeloProyecto::mdlIngresarProyecto($tabla, $datos);
