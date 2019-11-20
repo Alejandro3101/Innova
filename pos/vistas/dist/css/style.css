@@ -1,10 +1,10 @@
 /*slider rotacion img */
 
-.slider{
-    width: 100%;
+  .slider{
+  width: 100%;
   margin-left: 1%;
-    overflow: hidden;
-    }
+  overflow: hidden;
+  }
   .slider ul{
     display:flex;
     padding: 0px;
@@ -82,4 +82,8 @@
   .card-panel {
     margin: 0;
     padding: 60px;
+  }
+  /* BARRA DE TRAEAUNO */
+  .uno{
+    list-style:none;
   }

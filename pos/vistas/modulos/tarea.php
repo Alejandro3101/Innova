@@ -22,52 +22,69 @@
             </div>
 
 
-            <div class="box-body">
-                <table class="table table-bordered table-striped tablas ">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nombre Tarea</th>
-                        <th>Descripción</th>
-                        <th>Estado</th>
-                        <th>Actividad</th>
-                        <th>Integrantes</th>
-                        <th>Proyecto</th>
-                        <th>Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $item = null;
-                    $valor = null;
-                    $tarea = ControladorTareas::ctrMostrarTareas($item, $valor);
-
-                    foreach ($tarea as $key => $value){
-                        echo ' <tr>
-                                <td>'.($key+1).'</td>
-                                <td>'.$value["nombre_tarea"].'</td>
-                                <td>'.$value["descripcion"].'</td>';
-                        echo '               
-                    
-                                <td>'.$value["estado"].'</td>
-                                <td>'.$value["nombre_actividad"].'</td>
-                                <td>'.$value["rol"].'</td>
-                                <td>'.$value["nombre_proyecto"].'</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-primary btnEditarTareas" Tareaid="'.$value["id_tarea"].'" data-toggle="modal" data-target="#modaleditartarea"><i class="fa fa-pencil"></i></button>
-                                       
-                                        <button class="btn btn-danger btnEliminarTarea" idTarea="'.$value["id_tarea"].'"><i class="fa fa-times"></i></button>
-                                    
-                                    <a href="evidencia" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
-                                    
+            <div class="box-body tarea">
+                <ul class="uno">
+                    <!--  -->
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="container-fluid well well-sm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="btn-groupx">
+                                            <button>yiber</button>
+                                            
+                                        </div>
                                     </div>
-                                </td>
-                            </tr>';
-                    }
-                    ?>
-                    </tbody>
-                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--  -->
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="container-fluid well well-sm ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="btn-group">
+                                            <button>yiber</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--  -->
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="container-fluid well well-sm ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="btn-group">
+                                            <button>yiber</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--  -->
+                    <li class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="container-fluid well well-sm ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="btn-group">
+                                            <button>yiber</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
