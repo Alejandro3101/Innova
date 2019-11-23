@@ -76,7 +76,7 @@ function listaTarea(){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
                     var code = "";
                     code = "<div class='row'>"+
-                                "<div class='col-md-12 col-lg-12 bg-info' style = 'padding-bottom : 7px;'>"+
+                                "<div class='col-md-12 col-lg-12 bg-info' style = 'padding-bottom : 7px; padding-top : 7px;'>"+
                                     "<h4 style = 'border-radius : 50px; float:left;'>"+respuesta.data[i][1]+"</h4>"+
                                     "<button  type='button' class='btn btn-success btnEditarTareas' Tareaid ='"+respuesta.data[i][0]+"' style = 'border-radius : 19px; float:right;' data-toggle='modal' data-target='#modaleditartarea'>"+
                                         "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>"+
