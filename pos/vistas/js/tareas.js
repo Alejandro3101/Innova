@@ -60,3 +60,32 @@ $(".btnEliminarTarea").click(function () {
         }
     })
 })
+
+/*=============================================
+CARGAR TAREAS EN DIV
+=============================================*/
+
+function listaTarea(){    
+    $.ajax({
+        url:"ajax/tareas.ajax.php?a=lista",
+        method:"GET",
+        dataType:"json",
+        success:function(respuesta){
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                    var code = "";
+                    if(respuesta.data[i][3]=='Por Hacer'){
+                        alert( 'Por Hacer : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                    }else if(respuesta.data[i][3]=='En Proceso'){
+                        alert( 'En Proceso : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                    }else if(respuesta.data[i][3]=='En Revision'){
+                        alert( 'En Revision : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                    }else if(respuesta.data[i][3]=='Hecho'){
+                        alert( 'Hecho : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                    }
+                }                
+            }
+        }
+    });
+}
+listaTarea();
