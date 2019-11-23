@@ -43,24 +43,24 @@
 
                     <thead>
 
-                    <tr>
+                        <tr>
 
-                        <th>#</th>
-                        <th>Nombre</th>
-                        <th>Tipo</th>
-                        <th>Nit</th>
-                        <th>Direccion</th>
-                        <th>Telefono</th>
-                        <th>Encargado</th>
-                        <th>Celular</th>
-                        <th>Sector</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-
-
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Nit</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Encargado</th>
+                            <th>Celular</th>
+                            <th>Sector</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
 
 
-                    </tr>
+
+
+                        </tr>
 
                     </thead>
                     <?php
@@ -74,57 +74,50 @@
                     foreach ($empresa as $key => $value){
 
                         echo ' <tr>
-                  <td>'.($key+1).'</td>
-                  <td>'.$value["nombre_empresa"].'</td>
-                  <td>'.$value["tipo_empresa"].'</td>';
+                        <td>'.($key+1).'</td>
+                        <td>'.$value["nombre_empresa"].'</td>
+                        <td>'.$value["tipo_empresa"].'</td>';
 
 
 
                         echo '
-                    <td>'.$value["nit"].'</td>   
-                    <td>'.$value["direccion"].'</td>  
-                     <td>'.$value["telefono"].'</td> 
-                      <td>'.$value["encargado"].'</td> 
-                      <td>'.$value["celular"].'</td> 
-                      <td>'.$value["sector"].'</td> 
+                        <td>'.$value["nit"].'</td>   
+                        <td>'.$value["direccion"].'</td>  
+                        <td>'.$value["telefono"].'</td> 
+                        <td>'.$value["encargado"].'</td> 
+                        <td>'.$value["celular"].'</td> 
+                        <td>'.$value["sector"].'</td> 
            
            
            
            
-               <td><button class="btn btn-success btn-xs">Activo</button></td>
-               <td>
-                   <i class="btn-group">    
+                        <td><button class="btn btn-success btn-xs">Activo</button></td>
+                        <td>
+                            <i class="btn-group">    
 
-                       <button class="btn btn-primary btnEditarEmpresa" id_empresa="'.$value["id_empresa"].'" data-toggle="modal" data-target="#modalEditarEmpresa" ><i class="fa fa-pencil"></i></button>
-                       <button class="btn btn-danger btnEliminarEmpresa" id_empresa="'.$value["id_empresa"].'"><i class="fa fa-times"></i></button>
-                       
-                       
-                    
-
-
-
-                   </div>
+                                <button class="btn btn-primary btnEditarEmpresa" id_empresa="'.$value["id_empresa"].'" data-toggle="modal" data-target="#modalEditarEmpresa" ><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-danger btnEliminarEmpresa" id_empresa="'.$value["id_empresa"].'"><i class="fa fa-times"></i></button>
+                                
+                                
+                                
 
 
 
-               </td>
-           </tr>';
+                            </div>
+
+
+
+                        </td>
+                        </tr>';
 
                     }?>
-
-</table>
-
-
-
-
-
+                </table>
+            </div>
 
         </div>
 
-</div>
 
-
-</section>
+    </section>
 
 </div>
 
@@ -419,25 +412,27 @@ MODAL AGREGAR empresa
 
                         </div>
 
+                    </div>
+                </div>
 
-                        <!--=====================================
-                        PIE DEL MODAL
-                        ======================================-->
+                <!--=====================================
+                PIE DEL MODAL
+                ======================================-->
 
-                        <div class="modal-footer">
+                <div class="modal-footer">
 
-                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-                            <button type="submit" class="btn btn-primary">Guardar Empresa</button>
+                    <button type="submit" class="btn btn-primary">Guardar Empresa</button>
 
-                        </div>
+                </div>
 
-                        <?php
+                <?php
 
-                        $crearEmpresa = new empresascontroller();
-                        $crearEmpresa -> ctrCrearEmpresas();
+                $crearEmpresa = new empresascontroller();
+                $crearEmpresa -> ctrCrearEmpresas();
 
-                        ?>
+                ?>
             </form>
 
         </div>

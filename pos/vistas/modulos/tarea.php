@@ -161,9 +161,10 @@ MODAL EDITAR TAREA
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="editarestado">
                                     <option value="" id="editarestado"></option>
-                                    <option value="En espera">En espera</option>
-                                    <option value="En proceso">En proceso</option>
-                                    <option value="Finalizada">Finalizada</option>
+                                    <option value="Por Hacer">Por Hacer</option>
+                                    <option value="En Proceso">En Proceso</option>
+                                    <option value="En Revision">En Revision</option>
+                                    <option value="Hecho">Hecho</option>
                                 </select>
                             </div>
                         </div>
@@ -283,9 +284,10 @@ MODAL AGREGAR RECURSO
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="nuevoestado">
                                     <option>Seleccione</option>
-                                    <option value="En espera">En espera</option>
-                                    <option value="En proceso">En proceso</option>
-                                    <option value="Finalizada">Finalizada</option>
+                                    <option value="Por Hacer">Por Hacer</option>
+                                    <option value="En Proceso">En Proceso</option>
+                                    <option value="En Revision">En Revision</option>
+                                    <option value="Hecho">Hecho</option>
                                 </select>
                             </div>
                         </div>
