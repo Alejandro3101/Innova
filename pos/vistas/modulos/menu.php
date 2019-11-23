@@ -110,17 +110,6 @@
             </li>
             <li>
 
-                <a href="evidencia">
-
-                    <i class="fa fa-eye"></i>
-                    <span>Evidencias</span>
-
-                </a>
-
-
-            </li>
-            <li>
-
                 <a href="programa">
 
                     <i class="fa fa-plus"></i>

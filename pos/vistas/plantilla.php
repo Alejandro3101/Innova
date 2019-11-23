@@ -47,7 +47,7 @@ session_start();
 
     <!-- calender -->
 
-    <link rel="stylesheet" href="vistas/dist/css/fullcalendar.min.css"
+    <link rel="stylesheet" href="vistas/dist/css/fullcalendar.min.css">
 
 
     <!-- prueba -->

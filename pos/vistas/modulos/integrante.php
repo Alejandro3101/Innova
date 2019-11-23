@@ -29,8 +29,6 @@
                 <button class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarIntegrantes">
 
                     Agregar Integrantes
-
-
                 </button>
 
 
@@ -136,7 +134,7 @@ MODAL editar integrante
                 ======================================-->
                 <div class="modal-header" style="background:#222d32; color:white">
                     <button type="button" class="close"  data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Agregar Autores</h4>
+                    <h4 class="modal-title">Editar Integrantes</h4>
                 </div>
 
                 <!--=====================================
@@ -233,6 +231,8 @@ MODAL editar integrante
                                 </select>
                             </div>
                         </div>
+                    </div>
+                </div>
                 <!--=====================================
                 PIE DEL MODAL
                 ======================================-->
@@ -273,7 +273,7 @@ MODAL AGREGAR USUARIO
 
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                    <h4 class="modal-title">Agregar usuario</h4>
+                    <h4 class="modal-title">Agregar Integrantes</h4>
 
                 </div>
 

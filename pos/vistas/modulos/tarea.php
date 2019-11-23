@@ -23,68 +23,96 @@
 
 
             <div class="box-body tarea">
-                <ul class="uno">
-                    <!--  -->
-                    <li class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="container-fluid well well-sm">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="btn-groupx">
-                                            <button>yiber</button>
-                                            
+                <div class="container">
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-md-3 col-lg-3">
+                            <div class="container-fluid well well-sm">
+                                <h3>Por Hacer</h3>
+                                <hr>
+                                <div class="container-fluid ">
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 bg-green" style = "padding-bottom : 7px;">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fugit tempore modi, corporis mollitia velit nam voluptates facere ab dicta assumenda dolorum. Nulla voluptatum commodi id hic saepe eaque numquam?</p>
+                                            <div class="btn-groupx">
+                                                <button  type="button" class="btn btn-danger">yiber</button>   
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 bg-green" style = "padding-bottom : 7px;">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fugit tempore modi, corporis mollitia velit nam voluptates facere ab dicta assumenda dolorum. Nulla voluptatum commodi id hic saepe eaque numquam?</p>
+                                            <div class="btn-groupx">
+                                                <button  type="button" class="btn btn-danger">yiber</button>   
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-12 bg-green" style = "padding-bottom : 7px;">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fugit tempore modi, corporis mollitia velit nam voluptates facere ab dicta assumenda dolorum. Nulla voluptatum commodi id hic saepe eaque numquam?</p>
+                                            <div class="btn-groupx">
+                                                <button  type="button" class="btn btn-danger">yiber</button>   
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="container-fluid well well-sm ">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="btn-group">
+                                                <h3>En Proceso</h3>
+                                                <button>yiber</button>
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <!--  -->
-                    <li class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="container-fluid well well-sm ">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="btn-group">
-                                            <button>yiber</button>
-                                            
+                        <!--  -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="container-fluid well well-sm ">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="btn-group">
+                                                <h3>En Revisión</h3>
+                                                <button>yiber</button>
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <!--  -->
-                    <li class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="container-fluid well well-sm ">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="btn-group">
-                                            <button>yiber</button>
-                                            
+                        <!--  -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="container-fluid well well-sm ">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="btn-group">
+                                                <h3>Hecho</h3>
+                                                <button>yiber</button>
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <!--  -->
-                    <li class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="container-fluid well well-sm ">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="btn-group">
-                                            <button>yiber</button>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
