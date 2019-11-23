@@ -1,9 +1,9 @@
-/*=============================================
+$(document).ready(function(){/*=============================================
 EDITAR TAREAS
 =============================================*/
-$(".btnEditarTareas").click(function () {
-    var Tareaid = $(this).attr("Tareaid");
 
+$(".container").on('click','.btnEditarTareas', function(){
+    var Tareaid = $(this).attr("Tareaid");
     var  datos = new FormData();
     datos.append("Tareaid",Tareaid);
 
@@ -16,8 +16,6 @@ $(".btnEditarTareas").click(function () {
         processData:false,
         dataType:"json",
         success:function (respuesta) {
-
-
             $("#editarid_tarea").val(respuesta["id_tarea"]);
             $("#editarnombre_tarea").val(respuesta["nombre_tarea"]);
             $("#editardescripcion").val(respuesta["descripcion"]);
@@ -25,10 +23,9 @@ $(".btnEditarTareas").click(function () {
             $("#editarestado").val(respuesta["estado"]);
             $("#editarid_actividad").val(respuesta["id_actividad"]);
             $("#editarid_integrante").val(respuesta["id_integrante"]);
-
         }
     })
-})
+});
 
 /*=============================================
 ELIMINAR TAREAS
@@ -71,17 +68,37 @@ function listaTarea(){
         method:"GET",
         dataType:"json",
         success:function(respuesta){
+            $(".PorHacer").empty();
+            $(".EnProceso").empty();
+            $(".EnRevision").empty();
+            $(".Hecho").empty();
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
                     var code = "";
+                    code = "<div class='row'>"+
+                                "<div class='col-md-12 col-lg-12 bg-info' style = 'padding-bottom : 7px;'>"+
+                                    "<h4 style = 'border-radius : 50px; float:left;'>"+respuesta.data[i][1]+"</h4>"+
+                                    "<button  type='button' class='btn btn-success btnEditarTareas' Tareaid ='"+respuesta.data[i][0]+"' style = 'border-radius : 19px; float:right;' data-toggle='modal' data-target='#modaleditartarea'>"+
+                                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>"+
+                                    "</button>"+
+                                    "<br style = 'clear: left;'>"+
+                                    "<p>"+respuesta.data[i][2]+"</p>"+
+                                    "<div class='btn-groupx'>"+
+                                        "<button  type='button' class='btn btn-danger'>"+
+                                            "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> Date"+
+                                        "</button>"+
+                                    "</div>"+
+                                "</div>"+
+                            "</div>"+
+                            "<br>";                    
                     if(respuesta.data[i][3]=='Por Hacer'){
-                        alert( 'Por Hacer : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                        $(".PorHacer").append(code);                        
                     }else if(respuesta.data[i][3]=='En Proceso'){
-                        alert( 'En Proceso : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                        $(".EnProceso").append(code);
                     }else if(respuesta.data[i][3]=='En Revision'){
-                        alert( 'En Revision : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                        $(".EnRevision").append(code);
                     }else if(respuesta.data[i][3]=='Hecho'){
-                        alert( 'Hecho : '+respuesta.data[i][0]+" "+respuesta.data[i][1]+" "+respuesta.data[i][2]+" "+respuesta.data[i][3]);
+                        $(".Hecho").append(code);                        
                     }
                 }                
             }
@@ -89,3 +106,4 @@ function listaTarea(){
     });
 }
 listaTarea();
+});

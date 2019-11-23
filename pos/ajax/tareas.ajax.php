@@ -61,8 +61,8 @@ class AjaxTareas{
 EDITAR TAREAS
 =============================================*/
 if(isset($_POST["Tareaid"])){
-
     $editar = new AjaxTareas();
+    $editar->Tareaid = $_POST["Tareaid"];
     $editar -> ajaxEditarTareas();
 }
 
