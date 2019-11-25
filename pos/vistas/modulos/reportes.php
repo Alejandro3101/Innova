@@ -5,7 +5,7 @@
 
         <h1>
 
-            Reportes de ventas
+            Reportes
 
         </h1>
 

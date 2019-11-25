@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5884164-6041-4fdd-a6d1-327d9d9bfcd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/controladores/empresas.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/controladores/empresas.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/controladores/proyectos.controlador.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/controladores/proyectos.controlador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/descargar-reporte.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/descargar-reporte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos/vistas/modulos/reportes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pos/vistas/modulos/reportes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/reportes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -65,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pos/controladores/proyectos.controlador.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
@@ -178,6 +175,7 @@
         <option value="$PROJECT_DIR$/pos/controladores/empresas.controlador.php" />
         <option value="$PROJECT_DIR$/pos/vistas/modulos/descargar-reporte.php" />
         <option value="$PROJECT_DIR$/pos/controladores/proyectos.controlador.php" />
+        <option value="$PROJECT_DIR$/pos/vistas/modulos/reportes.php" />
       </list>
     </option>
   </component>
@@ -277,12 +275,12 @@
       <workItem from="1573652388788" duration="4402000" />
       <workItem from="1573663404089" duration="15102000" />
       <workItem from="1573697736722" duration="2844000" />
-      <workItem from="1574622215012" duration="10719000" />
+      <workItem from="1574622215012" duration="10853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75132000" />
+    <option name="totallyTimeSpent" value="75266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
@@ -652,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/reportes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pos/modelos/proyectos.modelo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -693,6 +684,13 @@
             <element signature="n#style#0;n#td#5;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos/vistas/modulos/reportes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
