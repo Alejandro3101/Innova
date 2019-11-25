@@ -36,14 +36,14 @@ $(".btnEliminarAutores").click(function () {
     var id_autor = $(this).attr("idAutor");
 
     swal({
-        title: '¿Está seguro de borrar el usuario?',
+        title: '¿Está seguro de borrar el Autor?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar usuario!'
+        confirmButtonText: 'Si, borrar Autor!'
     }).then((result)=>{
         if (result.value) {
             

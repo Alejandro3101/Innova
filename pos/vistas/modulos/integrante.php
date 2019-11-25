@@ -345,7 +345,7 @@ MODAL AGREGAR USUARIO
                             ?>
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <select class="form-control" name="nuevoid_persona">
-                                <option>Seleccione</option>
+                                <option>Seleccione  Usuario</option>
                                 <?php
                                 foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                     echo '<option value='.$xVVAL_DATA["id_persona"].'>'.$xVVAL_DATA["nombres"]." ".$xVVAL_DATA["apellidos"].'</option>';

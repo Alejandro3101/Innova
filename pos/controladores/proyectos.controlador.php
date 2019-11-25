@@ -134,7 +134,7 @@ class Proyectocontroller
                 echo '<script>
                 swal({
                 type: "success",
-                title: "¡La Tarea ha sido Actualizada correctamente!",
+                title: "¡El Proyecto ha sido Actualizado correctamente!",
                 showConfirmButton: true,
                 confirmButtonText: "Cerrar"
 
@@ -148,7 +148,7 @@ class Proyectocontroller
                 echo '<script>
                     swal({
                         type: "error",
-                        title: "¡El Aula no puede ir vacío o llevar caracteres especiales!",
+                        title: "¡El Proyecto no puede ir vacío o llevar caracteres especiales!",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
 

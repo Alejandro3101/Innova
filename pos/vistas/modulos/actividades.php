@@ -263,7 +263,7 @@ MODAL Editar Actividad
 
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-                    <button type="submit" class="btn btn-primary">Guardar Actividades</button>
+                    <button type="submit" class="btn btn-primary">Editar Actividades</button>
 
                 </div>
 

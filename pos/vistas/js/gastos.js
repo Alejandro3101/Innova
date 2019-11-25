@@ -34,14 +34,14 @@ $(".btnEliminarGastos").click(function () {
     var id_gasto = $(this).attr("idGastos");
 
     swal({
-        title: '¿Está seguro de borrar el usuario?',
+        title: '¿Está seguro de borrar el Gasto?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar usuario!'
+        confirmButtonText: 'Si, borrar Gasto!'
     }).then((result)=>{
         if (result.value) {
             

@@ -34,14 +34,14 @@ $(".btnEliminarRecursos").click(function () {
     var id_recurso = $(this).attr("idRecurso");
 
     swal({
-        title: '¿Está seguro de borrar el usuario?',
+        title: '¿Está seguro de borrar el Recurso?',
         text: "¡Si no lo está puede cancelar la accíón!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar usuario!'
+        confirmButtonText: 'Si, borrar recurso!'
     }).then((result)=>{
         if (result.value) {
             

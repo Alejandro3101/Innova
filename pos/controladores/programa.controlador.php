@@ -21,7 +21,7 @@ class programacontroller{
 					swal({
 
 						type: "success",
-						title: "¡El usuario ha sido guardado correctamente!",
+						title: "¡El Programa ha sido guardado correctamente!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 
@@ -40,7 +40,7 @@ class programacontroller{
                 swal({
 
                     type: "error",
-                    title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+                    title: "¡El Programa no puede ir vacío o llevar caracteres especiales!",
                     showConfirmButton: true,
                     confirmButtonText: "Cerrar"
 
@@ -96,7 +96,7 @@ class programacontroller{
 					swal({
 
 						type: "success",
-						title: "¡El Gasto ha sido Actualizado correctamente!",
+						title: "¡El Programa ha sido Actualizado correctamente!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 
@@ -117,7 +117,7 @@ class programacontroller{
 					swal({
 
 						type: "error",
-						title: "¡El Gasto no puede ir vacío o llevar caracteres especiales!",
+						title: "¡El Programa no puede ir vacío o llevar caracteres especiales!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 

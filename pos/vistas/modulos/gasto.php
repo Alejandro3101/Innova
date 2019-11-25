@@ -161,7 +161,7 @@ MODAL EDITAR GASTOS
                 ======================================-->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-                    <button type="submit" class="btn btn-primary">Guardar Gasto</button>
+                    <button type="submit" class="btn btn-primary">Editar Gasto</button>
                 </div>
                 <?php
                 $editarGastos = new gastocontroller();

@@ -43,7 +43,7 @@ class empresascontroller
 					swal({
 
 						type: "success",
-						title: "¡El usuario ha sido guardado correctamente!",
+						title: "¡La Empresa ha sido guardada correctamente!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 
@@ -71,7 +71,7 @@ class empresascontroller
 					swal({
 
 						type: "error",
-						title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+						title: "¡La Empresa no puede ir vacía o llevar caracteres especiales!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 

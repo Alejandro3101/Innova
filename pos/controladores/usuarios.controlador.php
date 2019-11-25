@@ -207,7 +207,7 @@ class ControladorUsuarios{
                 echo '<script>
                     swal({
                     type: "success",
-                    title: "¡El Usuario ha sido Actualizada correctamente!",
+                    title: "¡El Usuario ha sido Actualizado correctamente!",
                     showConfirmButton: true,
                     confirmButtonText: "Cerrar"
 

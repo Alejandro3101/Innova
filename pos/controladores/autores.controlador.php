@@ -28,7 +28,7 @@ class autorescontroller{
                     echo '<script>
 					swal({
 						type: "success",
-						title: "¡El usuario ha sido guardado correctamente!",
+						title: "¡El Autor ha sido guardado correctamente!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 					}).then(function(result){
@@ -42,7 +42,7 @@ class autorescontroller{
                 echo '<script>
 					swal({
 						type: "error",
-						title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+						title: "¡El Autor no puede ir vacío o llevar caracteres especiales!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 					}).then(function(result){
@@ -98,7 +98,7 @@ class autorescontroller{
                 echo '<script>
                 swal({
                 type: "success",
-                title: "¡La Tarea ha sido Actualizada correctamente!",
+                title: "¡El Autor ha sido Actualizado correctamente!",
                 showConfirmButton: true,
                 confirmButtonText: "Cerrar"
 
@@ -112,7 +112,7 @@ class autorescontroller{
                 echo '<script>
                     swal({
                         type: "error",
-                        title: "¡El Aula no puede ir vacío o llevar caracteres especiales!",
+                        title: "¡El Autor no puede ir vacío o llevar caracteres especiales!",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
 

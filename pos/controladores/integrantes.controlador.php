@@ -210,7 +210,7 @@ class integrantecontroller
 
 				swal({
 					  type: "success",
-					  title: "El integrante ha sido borrada correctamente",
+					  title: "El integrante ha sido borrado correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false

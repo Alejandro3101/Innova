@@ -296,7 +296,7 @@ MODAL AGREGAR empresa
 
                                 <select class="form-control input-lg" name="nuevotipo_empresa">
 
-                                    <option value="">Selecionar sector</option>
+                                    <option value="">Selecionar Tipo Empresa</option>
 
                                     <option value="Microempresa">Microempresa</option>
                                     <option value="Pequeña">Pequeña</option>

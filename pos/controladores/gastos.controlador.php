@@ -23,7 +23,7 @@ class gastocontroller{
 
 					swal({
 						type: "success",
-						title: "¡El usuario ha sido guardado correctamente!",
+						title: "¡El Gasto ha sido guardado correctamente!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 
@@ -44,7 +44,7 @@ class gastocontroller{
 					swal({
 
 						type: "error",
-						title: "¡El usuario no puede ir vacío o llevar caracteres especiales!",
+						title: "¡El gasto no puede ir vacío o llevar caracteres especiales!",
 						showConfirmButton: true,
 						confirmButtonText: "Cerrar"
 
