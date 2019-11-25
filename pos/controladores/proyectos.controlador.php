@@ -1,12 +1,14 @@
 <?php
 
-class Proyectocontroller{
+class Proyectocontroller
+{
 
     /*===========================================
        REGISTRO DE proyecto
     =============================================*/
 
-    static public function ctrCrearProyecto(){
+    static public function ctrCrearProyecto()
+    {
 
         if (isset($_POST["nuevoNombre"])) {
 
@@ -15,29 +17,29 @@ class Proyectocontroller{
 
                 $tabla = "proyectos";
                 $image = '';
-                if(isset($_FILES["nuevoformato"]) && !empty($_FILES["nuevoformato"]["tmp_name"])){
-                    if(!is_dir("vistas/formDocuments")){
-                      $dir = mkdir("vistas/formDocuments", 0777, true);
-                    }else{
-                      $dir=true;
+                if (isset($_FILES["nuevoformato"]) && !empty($_FILES["nuevoformato"]["tmp_name"])) {
+                    if (!is_dir("vistas/formDocuments")) {
+                        $dir = mkdir("vistas/formDocuments", 0777, true);
+                    } else {
+                        $dir = true;
                     }
                     $countfiles = count($_FILES["nuevoformato"]["tmp_name"]);
- 
-                    for($i=0;$i<$countfiles;$i++){
-                        if($dir){
-                            $filename= time()."-".$_FILES["nuevoformato"]["name"][$i];
-                            $muf=move_uploaded_file($_FILES["nuevoformato"]["tmp_name"][$i], "vistas/formDocuments/".$filename);
-                            $image .='vistas/formDocuments/'.$filename.';';
-                            if($muf){
-                                $image_upload=true;
-                            }else{
-                                $image_upload=false;
-                                $error["image"]= "La imagen no se ha subido";
+
+                    for ($i = 0; $i < $countfiles; $i++) {
+                        if ($dir) {
+                            $filename = time() . "-" . $_FILES["nuevoformato"]["name"][$i];
+                            $muf = move_uploaded_file($_FILES["nuevoformato"]["tmp_name"][$i], "vistas/formDocuments/" . $filename);
+                            $image .= 'vistas/formDocuments/' . $filename . ';';
+                            if ($muf) {
+                                $image_upload = true;
+                            } else {
+                                $image_upload = false;
+                                $error["image"] = "La imagen no se ha subido";
                             }
                         }
                     }
                 }
-                $image = substr($image,0,-1);
+                $image = substr($image, 0, -1);
 
                 $datos = array("nombre_proyecto" => $_POST["nuevoNombre"],
                     "tipo_proyecto" => $_POST["nuevoTproyecto"],
@@ -75,7 +77,7 @@ class Proyectocontroller{
 					</script>';
 
                 }
-            }else{
+            } else {
 
                 echo '<script>
 
@@ -101,13 +103,15 @@ class Proyectocontroller{
             }
         }
     }
-/*=============================================
-     EDITAR PROYECTO
-=============================================*/
-    static public function ctrEditarProyecto(){
+
+    /*=============================================
+         EDITAR PROYECTO
+    =============================================*/
+    static public function ctrEditarProyecto()
+    {
         if (isset($_POST["editarnombre_proyecto"])) {
             if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarnombre_proyecto"]) &&
-            preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_proyecto"])) {
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editartipo_proyecto"])) {
 
             }
 
@@ -140,7 +144,7 @@ class Proyectocontroller{
                 }
                 });
                 </script>';
-            }else{
+            } else {
                 echo '<script>
                     swal({
                         type: "error",
@@ -164,7 +168,8 @@ class Proyectocontroller{
         MOSTRAR PROYECTO
     =============================================*/
 
-    static public function ctrMostrarproyecto($item, $valor){
+    static public function ctrMostrarproyecto($item, $valor)
+    {
 
         $tabla = "proyectos";
 
@@ -214,25 +219,26 @@ class Proyectocontroller{
     }
 
     /*=============================================
-	DESCARGAR EXCEL
-	=============================================*/
+        DESCARGAR EXCEL
+        =============================================*/
 
     public function ctrDescargarReporte(){
 
-        if (isset($_GET["reporte"])) {
+        if(isset($_GET["reporte"])){
 
-            $tabla = "proyecto";
+            $tabla = "proyectos";
 
-            if (isset($_GET["fechaInicial"]) && isset($_GET["fechaFinal"])) {
+            if(isset($_GET["fechaInicial"]) && isset($_GET["fechaFinal"])){
 
-                $ventas = ModeloProyecto::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
+                $proyecto = ModeloProyecto::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
 
-            } else {
+            }else{
 
                 $item = null;
                 $valor = null;
 
-                $ventas = ModeloProyecto::mdlMostrarProyecto($tabla, $item, $valor);
+                $proyecto = ModeloProyecto::mdlMostrarProyecto($tabla, $item, $valor);
+
 
             }
 
@@ -241,32 +247,60 @@ class Proyectocontroller{
             CREAMOS EL ARCHIVO DE EXCEL
             =============================================*/
 
-            $Name = $_GET["reporte"] . '.xls';
+            $Name = $_GET["reporte"].'.xls';
 
             header('Expires: 0');
             header('Cache-control: private');
             header("Content-type: application/vnd.ms-excel"); // Archivo de Excel
             header("Cache-Control: cache, must-revalidate");
             header('Content-Description: File Transfer');
-            header('Last-Modified: ' . date('D, d M Y H:i:s'));
+            header('Last-Modified: '.date('D, d M Y H:i:s'));
             header("Pragma: public");
-            header('Content-Disposition:; filename="' . $Name . '"');
+            header('Content-Disposition:; filename="'.$Name.'"');
             header("Content-Transfer-Encoding: binary");
 
             echo utf8_decode("<table border='0'> 
 
-            <tr> 
-            <td style='font-weight:bold; border:1px solid #eee;'>CÓDIGO</td> 		
-            <td style='font-weight:bold; border:1px solid #eee;'>NOMBRE PROYECTO</td>
-            <td style='font-weight:bold; border:1px solid #eee;'>EMPRESA</td>
-            <td style='font-weight:bold; border:1px solid #eee;'>AUTOR</td>					
-            <td style='font-weight:bold; border:1px solid #eee;'>FECHA</td>	
-            <td style='font-weight:bold; border:1px solid #eee;'>ESTADO</td>			
-            </tr>");
+					<tr> 
+					<td style='font-weight:bold; border:1px solid #eee;'>CÓDIGO</td> 
+					<td style='font-weight:bold; border:1px solid #eee;'>NOMBRE_PROYECTO</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>TIPO</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>ESTADO</td>	
+					<td style='font-weight:bold; border:1px solid #eee;'>CLASIFICACION</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>FECHA CIERRE</td>									
+					<td style='font-weight:bold; border:1px solid #eee;'>EMPRESA</td>
+					
+					</tr>");
+
+            foreach ($proyecto as $row => $item){
+
+
+                $empresa = empresascontroller::ctrMostrarEmpresa("id_empresa", $item["id_empresa"]);
+
+                echo utf8_decode("<tr>
+			 			<td style='border:1px solid #eee;'>".$item["codigo"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["nombre_proyecto"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["tipo_proyecto"]."</td>			 			
+			 			<td style='border:1px solid #eee;'>".$item["estado_proyecto"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["clasificacion"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["fecha_cierre"]."</td> 
+			 			
+			 			<td style='border:1px solid #eee;'>".$empresa["nombre_empresa"]."</td>
+			 				
+		 			</tr>");
+
+
+            }
+
+
+            echo "</table>";
 
         }
+
     }
+
 }
+
 
 
 

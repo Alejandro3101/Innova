@@ -97,7 +97,7 @@ class empresascontroller
     }
 
     /*=============================================
-   MOSTRAR Rol
+   MOSTRAR empresa
    =============================================*/
 
     static public function ctrMostrarEmpresa($item, $valor)
