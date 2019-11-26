@@ -37,16 +37,16 @@ class AjaxActividades
 
 }
 /*=============================================
-    EDITAR actividades
-    =============================================*/
-    if (isset($_POST["id_actividad"])) {
+EDITAR actividades
+=============================================*/
+if (isset($_POST["id_actividad"])) {
 
-        $editar = new AjaxActividades();
-        $editar->id_actividad = $_POST["id_actividad"];
-        $editar->ajaxEditarActividades();
-    }
-    if (isset($_GET["a"]) && $_GET["a"] == "session") {
-        $session = new AjaxActividades();
-        $session->id_actividad = $_POST["id_actividad_session"];
-        $session->ajaxSessionActividades();
-    }
+    $editar = new AjaxActividades();
+    $editar->id_actividad = $_POST["id_actividad"];
+    $editar->ajaxEditarActividades();
+}
+if (isset($_GET["a"]) && $_GET["a"] == "session") {
+    $session = new AjaxActividades();
+    $session->id_actividad = $_POST["id_actividad_session"];
+    $session->ajaxSessionActividades();
+}

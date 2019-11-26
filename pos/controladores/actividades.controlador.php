@@ -4,7 +4,7 @@ class actividadescontroller{
 
     /*=============================================
         REGISTRO DE Actividades
-     =============================================*/
+    =============================================*/
 
     static public function ctrCrearActividades(){
 
@@ -20,8 +20,6 @@ class actividadescontroller{
 
                 $datos = array("nombre_actividad" => $_POST["nuevoNombreAct"],
                     "descripcion" => $_POST["nuevadescripcion"],
-                    "fecha_inicio" => $_POST["nuevaFechainicio"],
-                    "fecha_limite" => $_POST["nuevafechalimite"],
                     "estado" => $_POST["nuevoestado"],
                     "id_proyecto" => $_POST["nuevoproyecto"]);
 
@@ -74,18 +72,10 @@ class actividadescontroller{
 							window.location = "actividades";
 
 						}
-
 					});
-				
-
 				</script>';
-
             }
-
-
         }
-
-
     }
     
     /*=============================================
@@ -106,8 +96,6 @@ class actividadescontroller{
                 $datos = array("id_actividad" => $_POST["editarIdAct"],
                     "nombre_actividad" => $_POST["editarNombreAct"],
                     "descripcion" => $_POST["editardescripcion"],
-                    "fecha_inicio" => $_POST["editarFechainicio"],
-                    "fecha_limite" => $_POST["editarfechalimite"],
                     "estado" => $_POST["editarestado"],
                     "id_proyecto" => $_POST["editarproyecto"]);
 
@@ -196,9 +184,9 @@ class actividadescontroller{
 
 
 
-    /*--------------------------------------------
+    /*============================================
     Eliminar Actividades
-    ---------------------------------------------*/
+    ==============================================*/
 
     static public function ctrBorrarActividades()
     {

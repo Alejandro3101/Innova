@@ -117,6 +117,20 @@ MODAL EDITAR TAREA
                                 <input type="text" class="form-control" name="editardescripcion" id="editardescripcion" required>
                             </div>
                         </div>
+                        <!-- ENTRADA PARA LA FECHA DE INICIO -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="date" class="form-control" name="editarfecha_inicio" id="editarfecha_inicio" required>
+                            </div>
+                        </div>
+                        <!-- ENTRADA PARA LA FECHA LIMITE -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="date" class="form-control" name="editarfecha_limite" id="editarfecha_limite" required>
+                            </div>
+                        </div>
                         <!-- ENTRADA PARA ESTADO -->
                         <div class="form-group">
                             <div class="input-group">
@@ -219,6 +233,20 @@ MODAL AGREGAR RECURSO
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <input type="text" class="form-control input-lg" name="nuevodescripcion" placeholder="Ingresar la descripción" required>
+                            </div>
+                        </div>
+                        <!-- ENTRADA PARA LA FECHA DE INICIO -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="date" class="form-control input-lg" name="nuevofecha_inicio" placeholder="Ingresar la fecha de inicio" required>
+                            </div>
+                        </div>
+                        <!-- ENTRADA PARA LA FECHA LIMITE -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="date" class="form-control input-lg" name="nuevofecha_limite" placeholder="Ingresar la fecha de limite" required>
                             </div>
                         </div>
                         <!-- ENTRADA PARA ESTADO -->

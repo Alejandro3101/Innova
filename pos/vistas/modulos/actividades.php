@@ -3,9 +3,7 @@
     <section class="content-header">
 
         <h1>
-
             Administrar Actividades
-
         </h1>
 
         <ol class="breadcrumb">
@@ -24,40 +22,23 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-
-
                 <button class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarrol">
-
                     Agregar Actividades
-
-
-
                 </button>
-
-
-
             </div>
             <div class="box-body">
 
                 <table class="table table-bordered table-striped tablas ">
 
                     <thead>
-
                     <tr>
-
                         <th>#</th>
                         <th>Nombre_Actividad</th>
                         <th>Descripcion</th>
-                        <th>Fecha Inicio</th>
-                        <th>Fecha Limite</th>
                         <th>Estado</th>
                         <th>Proyecto</th>
                         <th>Acciones</th>
-
-
-
                     </tr>
-
                     </thead>
                      <tbody>
                     <?php
@@ -76,27 +57,16 @@
                   <td>'.$value["descripcion"].'</td>';
 
                   echo '
-                  <td>'.$value["fecha_inicio"].'</td>
-                  <td>'.$value["fecha_limite"].'</td>
                   <td>'.$value["estado"].'</td>
                   <td>'.$value["nombre_proyecto"].'</td>
                   <td>
 
                     <div class="btn-group">
-                        
                         <button class="btn btn-primary btnEditarActividades" id_actividad="'.$value["id_actividad"].'" data-toggle="modal" data-target="#modalEditarActividad"><i class="fa fa-pencil"></i></button>
-
-                      <button class="btn btn-danger btnEliminarActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-times"></i></button>
-                      
-                      <button class="btn btn-info btnTareasActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-arrow-right"></i></button>
-                      
-                      
-         
-
+                        <button class="btn btn-danger btnEliminarActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-times"></i></button>
+                        <button class="btn btn-info btnTareasActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-arrow-right"></i></button>
                     </div>  
-
                   </td>
-
                 </tr>';
                     }
                 ?>
@@ -181,38 +151,6 @@ MODAL Editar Actividad
                             </div>
 
                         </div>
-
-                        <!-- ENTRADA PARA LA fecha_inicio -->
-
-                        <div class="form-group">
-                            <label>Fecha Inicio</label><br>
-
-                            <div class="input-group">
-
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-
-                                <input type="date" class="form-control input-lg" name="editarFechainicio" id="editarFechainicio" value="">
-
-                            </div>
-                        </div>
-
-                        <!-- ENTRADA PARA LA fecha_limite -->
-
-                        <div class="form-group">
-                            <label>Fecha Limite</label><br>
-
-                            <div class="input-group">
-
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-
-                                <input type="date" class="form-control input-lg" name="editarfechalimite" id="editarfechalimite" value="">
-
-                            </div>
-                        </div>
-
-
                         <!-- ENTRADA PARA EL estado -->
 
                         <div class="form-group">
@@ -348,59 +286,28 @@ MODAL AGREGAR Actividad
 
                         </div>
 
-                        <!-- ENTRADA PARA LA fecha_inicio -->
+                        <!-- ENTRADA PARA EL estado -->
 
                         <div class="form-group">
-                            <label>Fecha Inicio</label><br>
 
                             <div class="input-group">
 
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
+                                <select class="form-control input-lg" name="nuevoestado" required>
 
-                                <input type="date" class="form-control input-lg" name="nuevaFechainicio" required>
+                                    <option value="">Selecionar Estado</option>
+
+                                    <option value="Planeada">Planeada</option>
+                                    <option value="Ejecutada">Ejecutada</option>
+                                    <option value="Finalizada">Finalizada</option>
+                                    <option value="Cancelada">Cancelada</option>
+
+                                </select>
 
                             </div>
+
                         </div>
-
-                        <!-- ENTRADA PARA LA fecha_limite -->
-
-                        <div class="form-group">
-                            <label>Fecha Limite</label><br>
-
-                            <div class="input-group">
-
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-
-
-                                <input type="date" class="form-control input-lg" name="nuevafechalimite" required>
-
-                            </div>
-                        </div>
-
-
-                            <!-- ENTRADA PARA EL estado -->
-
-                            <div class="form-group">
-
-                                <div class="input-group">
-
-                                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                                    <select class="form-control input-lg" name="nuevoestado" required>
-
-                                        <option value="">Selecionar Estado</option>
-
-                                        <option value="Planeada">Planeada</option>
-                                        <option value="Ejecutada">Ejecutada</option>
-                                        <option value="Finalizada">Finalizada</option>
-                                        <option value="Cancelada">Cancelada</option>
-
-                                    </select>
-
-                                </div>
-
-                            </div>
 
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
                         <div class="form-group">

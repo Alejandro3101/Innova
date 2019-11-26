@@ -21,11 +21,14 @@ class AjaxTareas{
     }
 
     /*=============================================
-    ELIMINAR GASTOS
+    ELIMINAR TAREAS
     =============================================*/
     public function EliminarDatosTarea($idE){
         $oBJECT_ELIM = ControladorTareas::CrtEliminarTarea($idE);
     }
+    /*=============================================
+    LISTA TABLERO
+    =============================================*/
     public function ListaDatosTarea(){
         $item = null;
         $valor = null;
@@ -38,11 +41,15 @@ class AjaxTareas{
                             "'.$objADMIN[$i]["id_tarea"].'",
                             "'.$objADMIN[$i]["nombre_tarea"].'",
                             "'.$objADMIN[$i]["descripcion"].'",
+                            "'.$objADMIN[$i]["fecha_inicio"].'",
+                            "'.$objADMIN[$i]["fecha_limite"].'",
                             "'.$objADMIN[$i]["estado"].'"
                         ],';
                     }
                 }else{
                     $oBJEC_JSON .= '[
+                        "",
+                        "",
                         "",
                         "",
                         "",
