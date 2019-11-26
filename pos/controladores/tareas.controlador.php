@@ -19,6 +19,8 @@ class ControladorTareas{
                     "descripcion" => $_POST["nuevodescripcion"],
                     "estado" => $_POST["nuevoestado"],
                     "id_actividad" => $_POST["nuevoid_actividad"],
+                    "fecha_inicio" => $_POST["nuevofecha_inicio"],
+                    "fecha_limite" => $_POST["nuevofecha_limite"],
                     "id_integrante" => $_POST["nuevoid_integrante"]);
 
                 $respuesta = ModeloTareas::mdlIngresarTareas($tareas, $datos);
@@ -88,6 +90,8 @@ class ControladorTareas{
               "descripcion" => $_POST["editardescripcion"],
               "estado" => $_POST["editarestado"],
               "id_actividad" => $_POST["editarid_actividad"],
+              "fecha_inicio" => $_POST["editarfecha_inicio"],
+              "fecha_limite" => $_POST["editarfecha_limite"],
               "id_integrante" => $_POST["editarid_integrante"]);
 
             $respuesta = ModeloTareas::mdlEditarTarea($tareas, $datos);

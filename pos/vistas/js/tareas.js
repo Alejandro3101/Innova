@@ -21,6 +21,8 @@ $(".container").on('click','.btnEditarTareas', function(){
             $("#editardescripcion").val(respuesta["descripcion"]);
             $("#editarestado").html(respuesta["estado"]);
             $("#editarestado").val(respuesta["estado"]);
+            $("#editarfecha_inicio").val(respuesta["fecha_inicio"]);
+            $("#editarfecha_limite").val(respuesta["fecha_limite"]);
             $("#editarid_integrante").val(respuesta["id_integrante"]);
         }
     })
@@ -84,19 +86,19 @@ function listaTarea(){
                                     "<p>"+respuesta.data[i][2]+"</p>"+
                                     "<div class='btn-groupx'>"+
                                         "<button  type='button' class='btn btn-danger'>"+
-                                            "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> Date"+
+                                            "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> "+respuesta.data[i][4]+""+
                                         "</button>"+
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
                             "<br>";                    
-                    if(respuesta.data[i][3]=='Por Hacer'){
+                    if(respuesta.data[i][5]=='Por Hacer'){
                         $(".PorHacer").append(code);                        
-                    }else if(respuesta.data[i][3]=='En Proceso'){
+                    }else if(respuesta.data[i][5]=='En Proceso'){
                         $(".EnProceso").append(code);
-                    }else if(respuesta.data[i][3]=='En Revision'){
+                    }else if(respuesta.data[i][5]=='En Revision'){
                         $(".EnRevision").append(code);
-                    }else if(respuesta.data[i][3]=='Hecho'){
+                    }else if(respuesta.data[i][5]=='Hecho'){
                         $(".Hecho").append(code);                        
                     }
                 }                
