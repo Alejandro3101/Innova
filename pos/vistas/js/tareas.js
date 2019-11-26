@@ -78,13 +78,16 @@ function listaTarea(){
                                 "<div class='col-md-12 col-lg-12 bg-info' style = 'padding-bottom : 7px; padding-top : 7px;'>"+
                                     "<h4 style = 'border-radius : 50px; float:left;'>"+respuesta.data[i][1]+"</h4>"+
                                     "<button  type='button' class='btn btn-success btnEditarTareas' Tareaid ='"+respuesta.data[i][0]+"' style = 'border-radius : 19px; float:right;' data-toggle='modal' data-target='#modaleditartarea'>"+
-                                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>"+
+                                        "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Editar"+
                                     "</button>"+
                                     "<br style = 'clear: left;'>"+
                                     "<p>"+respuesta.data[i][2]+"</p>"+
                                     "<div class='btn-groupx'>"+
-                                        "<button  type='button' class='btn btn-danger'>"+
+                                        "<button style = 'border-radius : 50px; float:left; type='button' class='btn btn-danger'>"+
                                             "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> Date"+
+                                        "</button>"+
+                                        "<button style = 'border-radius : 50px; float:right; type=button' class='btn btn-primary' data-toggle='modal' data-target='#TareaIntegrante'>"+
+                                            "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Integrantes"+
                                         "</button>"+
                                     "</div>"+
                                 "</div>"+
@@ -99,10 +102,12 @@ function listaTarea(){
                     }else if(respuesta.data[i][3]=='Hecho'){
                         $(".Hecho").append(code);                        
                     }
+                    
                 }                
             }
         }
     });
 }
 listaTarea();
+$("#selectintegrantes").select2();
 });

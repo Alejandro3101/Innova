@@ -44,11 +44,6 @@
     <link rel="stylesheet" href="vistas/dist/css/fullcalendar.min.css">
 
 
-    <!-- prueba -->
-
-
-
-
     <!-- Favicons -->
     <link href="lib/img/favicon.png" rel="icon">
     <link href="lib/img/apple-touch-icon.png" rel="apple-touch-icon">

@@ -1,4 +1,8 @@
-<div class="content-wrapper">
+    <!-- select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    
+    <div class="content-wrapper">
     <section class="content-header">
         <h1>
             Tareas de la Actividad <b><?php echo($_SESSION["NombreActividad"]);?></b> del Proyecto <b><?php echo($_SESSION["NombreProyecto"]);?></b>.
@@ -288,4 +292,38 @@ MODAL AGREGAR RECURSO
             </form>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="TareaIntegrante" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Integrantes de la Tarea <b><p id = "NameTarea"></p></b></h5>.
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="idTarea" id="idTarea" value="">
+        <!-- ENTRADA PARA LA LLAVE FORANEA DE ACTIVIDADES -->
+        <div class="form-group">
+            <button  type='button' class='btn btn-success btnEditarTareas' Tareaid ='"+respuesta.data[i][0]+"' style = 'border-radius : 19px; float:right;'>
+                <span class='glyphicon glyphicon-save' aria-hidden='true'></span> Agregar
+            </button>
+            <div class="input-group"  style = 'border-radius : 19px; float:left; width : 84%;'>
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <select class="form-control" style = "width : 80%;" name="selectintegrantes" id = "selectintegrantes">
+                    <option value=''>Seleccione el Integrante.</option>';
+                </select>
+            </div>            
+            <br style = 'clear: left;'>
+            <hr>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
