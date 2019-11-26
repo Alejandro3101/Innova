@@ -21,7 +21,6 @@ $(".container").on('click','.btnEditarTareas', function(){
             $("#editardescripcion").val(respuesta["descripcion"]);
             $("#editarestado").html(respuesta["estado"]);
             $("#editarestado").val(respuesta["estado"]);
-            $("#editarid_actividad").val(respuesta["id_actividad"]);
             $("#editarid_integrante").val(respuesta["id_integrante"]);
         }
     })

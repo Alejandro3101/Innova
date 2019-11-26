@@ -88,7 +88,7 @@
 
                       <button class="btn btn-danger btnEliminarActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-times"></i></button>
                       
-                        <a href="tarea" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
+                      <button class="btn btn-info btnTareasActividades " id_actividad="'.$value["id_actividad"].'"><i class="fa fa-arrow-right"></i></button>
                       
                       
          

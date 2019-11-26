@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Tareas
+            Tareas de la Actividad <b><?php echo($_SESSION["NombreActividad"]);?></b> del Proyecto <b><?php echo($_SESSION["NombreProyecto"]);?></b>.
         </h1>
 
         <ol class="breadcrumb">
@@ -127,23 +127,24 @@ MODAL EDITAR TAREA
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE ACTIVIDADES -->
-                        <div class="form-group">
+                        <!--div class="form-group">
                             <div class="input-group">
-                                <?php
+                                <php
                                 $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM actividades");
                                 $OBJ_DATA-> execute();
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="editarid_actividad">
-                                    <?php
+                                    <php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_actividad"].'>'.$xVVAL_DATA["id_actividad"]." ".$xVVAL_DATA["nombre_actividad"].'</option>';
                                     }
                                     ?>
                                 </select>
                             </div>
-                        </div>
+                        </div-->
+                        <input type="hidden" name="editarid_actividad" value = "<?php echo($_SESSION["IdActividad"]);?>">
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE INTEGRANTES -->
                         <div class="form-group">
                             <div class="input-group">
@@ -202,26 +203,6 @@ MODAL AGREGAR RECURSO
                 <div class="modal-body">
                     <div class="box-body">
 
-                        <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <?php
-                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
-                                $OBJ_DATA-> execute();
-                                $aVECT_DATA = $OBJ_DATA->fetchALL();
-                                ?>
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="nuevoid_proyecto">
-                                    <option>Seleccione el Proyecto</option>
-                                    <?php
-                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                        echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
                         <!-- ENTRADA PARA EL NOMBRE DE LA TAREA -->
                         <div class="form-group">
                             <div class="input-group">
@@ -249,10 +230,10 @@ MODAL AGREGAR RECURSO
                                 </select>
                             </div>
                         </div>
-                        <!-- ENTRADA PARA LA LLAVE FORANEA DE ACTIVIDADES -->
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE ACTIVIDADES >
                         <div class="form-group">
                             <div class="input-group">
-                                <?php
+                                <php
                                 $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM actividades");
                                 $OBJ_DATA-> execute();
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
@@ -260,14 +241,17 @@ MODAL AGREGAR RECURSO
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="nuevoid_actividad">
                                     <option>Seleccione</option>
-                                    <?php
+                                    <php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_actividad"].'>'.$xVVAL_DATA["id_actividad"]." ".$xVVAL_DATA["nombre_actividad"].'</option>';
                                     }
                                     ?>
                                 </select>
                             </div>
-                        </div>
+                        </div-->
+                        <input type="hidden" name="nuevoid_actividad" value = "<?php echo($_SESSION["IdActividad"]);?>">
+
+                        
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE INTEGRANTES -->
                         <div class="form-group">
                             <div class="input-group">

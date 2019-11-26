@@ -62,3 +62,26 @@ $(".btnEliminarActividades").click(function () {
     })
 
 })
+/*=============================================
+SESSION Actividades
+=============================================*/
+$(".btnTareasActividades").click(function () {
+    var id_actividad = $(this).attr("id_actividad");
+    var datos = new FormData();
+    datos.append("id_actividad_session",id_actividad);
+
+    $.ajax({
+        url:"ajax/actividades.ajax.php?a=session",
+        method:"POST",
+        data: datos,
+        cache: false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success:function (respuesta) {
+            if(respuesta==true){
+                window.location = "tarea";
+            }
+        }
+    })
+})

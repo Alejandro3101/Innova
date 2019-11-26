@@ -97,7 +97,7 @@
 
 
             </li>
-            <li>
+            <!--li>
 
                 <a href="tarea">
 
@@ -107,7 +107,7 @@
                 </a>
 
 
-            </li>
+            </li-->
             <li>
 
                 <a href="programa">
