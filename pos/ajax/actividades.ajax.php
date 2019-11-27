@@ -31,6 +31,7 @@ class AjaxActividades
         $_SESSION["IdActividad"] = $session["id_actividad"];
         $_SESSION["NombreActividad"] = $session["nombre_actividad"];
         $_SESSION["NombreProyecto"] = $proyecto["nombre_proyecto"];
+        $_SESSION["IdProyecto"] = $proyecto["id_proyecto"];
         $respuesta = true;
         echo $respuesta;
     }

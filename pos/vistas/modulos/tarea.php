@@ -336,17 +336,21 @@ MODAL AGREGAR RECURSO
         <input type="hidden" name="idTarea" id="idTarea" value="">
         <!-- ENTRADA PARA LA LLAVE FORANEA DE ACTIVIDADES -->
         <div class="form-group">
-            <button  type='button' class='btn btn-success btnEditarTareas' Tareaid ='"+respuesta.data[i][0]+"' style = 'border-radius : 19px; float:right;'>
+            <input type="hidden" name="TareaIdCreate" id ="TareaIdCreate">
+            <button  type='button' class='btn btn-success btnInsertarTareaIntegrante' Tareaid ='"+respuesta.data[i][0]+"' style = 'border-radius : 19px; float:right;'>
                 <span class='glyphicon glyphicon-save' aria-hidden='true'></span> Agregar
             </button>
             <div class="input-group"  style = 'border-radius : 19px; float:left; width : 84%;'>
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <select class="form-control" style = "width : 80%;" name="selectintegrantes" id = "selectintegrantes">
-                    <option value=''>Seleccione el Integrante.</option>';
+                    <option value=''>Seleccione el Integrante.</option>
                 </select>
             </div>            
             <br style = 'clear: left;'>
             <hr>
+            <div class="container-integrante" style="margin:20px;">
+                
+            </div>
         </div>
       </div>
       <div class="modal-footer">

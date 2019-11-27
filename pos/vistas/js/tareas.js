@@ -88,8 +88,8 @@ function listaTarea(){
                                         "<button style = 'border-radius : 50px; float:left; type='button' class='btn btn-danger'>"+
                                             "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> "+respuesta.data[i][4]+""+
                                         "</button>"+
-                                        "<button style = 'border-radius : 50px; float:right; type=button' class='btn btn-primary' data-toggle='modal' data-target='#TareaIntegrante'>"+
-                                            "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Integrantes"+
+                                        "<button style = 'border-radius : 50px; float:right; type=button' class='btn btn-primary btnIntegrantes' Tareaid ='"+respuesta.data[i][0]+"' data-toggle='modal' data-target='#TareaIntegrante'>"+
+                                            "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span>"+
                                         "</button>"+
                                     "</div>"+
                                 "</div>"+
@@ -110,6 +110,87 @@ function listaTarea(){
         }
     });
 }
+
 listaTarea();
+$(".container").on("click",".btnIntegrantes",function(){
+    var IdTarea = $(this).attr("Tareaid");
+    $("#TareaIdCreate").val(IdTarea);
+    var  datos = new FormData();
+    datos.append("IdTarea",IdTarea);
+    $.ajax({
+        url:"ajax/tareaintegrante.ajax.php?a=listaIntegrantes",
+        method:"GET",
+        cache: false,
+        dataType:"json",
+        success:function(respuesta){
+            $("#selectintegrantes").empty();
+            $("#selectintegrantes").append("<option value=''>Seleccione el Integrante.</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#selectintegrantes").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>"); 
+                }                              
+            }
+            $("#selectintegrantes").change();
+            $("#selectintegrantes").select2();
+        }
+    });
+    $.ajax({
+        url:"ajax/tareaintegrante.ajax.php?a=listaTareaIntegrantes",
+        method:"POST",
+        data:datos,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success:function(respuesta){
+            $(".container-integrante").empty();
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0){
+                    $(".container-integrante").append("<div class='row p-3 mb-2 bg-light text-dark' style='padding:8px;'><h4 class = 'nombreIntegrante' style = 'float:left;'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</h4> <button style = 'border-radius : 50px; float:right;' class='btn btn-danger btnBorrarTareaIntegrante' idTareaIntegrante='"+respuesta.data[i][0]+"'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>"); 
+                }                              
+            }
+        }
+    });
+});
+$(".btnInsertarTareaIntegrante").click(function(){
+    var IdTarea = $("#TareaIdCreate").val();
+    var IdIntegrante = $("#selectintegrantes").val();
+    var  datos = new FormData();
+    datos.append("IdTarea",IdTarea);
+    datos.append("IdIntegrante",IdIntegrante);
+    $.ajax({
+        url:"ajax/tareaintegrante.ajax.php?a=crear",
+        method:"POST",
+        data:datos,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success:function(respuesta){
+            if(respuesta==true){
+                window.location = "tarea";
+            }
+        }
+    });
+});
+$('.container-integrante').on('click','.btnBorrarTareaIntegrante',function(){
+    var IdTareaIntegrante = $(this).attr("idTareaIntegrante");
+    var  datos = new FormData();
+    datos.append("IdTareaIntegrante",IdTareaIntegrante);
+    $.ajax({
+        url:"ajax/tareaintegrante.ajax.php?a=eliminar",
+        method:"POST",
+        data:datos,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success:function(respuesta){
+            if(respuesta==true){
+                window.location = "tarea";
+            }
+        }
+    });
+});
 $("#selectintegrantes").select2();
 });
