@@ -31,7 +31,15 @@ $(".btnEditarProyecto").click(function () {
             $("#editarid_proyecto").val(respuesta["id_proyecto"]);
             $("#editarnombre_proyecto").val(respuesta["nombre_proyecto"]);
             $("#editartipo_proyecto").val(respuesta["tipo_proyecto"]);
-            $("#editarcodigo").val(respuesta["codigo"]);
+            if($("#editartipo_proyecto").val()=='Sin Recursos'){
+                $(".nuevocodigodiv").addClass('invisible');
+                $(".nuevocodigodiv").height(0);
+                $("#editarcodigo").val("");
+            }else if($("#editartipo_proyecto").val()=='Con Recursos'){
+                $(".nuevocodigodiv").height(45.5);
+                $(".nuevocodigodiv").removeClass('invisible');
+                $("#editarcodigo").val(respuesta["codigo"]);
+            }
             $("#editarlinea_programatica").val(respuesta["linea_programatica"]);
             $("#editarclasificacion").val(respuesta["clasificacion"]);
             $("#editarformatos").val(respuesta["formatos"]);
