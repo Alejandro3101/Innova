@@ -112,8 +112,8 @@ MODAL editar autor
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editartipo_documento">
-                                    <option value="" id="editartipo_documento"></option>
+                                <select class="form-control" name="editartipo_documento" id="editartipo_documento">
+                                    <option>Seleccione el Tipo de Documento</option>
                                     <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
                                     <option value="Tarjeta de identidad">Tarjeta de identidad</option>
                                     <option value="Tarjeta Pasajero">Tarjeta Pasajero</option>

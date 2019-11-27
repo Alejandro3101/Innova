@@ -135,8 +135,8 @@ MODAL EDITAR TAREA
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editarestado">
-                                    <option value="" id="editarestado"></option>
+                                <select class="form-control" name="editarestado" id="editarestado">
+                                    <option>Seleccione</option>
                                     <option value="Por Hacer">Por Hacer</option>
                                     <option value="En Proceso">En Proceso</option>
                                     <option value="En Revision">En Revision</option>
@@ -172,7 +172,8 @@ MODAL EDITAR TAREA
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editarid_integrante">
+                                <select class="form-control" name="editarid_integrante" id="editarid_integrante">
+                                    <option>Seleccione</option>                                    
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_integrante"].'>'.$xVVAL_DATA["id_integrante"]." ".$xVVAL_DATA["rol"].'</option>';

@@ -133,7 +133,8 @@ MODAL EDITAR RECURSO
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control" name="editarid_proyecto">
+                                <select class="form-control" name="editarid_proyecto" id ="editarid_proyecto">
+                                    <option>Seleccione Proyecto</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA["id_proyecto"]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';

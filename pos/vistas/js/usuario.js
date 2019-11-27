@@ -17,6 +17,16 @@ function ocultar() {
     $(".nuevafechaDesvinculacionv").height(0);
     $(".nuevoestadov").height(0);
     $(".nuevoid_programav").height(0);
+    $("#nuevaFechaVinculacion").val("");
+    $("#nuevafechaDesvinculacion").val("");
+    $("#nuevoestado").val("");
+    $("#nuevaprofesion").val("");
+    $("#nuevoCvlac").val("");
+    $("#nuevaFicha").val("");    
+    $("#nuevoCargo").val("");
+    $("#nuevoTvinculacion").val("");
+    $("#nuevoid_programa option[value='NULL']").attr("selected",true);
+    
 }
 ocultar();
 $(".nuevoid_rol").change(function(){
@@ -72,6 +82,16 @@ function ocultarEdit() {
     $(".nuevafechaDesvinculacionvEdit").height(0);
     $(".nuevoestadovEdit").height(0);
     $(".nuevoid_programavEdit").height(0);
+    $("#editarfecha_vinculacion").val("");
+    $("#editarfecha_desvinculacion").val("");
+    $("#editarestado_vinculacion").val("");
+    $("#editarprofesion").val("");
+    $("#editarcvlac").val("");
+    $("#editarficha").val("");
+    $("#editartipo_vinculacion").val("");
+    $("#editarcargo").val("");
+    $("#editarid_programa option[value='NULL']").attr("selected",true);
+
 }
 ocultarEdit();
 $("#editartipo_rol").change(function(){
@@ -128,6 +148,7 @@ $(".btnEditarUsuario").click(function () {
             $("#editarnombres").val(respuesta["nombres"]);
             $("#editarapellidos").val(respuesta["apellidos"]);
             $("#editartipo_rol option[value='"+respuesta["id_rol"]+"']").attr("selected",true);
+            ocultarEdit();
             $("#editartipo_documento option[value='"+respuesta["tipo_documento"]+"']").attr("selected",true);
             $("#editardocumento").val(respuesta["documento"]);
             $("#editarcelular").val(respuesta["celular"]);
@@ -141,8 +162,7 @@ $(".btnEditarUsuario").click(function () {
             $("#editarfecha_desvinculacion").val(respuesta["fecha_desvinculacion"]);
             $("#editarestado_vinculacion").val(respuesta["estado_vinculacion"]);
             $("#editarcontrasena").val(respuesta["contrasena"]);
-            $("#editarid_programa").val(respuesta["id_programa"]);
-            ocultarEdit();
+            $("#editarid_programa option[value='"+respuesta["id_programa"]+"']").attr("selected",true);
             if($('#editartipo_rol option:selected').attr("nom")=='Administrador'||$('.nuevoid_rol option:selected').attr("nom")=='Instructor'){
                 $(".nuevaprofesionvEdit").removeClass('invisible');
                 $(".nuevoTvinculacionvEdit").removeClass('invisible');

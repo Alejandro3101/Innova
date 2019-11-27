@@ -154,6 +154,8 @@ MODAL editar integrante
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
                                 <select class="form-control input-lg" name="editarol" id="editarol">
+                                    <option value="">Selecionar Rol</option>
+
                                     <option value="Instructor Lider">Instructor Lider</option>
 
                                     <option value="Aprendiz Lider">Aprendiz Lider</option>
@@ -202,7 +204,7 @@ MODAL editar integrante
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="editarid_persona" id="editarid_persona">
-                                    <option></option>
+                                    <option>Seleccione  Usuario</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_persona"].'>'.$xVVAL_DATA["nombres"]." ".$xVVAL_DATA["apellidos"].'</option>';
@@ -222,7 +224,7 @@ MODAL editar integrante
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="editarid_proyecto" id="editarid_proyecto">
-                                    <option></option>
+                                    <option>Seleccione el Proyecto</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
@@ -313,7 +315,7 @@ MODAL AGREGAR USUARIO
 
                         </div>
 
-                     <!-- ENTRADA PARA EL Estado -->
+                        <!-- ENTRADA PARA EL Estado -->
 
                         <div class="form-group">
 
@@ -335,67 +337,69 @@ MODAL AGREGAR USUARIO
 
                         </div>
 
-                    <!-- ENTRADA PARA LA LLAVE FORANEA DE persona -->
-                    <div class="form-group">
-                        <div class="input-group">
-                            <?php
-                            $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM persona");
-                            $OBJ_DATA-> execute();
-                            $aVECT_DATA = $OBJ_DATA->fetchALL();
-                            ?>
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <select class="form-control" name="nuevoid_persona">
-                                <option>Seleccione  Usuario</option>
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE persona -->
+                        <div class="form-group">
+                            <div class="input-group">
                                 <?php
-                                foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                    echo '<option value='.$xVVAL_DATA["id_persona"].'>'.$xVVAL_DATA["nombres"]." ".$xVVAL_DATA["apellidos"].'</option>';
-                                }
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM persona");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
-                            </select>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="nuevoid_persona">
+                                    <option>Seleccione  Usuario</option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_persona"].'>'.$xVVAL_DATA["nombres"]." ".$xVVAL_DATA["apellidos"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
 
-                    <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
-                    <div class="form-group">
-                        <div class="input-group">
-                            <?php
-                            $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
-                            $OBJ_DATA-> execute();
-                            $aVECT_DATA = $OBJ_DATA->fetchALL();
-                            ?>
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <select class="form-control" name="nuevoid_proyecto">
-                                <option>Seleccione el Proyecto</option>
+                        <!-- ENTRADA PARA LA LLAVE FORANEA DE proyecto -->
+                        <div class="form-group">
+                            <div class="input-group">
                                 <?php
-                                foreach($aVECT_DATA as $key => $xVVAL_DATA){
-                                    echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
-                                }
+                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                $OBJ_DATA-> execute();
+                                $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
-                            </select>
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select class="form-control" name="nuevoid_proyecto">
+                                    <option>Seleccione el Proyecto</option>
+                                    <?php
+                                    foreach($aVECT_DATA as $key => $xVVAL_DATA){
+                                        echo '<option value='.$xVVAL_DATA["id_proyecto"].'>'.$xVVAL_DATA[""]." ".$xVVAL_DATA["nombre_proyecto"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-
-
-
-                    <!--=====================================
-                    PIE DEL MODAL
-                    ======================================-->
-
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-                        <button type="submit" class="btn btn-primary">Guardar Integrante</button>
 
                     </div>
+                </div>
 
-                    <?php
 
-                    $crearIntegrantes = new integrantecontroller();
-                    $crearIntegrantes -> ctrCrearIntegrantes();
+                <!--=====================================
+                PIE DEL MODAL
+                ======================================-->
 
-                    ?>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+                    <button type="submit" class="btn btn-primary">Guardar Integrante</button>
+
+                </div>
+
+                <?php
+
+                $crearIntegrantes = new integrantecontroller();
+                $crearIntegrantes -> ctrCrearIntegrantes();
+
+                ?>
 
             </form>
 

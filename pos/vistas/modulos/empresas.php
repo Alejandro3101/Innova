@@ -155,6 +155,7 @@ MODAL EDITAR EMPRESA
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                                 <select class="form-control input-lg" name="editartipo_empresa" id="editartipo_empresa" readonly>
+                                    <option value="">Selecionar Tipo Empresa</option>
                                     <option value="Microempresa">Microempresa</option>
                                     <option value="Pequeña">Pequeña</option>
                                     <option value="Mediana">Mediana</option>
@@ -208,6 +209,7 @@ MODAL EDITAR EMPRESA
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                                 <select class="form-control input-lg" name="editarsector" id="editarsector" >
+                                    <option value="">Selecionar sector</option>
                                     <option value="Agricultura">Agricultura</option>
                                     <option value="Ganaderia">Ganaderia</option>
                                     <option value="Pesca">Pesca</option>

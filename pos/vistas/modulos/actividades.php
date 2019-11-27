@@ -160,7 +160,7 @@ MODAL Editar Actividad
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
                                 <select class="form-control input-lg" name="editarestado" id="editarestado" >
-
+                                    <option value="">Selecionar Estado</option>
                                     <option value="Planeada">Planeada</option>
                                     <option value="Ejecutada">Ejecutada</option>
                                     <option value="Finalizada">Finalizada</option>

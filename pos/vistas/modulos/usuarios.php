@@ -220,7 +220,7 @@ MODAL AGREGAR USUARIO
                             <label>Fecha vinculación</label><br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="date" class="form-control input-lg" name="nuevaFechaVinculacion"  >
+                                <input type="date" class="form-control input-lg" name="nuevaFechaVinculacion" id="nuevaFechaVinculacion"  >
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA fecha_desvinculacion -->
@@ -228,14 +228,14 @@ MODAL AGREGAR USUARIO
                             <label>Fecha desvinculacion</label><br>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="date" class="form-control input-lg" name="nuevafechaDesvinculacion" >
+                                <input type="date" class="form-control input-lg" name="nuevafechaDesvinculacion" id="nuevafechaDesvinculacion" >
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU estado -->
                         <div class="form-group nuevoestadov invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="nuevoestado">
+                                <select class="form-control input-lg" name="nuevoestado" id="nuevoestado">
                                     <option value="">Selecionar Estado</option>
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
@@ -246,14 +246,14 @@ MODAL AGREGAR USUARIO
                         <div class="form-group nuevaprofesionv invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="nuevaprofesion" placeholder="Ingresar Profesion" >
+                                <input type="text" class="form-control input-lg" name="nuevaprofesion" id="nuevaprofesion" placeholder="Ingresar Profesion" >
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU tipo_vinculacion -->
                         <div class="form-group nuevoTvinculacionv invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="nuevoTvinculacion">
+                                <select class="form-control input-lg" name="nuevoTvinculacion" id="nuevoTvinculacion">
                                     <option value="">Selecionar Tipo Vinculacion</option>
                                     <option value="Contratista">Contratista</option>
                                     <option value="Planta">Planta</option>
@@ -266,18 +266,18 @@ MODAL AGREGAR USUARIO
                         <div class="form-group nuevoCvlacv invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="nuevoCvlac" placeholder="Ingresar cvlac" >
+                                <input type="text" class="form-control input-lg" name="nuevoCvlac" id="nuevoCvlac" placeholder="Ingresar cvlac" >
                             </div>
                         </div>
                         <!-- ENTRADA PARA SELECCIONAR SU cargo -->
                         <div class="form-group nuevoCargov invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                <select class="form-control input-lg" name="nuevoCargo">
+                                <select class="form-control input-lg" name="nuevoCargo" id="nuevoCargo">
                                     <option value="">Selecionar Cargo</option>
                                     <option value="Voluntario">Voluntario</option>
                                     <option value="Monitor">Monitor</option>
-                                    <option value="Apoyo de sostenimiento">Apoyo Sostenimiento<option>
+                                    <option value="Apoyo de sostenimiento">Apoyo Sostenimiento</option>
                                     <option value="Practicante">Practicante</option>
                                     <option value="Pasantia">Pasantia</option>
                                 </select>
@@ -287,7 +287,7 @@ MODAL AGREGAR USUARIO
                         <div class="form-group nuevaFichav invisible">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                <input type="text" class="form-control input-lg" name="nuevaFicha" placeholder="Ingresar Ficha" >
+                                <input type="text" class="form-control input-lg" name="nuevaFicha" id="nuevaFicha" placeholder="Ingresar Ficha" >
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA LLAVE FORANEA DE PROGRAMA -->
@@ -300,7 +300,7 @@ MODAL AGREGAR USUARIO
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select class="form-control nuevoid_programa" name="nuevoid_programa">
+                                <select class="form-control nuevoid_programa" name="nuevoid_programa" id="nuevoid_programa">
                                     <option value='NULL'>Selecionar Programa</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
@@ -492,7 +492,7 @@ MODAL EDITAR USUARIO
                                     <option value="">Selecionar Cargo</option>
                                     <option value="Voluntario">Voluntario</option>
                                     <option value="Monitor">Monitor</option>
-                                    <option value="Apoyo de sostenimiento">Apoyo Sostenimiento<option>
+                                    <option value="Apoyo de sostenimiento">Apoyo Sostenimiento</option>
                                     <option value="Practicante">Practicante</option>
                                     <option value="Pasantia">Pasantia</option>
                                 </select>

@@ -19,11 +19,11 @@ $(".container").on('click','.btnEditarTareas', function(){
             $("#editarid_tarea").val(respuesta["id_tarea"]);
             $("#editarnombre_tarea").val(respuesta["nombre_tarea"]);
             $("#editardescripcion").val(respuesta["descripcion"]);
-            $("#editarestado").html(respuesta["estado"]);
-            $("#editarestado").val(respuesta["estado"]);
             $("#editarfecha_inicio").val(respuesta["fecha_inicio"]);
             $("#editarfecha_limite").val(respuesta["fecha_limite"]);
-            $("#editarid_integrante").val(respuesta["id_integrante"]);
+            $("#editarestado option[value='"+respuesta["estado"]+"']").attr("selected",true);
+            $("#editarid_integrante option[value='"+respuesta["id_integrante"]+"']").attr("selected",true);
+
         }
     })
 });

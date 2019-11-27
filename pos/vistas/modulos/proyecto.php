@@ -141,6 +141,7 @@ MODAL EDITAR PROYECTOS
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-users"></i></span>
                                 <select class="form-control input-lg" name="editarlinea_programatica" id="editarlinea_programatica" >
+                                    <option value="">Selecionar Linea Programatica</option>
                                     <option value="Linea de Modernizacion">Linea de Modernizacion</option>
                                     <option value="Linea de fomento a la Innovacion y desarrollo tecnologico">Linea de fomento a la Innovacion y desarrollo tecnologico</option>
                                     <option value="Linea de investigacion aplicada">Linea de investigacion aplicada</option>
@@ -195,6 +196,7 @@ MODAL EDITAR PROYECTOS
                                 ?>
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <select class="form-control" name="editarid_empresa" id="editarid_empresa" >
+                                    <option>Seleccione Empresa</option>
                                     <?php
                                     foreach($aVECT_DATA as $key => $xVVAL_DATA){
                                         echo '<option value='.$xVVAL_DATA["id_empresa"].'>'.$xVVAL_DATA["nombre_empresa"].'</option>';

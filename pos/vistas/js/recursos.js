@@ -22,7 +22,7 @@ $(".btnEditarRecursos").click(function () {
             $("#editarconcepto").val(respuesta["concepto"]);
             $("#editarvalor_rubro").val(respuesta["valor_rubro"]);
             $("#editarvalor_proyecto").val(respuesta["valor_proyecto"]);
-            $("#editarid_proyecto").val(respuesta["id_proyecto"]);
+            $("#editarid_proyecto option[value='"+respuesta["id_proyecto"]+"']").attr("selected",true);
         }
     })
 })

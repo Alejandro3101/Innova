@@ -19,8 +19,7 @@ $(".btnEditarAutores").click(function () {
             $("#editarid_autor").val(respuesta["id_autor"]);
             $("#editarnombres").val(respuesta["nombres"]);
             $("#editarapellidos").val(respuesta["apellidos"]);
-            $("#editartipo_documento").html(respuesta["tipo_documento"]);
-            $("#editartipo_documento").val(respuesta["tipo_documento"]);
+            $("#editartipo_documento option[value='"+respuesta["tipo_documento"]+"']").attr("selected",true);
             $("#editardocumento").val(respuesta["documento"]);
             $("#editaremail").val(respuesta["email"]);
             $("#editarcelular").val(respuesta["celular"]);
