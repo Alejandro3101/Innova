@@ -275,7 +275,7 @@ class Proyectocontroller
             foreach ($proyecto as $row => $item){
 
 
-                $empresa = empresascontroller::ctrMostrarEmpresa("id_empresa", $item["id_empresa"]);
+                $empresa = empresascontroller::ctrMostrarEmpresa("id_empresa", $item["id"]);
 
                 echo utf8_decode("<tr>
 			 			<td style='border:1px solid #eee;'>".$item["codigo"]."</td> 
