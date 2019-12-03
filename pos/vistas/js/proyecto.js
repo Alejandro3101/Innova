@@ -42,7 +42,6 @@ $(".btnEditarProyecto").click(function () {
             }
             $("#editarlinea_programatica").val(respuesta["linea_programatica"]);
             $("#editarclasificacion").val(respuesta["clasificacion"]);
-            $("#editarformatos").val(respuesta["formatos"]);
             $("#editarestado_proyecto").val(respuesta["estado_proyecto"]);
             $("#editarfecha_cierre").val(respuesta["fecha_cierre"]);
             $("#editarid_empresa").val(respuesta["id_empresa"]);

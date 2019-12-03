@@ -30,7 +30,7 @@
                <!-- <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#modalSIGUIENTE"'> Recursos → </button>  -->
             </div>
             <div class="box-body">
-                <table class="table table-bordered table-striped tablas ">
+                <table class="table table-bordered table-striped tablas tablaProyecto ">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -38,9 +38,9 @@
                         <th>Tipo</th>
                         <th>Codigo</th>
                         <th>Clasificacion</th>
-                        <th>Profesion</th>
                         <th>Estado</th>
                         <th>Fecha_cierre</th>
+                        <th>Formatos</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -57,10 +57,10 @@
                                     <td>'.$value["tipo_proyecto"].'</td>';
                                 echo '
                                     <td>'.$value["codigo"].'</td>   
-                                    <td>'.$value["clasificacion"].'</td>  
-                                    <td>'.$value["estado_proyecto"].'</td> 
-                                    <td><button class="btn btn-success btn-xs">Activo</button></td>
+                                    <td>'.$value["clasificacion"].'</td>
+                                    <td>'.$value["estado_proyecto"].'</td>
                                     <td>'.$value["fecha_cierre"].'</td> 
+                                    <td><button class="btn btn-success btn-xs btnFormatos" idProyecto = "'.$value["id_proyecto"].'" data-toggle="modal" data-target="#modalFormato">Formatos</button></td>
                                     <td>
                                         <i class="btn-group">
 
@@ -87,6 +87,76 @@
 
     </section>
 
+</div>
+<!--=====================================
+MODAL VER FORMATOS
+======================================-->
+<div id="modalFormato" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+                <!--=====================================
+                CABEZA DEL MODAL
+                ======================================-->
+                <div class="modal-header" style="background:#222d32; color:white">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Formatos de el Proyecto</h4>
+                </div>
+                <!--=====================================
+                CUERPO DEL MODAL
+                ======================================-->
+                <div class="modal-body">
+                    <div class="box-body">
+                    <h4>Agregar Formato</h4>
+                    <form role="form" id = "formFormatoCreate" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="nuevoFormatoProyecto" id = "nuevoFormatoProyecto">
+                        <!-- ENTRADA PARA EL CODIGO -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <select name="nuevoFormatoCodigo"  id="nuevoFormatoCodigo" style = " width: 100%;" required>
+                                    <option value = "">Seleccione el Codigo</option>
+                                    <?php
+                                        $formato = ControladorCodigoFormato::ctrListaCodigoFormato();
+                                        foreach ($formato as $key => $form){
+                                            echo ' <option value = "'.$form["id_codigo_formato"].'">'.$form["codigo"]." ".$form["nombre"].'</option>' ;
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- ENTRADA PARA EL FORMATO -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="file" class="form-control input-lg" name="nuevoFormatoArchivo" id="nuevoFormatoArchivo" placeholder="Ingresar el Archivo" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Formato</button>
+                    </form>
+                    <div class="clearfix">
+                    <br>
+                    </div>
+                    <table class="table table-bordered table-striped tablaFormato">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Fecha de Modificacion</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </div>
+                </div>
+                <!--=====================================
+                PIE DEL MODAL
+                ======================================-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+                </div>
+        </div>
+    </div>
 </div>
 
 <!--=====================================
@@ -158,13 +228,6 @@ MODAL EDITAR PROYECTOS
                                     <option value="Formativo">Formativo</option>
                                     <option value="Empresarial">Empresarial</option>
                                 </select>
-                            </div>
-                        </div>
-                        <!-- ENTRADA PARA LA formatos -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="file" class="form-control input-lg" name="editarformatos" id="editarformatos" multiple>
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA estado -->
@@ -291,13 +354,6 @@ MODAL AGREGAR Proyectos
                                     <option value="Formativo">Formativo</option>
                                     <option value="Empresarial">Empresarial</option>
                                 </select>
-                            </div>
-                        </div>
-                        <!-- ENTRADA PARA LA formatos -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="file" class="form-control input-lg" name="nuevoformato[]" multiple>
                             </div>
                         </div>
                         <!-- ENTRADA PARA LA estado -->
