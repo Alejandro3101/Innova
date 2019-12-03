@@ -277,6 +277,125 @@ class ControladorUsuarios{
 
         }
     }
+
+
+
+    /*=============================================
+      DESCARGAR EXCEL
+      =============================================*/
+
+    public function ctrDescargarReporte3(){
+
+        if(isset($_GET["reporte"])){
+
+            $tabla = "persona";
+
+            if(isset($_GET["fechaInicial"]) && isset($_GET["fechaFinal"])){
+
+                $usuario = ModeloUsuarios::mdlRangoFechasVentas($tabla, $_GET["fechaInicial"], $_GET["fechaFinal"]);
+
+            }else{
+
+                $item = null;
+                $valor = null;
+
+                $usuario = ModeloUsuarios::mdlMostrarUsuarios($tabla, $item, $valor);
+
+
+            }
+
+
+            /*=============================================
+            CREAMOS EL ARCHIVO DE EXCEL
+            =============================================*/
+
+            $Name = $_GET["reporte"].'.xls';
+
+            header('Expires: 0');
+            header('Cache-control: private');
+            header("Content-type: application/vnd.ms-excel"); // Archivo de Excel
+            header("Cache-Control: cache, must-revalidate");
+            header('Content-Description: File Transfer');
+            header('Last-Modified: '.date('D, d M Y H:i:s'));
+            header("Pragma: public");
+            header('Content-Disposition:; filename="'.$Name.'"');
+            header("Content-Transfer-Encoding: binary");
+
+            echo utf8_decode("<table border='0'> 
+
+					<tr> 
+					<td style='font-weight:bold; border:1px solid #eee;'>Id</td> 
+					<td style='font-weight:bold; border:1px solid #eee;'>Nombre</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>Apellido</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>Tipo_Documento</td>	
+					<td style='font-weight:bold; border:1px solid #eee;'>Documento</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>Celular</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>Email</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>Profesion</td>	
+					<td style='font-weight:bold; border:1px solid #eee;'>Tipo_Vinculacion</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>cvlac</td>			
+					<td style='font-weight:bold; border:1px solid #eee;'>Cargo</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>Ficha</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>Fecha_Vinculacion</td>	
+					<td style='font-weight:bold; border:1px solid #eee;'>Fecha_Desvinculacion</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>Estado</td>		
+					<td style='font-weight:bold; border:1px solid #eee;'>Contraseña</td>
+					<td style='font-weight:bold; border:1px solid #eee;'>Programa</td>	
+					
+									
+					
+					</tr>");
+
+            foreach ($usuario as $row => $item){
+
+                $programa = programacontroller::ctrMostrarPrograma("id_programa", $item["id_programa"]);
+
+
+                echo utf8_decode("<tr>
+			 			<td style='border:1px solid #eee;'>".$item["id_persona"]."</td> 
+			 		    <td style='border:1px solid #eee;'>".$item["nombres"]."</td>
+			 			<td style='border:1px solid #eee;'>".$item["apellidos"]."</td>			 			
+			 			<td style='border:1px solid #eee;'>".$item["tipo_documento"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["documento"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["celular"]."</td> 
+			 		    <td style='border:1px solid #eee;'>".$item["email"]."</td>
+			 			<td style='border:1px solid #eee;'>".$item["profesion"]."</td>			 			
+			 			<td style='border:1px solid #eee;'>".$item["tipo_vinculacion"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["cvlac"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["cargo"]."</td> 
+			 		    <td style='border:1px solid #eee;'>".$item["ficha"]."</td>
+			 			<td style='border:1px solid #eee;'>".$item["fecha_vinculacion"]."</td>			 			
+			 			<td style='border:1px solid #eee;'>".$item["fecha_desvinculacion"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["estado_vinculacion"]."</td> 
+			 			<td style='border:1px solid #eee;'>".$item["contrasena"]."</td>
+			 			<td style='border:1px solid #eee;'>".$programa["id_programa"]."</td>			 			
+			 			
+			 			
+			 			
+		 			</tr>");
+
+
+            }
+
+
+            echo "</table>";
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 ?>
 	

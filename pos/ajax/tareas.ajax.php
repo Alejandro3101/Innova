@@ -1,6 +1,8 @@
 <?php
 require_once "../controladores/tareas.controlador.php";
 require_once "../modelos/tareas.modelo.php";
+require_once "../controladores/tareaintegrante.controlador.php";
+require_once "../modelos/tareaintegrante.modelo.php";
 
 class AjaxTareas{
     /*=============================================
@@ -37,17 +39,31 @@ class AjaxTareas{
             "data": [';
                 if (count($objADMIN) >= 1){
                     for ($i=0; $i < count($objADMIN); $i++) {
+                        $objinteg =  ControladorTareaIntegrante::ctrListaTareaIntegrantes($objADMIN[$i]["id_tarea"]);
+                        $integrantes = '';
+                        if (count($objinteg) >= 1){
+                            for ($f=0; $f < count($objinteg); $f++) {
+                                $integrantes .= $objinteg[$f]["nombres"] . ", ";
+                                // "'.$objinteg[$i]["apellidos"].'"
+                            }
+                            $integrantes = substr($integrantes,0,-2);
+                            $integrantes .= '.';
+                        }else{
+                            $integrantes = '';
+                        }
                         $oBJEC_JSON .= '[
                             "'.$objADMIN[$i]["id_tarea"].'",
                             "'.$objADMIN[$i]["nombre_tarea"].'",
                             "'.$objADMIN[$i]["descripcion"].'",
                             "'.$objADMIN[$i]["fecha_inicio"].'",
                             "'.$objADMIN[$i]["fecha_limite"].'",
-                            "'.$objADMIN[$i]["estado"].'"
+                            "'.$objADMIN[$i]["estado"].'",
+                            "'.$integrantes.'"
                         ],';
                     }
                 }else{
                     $oBJEC_JSON .= '[
+                        "",
                         "",
                         "",
                         "",

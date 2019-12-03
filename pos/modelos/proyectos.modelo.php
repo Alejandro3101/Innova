@@ -43,7 +43,7 @@ class ModeloProyecto{
     
     static public function mdlIngresarProyecto($tabla, $datos){
      
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_proyecto,tipo_proyecto,codigo,linea_programatica,clasificacion,formatos,estado_proyecto,fecha_cierre,id_empresa) VALUES (:nombre_proyecto,:tipo_proyecto,:codigo,:linea_programatica,:clasificacion,:formatos,:estado_proyecto,:fecha_cierre,:id_empresa)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_proyecto,tipo_proyecto,codigo,linea_programatica,clasificacion,estado_proyecto,fecha_cierre,id_empresa) VALUES (:nombre_proyecto,:tipo_proyecto,:codigo,:linea_programatica,:clasificacion,:estado_proyecto,:fecha_cierre,:id_empresa)");
 
         if($datos["tipo_proyecto"]=="Con Recursos"){
             $codigo = $datos["codigo"];
@@ -73,7 +73,6 @@ class ModeloProyecto{
         $stmt->bindParam(":codigo", $codigo, PDO::PARAM_STR);
         $stmt->bindParam(":linea_programatica", $datos["linea_programatica"], PDO::PARAM_STR);
         $stmt->bindParam(":clasificacion", $datos["clasificacion"], PDO::PARAM_STR);
-        $stmt->bindParam(":formatos", $datos["formatos"], PDO::PARAM_STR);
         $stmt->bindParam(":estado_proyecto", $datos["estado_proyecto"], PDO::PARAM_STR);
         $stmt->bindParam(":fecha_cierre", $datos["fecha_cierre"], PDO::PARAM_STR);
         $stmt->bindParam(":id_empresa", $datos["id_empresa"], PDO::PARAM_STR);
@@ -97,7 +96,7 @@ class ModeloProyecto{
         EDITAR PROYECTO
     =============================================*/
     static public function mdlEditarProyecto($tabla, $datos){
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_proyecto =:nombre_proyecto,tipo_proyecto =:tipo_proyecto,codigo =:codigo,linea_programatica =:linea_programatica,clasificacion =:clasificacion,formatos =:formatos,estado_proyecto =:estado_proyecto,fecha_cierre =:fecha_cierre,id_empresa =:id_empresa WHERE id_proyecto =:id_proyecto");
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_proyecto =:nombre_proyecto,tipo_proyecto =:tipo_proyecto,codigo =:codigo,linea_programatica =:linea_programatica,clasificacion =:clasificacion,estado_proyecto =:estado_proyecto,fecha_cierre =:fecha_cierre,id_empresa =:id_empresa WHERE id_proyecto =:id_proyecto");
         if($datos["tipo_proyecto"]=="Con Recursos"){
             $codigo = $datos["codigo"];
         }else{
@@ -127,7 +126,6 @@ class ModeloProyecto{
         $stmt->bindParam(":codigo", $codigo, PDO::PARAM_STR);
         $stmt->bindParam(":linea_programatica", $datos["linea_programatica"], PDO::PARAM_STR);
         $stmt->bindParam(":clasificacion", $datos["clasificacion"], PDO::PARAM_STR);
-        $stmt->bindParam(":formatos", $datos["formatos"], PDO::PARAM_STR);
         $stmt->bindParam(":estado_proyecto", $datos["estado_proyecto"], PDO::PARAM_STR);
         $stmt->bindParam(":fecha_cierre", $datos["fecha_cierre"], PDO::PARAM_STR);
         $stmt->bindParam(":id_empresa", $datos["id_empresa"], PDO::PARAM_STR);

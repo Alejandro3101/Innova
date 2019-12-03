@@ -16,31 +16,6 @@ class Proyectocontroller
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoestado"])) {
 
                 $tabla = "proyectos";
-                $image = '';
-                if (isset($_FILES["nuevoformato"]) && !empty($_FILES["nuevoformato"]["tmp_name"])) {
-                    if (!is_dir("vistas/formDocuments")) {
-                        $dir = mkdir("vistas/formDocuments", 0777, true);
-                    } else {
-                        $dir = true;
-                    }
-                    $countfiles = count($_FILES["nuevoformato"]["tmp_name"]);
-
-                    for ($i = 0; $i < $countfiles; $i++) {
-                        if ($dir) {
-                            $filename = time() . "-" . $_FILES["nuevoformato"]["name"][$i];
-                            $muf = move_uploaded_file($_FILES["nuevoformato"]["tmp_name"][$i], "vistas/formDocuments/" . $filename);
-                            $image .= 'vistas/formDocuments/' . $filename . ';';
-                            if ($muf) {
-                                $image_upload = true;
-                            } else {
-                                $image_upload = false;
-                                $error["image"] = "La imagen no se ha subido";
-                            }
-                        }
-                    }
-                }
-                $image = substr($image, 0, -1);
-
                 $datos = array("nombre_proyecto" => $_POST["nuevoNombre"],
                     "tipo_proyecto" => $_POST["nuevoTproyecto"],
                     "codigo" => $_POST["nuevocodigo"],
@@ -48,7 +23,6 @@ class Proyectocontroller
                     "clasificacion" => $_POST["nuevaclasificacion"],
                     "estado_proyecto" => $_POST["nuevoestado"],
                     "fecha_cierre" => $_POST["Fecha"],
-                    "formatos" => $image,
                     "id_empresa" => $_POST["nuevoid_empresa"]);
 
                 $respuesta = ModeloProyecto::mdlIngresarProyecto($tabla, $datos);
@@ -123,7 +97,6 @@ class Proyectocontroller
                 "codigo" => $_POST["editarcodigo"],
                 "linea_programatica" => $_POST["editarlinea_programatica"],
                 "clasificacion" => $_POST["editarclasificacion"],
-                "formatos" => $_POST["editarformatos"],
                 "estado_proyecto" => $_POST["editarestado_proyecto"],
                 "fecha_cierre" => $_POST["editarfecha_cierre"],
                 "id_empresa" => $_POST["editarid_empresa"]);
@@ -275,7 +248,7 @@ class Proyectocontroller
             foreach ($proyecto as $row => $item){
 
 
-                $empresa = empresascontroller::ctrMostrarEmpresa("id_empresa", $item["id_empresa"]);
+                $empresa = empresascontroller::ctrMostrarEmpresa("id_empresa", $item["id"]);
 
                 echo utf8_decode("<tr>
 			 			<td style='border:1px solid #eee;'>".$item["codigo"]."</td> 

@@ -84,6 +84,7 @@ function listaTarea(){
                                     "</button>"+
                                     "<br style = 'clear: left;'>"+
                                     "<p>"+respuesta.data[i][2]+"</p>"+
+                                    "<p> Integrantes : "+respuesta.data[i][6]+"</p>"+
                                     "<div class='btn-groupx'>"+
                                         "<button style = 'border-radius : 50px; float:left; type='button' class='btn btn-danger'>"+
                                             "<span class='glyphicon glyphicon-time' aria-hidden='true'></span> "+respuesta.data[i][4]+""+
