@@ -3,16 +3,14 @@
     <section class="content-header">
 
         <h1>
-
-                Administrar Empresas
-
+            Empresas
         </h1>
 
         <ol class="breadcrumb">
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <li class="active">Administrar Empresa</li>
+            <li class="active">Empresa</li>
 
         </ol>
 

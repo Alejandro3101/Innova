@@ -4,7 +4,7 @@
     
     <h1>
       
-      Administrar usuarios
+        Usuarios
     
     </h1>
 
@@ -12,7 +12,7 @@
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar usuarios</li>
+      <li class="active">Usuarios</li>
     
     </ol>
 
@@ -97,11 +97,7 @@ Agregar Usuario
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary btnEditarUsuario" Usuarioid="'.$value["id_persona"].'" data-toggle="modal" data-target="#modaleditarUsuario"><i class="fa fa-pencil"></i></button>
-                                       
                                         <button class="btn btn-danger btnEliminarUsuario" id_persona="'.$value["id_persona"].'"><i class="fa fa-times"></i></button>
-                                    
-                                    <a href="evidencia" class="btn btn-info"><i class="fa fa-arrow-right"></i></a>
-                                    
                                     </div>
                                 </td>
                             </tr>';

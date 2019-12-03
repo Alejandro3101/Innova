@@ -4,7 +4,7 @@
 
         <h1>
 
-            Administrar Proyectos
+             Proyectos
 
         </h1>
 
@@ -12,7 +12,7 @@
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <li class="active">Administrar Proyectos</li>
+            <li class="active">Proyectos</li>
 
         </ol>
 

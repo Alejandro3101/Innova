@@ -4,7 +4,7 @@
 
         <h1>
 
-            Administrar Integrantes
+            Integrantes
 
         </h1>
 
@@ -12,7 +12,7 @@
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <li class="active">Administrar Integrantes</li>
+            <li class="active">Integrantes</li>
 
         </ol>
 

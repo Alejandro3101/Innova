@@ -79,9 +79,10 @@ class ControladorUsuarios{
                     "fecha_vinculacion" => $_POST["nuevaFechaVinculacion"],
                     "fecha_desvinculacion" => $_POST["nuevafechaDesvinculacion"],
                     "estado_vinculacion" => $_POST["nuevoestado"],
-                    "contrasena" => $_POST["contrasena"],
+                    "contrasena" => $_POST["nuevacontrasena"],
                     "id_programa" => $_POST["nuevoid_programa"],
                     "id_rol" => $_POST["nuevoid_rol"]);
+
 
                 $respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
 

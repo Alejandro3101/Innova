@@ -3,14 +3,14 @@
     <section class="content-header">
 
         <h1>
-            Administrar Actividades
+            Actividades
         </h1>
 
         <ol class="breadcrumb">
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-            <li class="active">Administrar Actividades</li>
+            <li class="active">Actividades</li>
 
         </ol>
 
