@@ -25,8 +25,8 @@
                 <table class="table table-bordered table-striped tablas">
                     <thead>
                     <tr>
-                        <th>#</th>
                         <th>Nombre del Programa</th>
+                        <th>Acciones</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,7 +39,6 @@
                     foreach ($recurso as $key => $value) {
                         $contador +=1;
                         echo '<tr>
-                                
                                 <td>'.$value["nombre_programa"].'</td>
                                 <td>
                                 <div class="btn-group">
@@ -70,7 +69,7 @@ MODAL EDITAR RECURSO
                 ======================================-->
                 <div class="modal-header" style="background:#222d32; color:white">
                     <button type="button" class="close"  data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Agregar Tarea</h4>
+                    <h4 class="modal-title">Agregar Programa</h4>
                 </div>
                 <!--=====================================
                 CUERPO DEL MODAL

@@ -13,14 +13,7 @@ class empresascontroller
         if (isset($_POST["nuevoNombreE"])) {
 
             if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombreE"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevotipo_empresa"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevonit"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevadireccion"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevotelefono"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoencargado"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevocelular"]) &&
-                preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevosector"])) {
-
+            preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevotipo_empresa"])) {
 
                 $tabla = "empresas";
 

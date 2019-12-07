@@ -109,13 +109,25 @@
 
 
                 </li>
-                
+
                 <li>
 
                     <a href="gasto">
 
-                        <i class="fa fa-dollar"></i>
+                        <i class="fa fa-plus"></i>
                         <span>Gastos</span>
+
+                    </a>
+
+
+                </li>       
+                
+                <li>
+
+                    <a href="reportes">
+
+                        <i class="fa fa-dollar"></i>
+                        <span>Reportes</span>
 
                     </a>
 

@@ -59,6 +59,7 @@ Agregar Usuario
 
     <th>Estado</th>
     <th>Programa</th>
+    <th>Roles</th>
     <th>Acciones</th>
 
 
@@ -93,7 +94,8 @@ Agregar Usuario
                                 <td>'.$value["ficha"].'</td>
                               
                                 <td>'.$value["estado_vinculacion"].'</td>
-                                <td>'.$value["id_programa"].'</td>
+                                <td>'.$value["nombre_programa"].'</td>
+                                <td>'.$value["nombre"].'</td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary btnEditarUsuario" Usuarioid="'.$value["id_persona"].'" data-toggle="modal" data-target="#modaleditarUsuario"><i class="fa fa-pencil"></i></button>

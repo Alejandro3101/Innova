@@ -12,12 +12,12 @@ class ControladorFormato{
         $objINSERT =  ModeloFormato::mdlInsertarFormato($fecha,$archivo,$proyecto,$codigo);
         return $objINSERT;
     }
-    static public function ctrEditarFormato($idTarea,$idIntegrante){
-        $objINSERT =  ModeloFormato::mdlEditarIntegrantes($idTarea,$idIntegrante);
+    static public function ctrEditarFormato($idformato,$fecha,$archivo,$proyecto,$codigo){
+        $objINSERT =  ModeloFormato::mdlEditarFormato($idformato,$fecha,$archivo,$proyecto,$codigo);
         return $objINSERT;
     }
     static public function ctrEliminarFormato($idFormato){
-        $objDELETE =  ModeloFormato::mdlEliminarIntegrantes($idFormato);
+        $objDELETE =  ModeloFormato::mdlEliminarFormato($idFormato);
         return $objDELETE;
     }
 }

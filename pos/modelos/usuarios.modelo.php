@@ -22,7 +22,7 @@ class ModeloUsuarios{
 
         }else{
 
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+            $stmt = Conexion::conectar()->prepare("SELECT id_persona,nombres,apellidos,tipo_documento,tipo_vinculacion,documento,celular,email,profesion,tipo_documento,cvlac,cargo,ficha,fecha_vinculacion,fecha_desvinculacion,estado_vinculacion,contrasena,programa.id_programa,programa.nombre_programa,rol.id_rol,rol.nombre FROM `persona` INNER JOIN programa ON programa.id_programa = persona.id_programa INNER JOIN rol ON rol.id_rol = persona.id_rol");
 
             $stmt -> execute();
 

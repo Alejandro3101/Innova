@@ -43,7 +43,7 @@
                     <tr>
 
                         <th>#</th>
-                            <th>Nombre</th>
+                        <th>Nombre</th>
                         <th>Codigo</th>
                         <th>Acciones</th>
 
