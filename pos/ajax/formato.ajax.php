@@ -9,6 +9,7 @@ require_once "../modelos/codigoformato.modelo.php";
 
 class AjaxFormato{
     public $idProyecto;
+    public $idFormato;
     public $fecha;
     public $idCodigo;
     public $archivo;
@@ -18,7 +19,8 @@ class AjaxFormato{
             if (count($objLISTA) >= 1){
                 $enum = 1;
                 for ($i=0; $i < count($objLISTA); $i++) {
-                    $btnEditar = "<button type='button' class='btn btn-primary btnEditarFormato' id_formato='".$objLISTA[$i]["id_formato"]."'active data-toggle='modal' data-target='#ventana2'><i class='fa fa-pencil'></i></button>";
+                    $btnDescargar = "<a  class='btn btn-info' href='".$objLISTA[$i]["archivo"]."' active  download><i class='fa fa-download'></i></a>";
+                    $btnEditar = "<button type='button' class='btn btn-primary btnEditarFormato' id_formato='".$objLISTA[$i]["id_formato"]."' active ><i class='fa fa-pencil'></i></button>";
                     $btnEliminar = "<button class='btn btn-danger btnEliminarFormato' idformato='".$objLISTA[$i]["id_formato"]."' ><i class='fa fa-times'></i></button>";
                     $item = "id_proyecto";
                     $valor = $objLISTA[$i]["id_proyecto"];
@@ -27,7 +29,7 @@ class AjaxFormato{
                         "'.$enum++.'",
                         "'.$objLISTA[$i]["codigo"]." ".$objLISTA[$i]["nombre"]." ".$respuesta["codigo"].'",
                         "'.$objLISTA[$i]["fecha"].'",
-                        "'.$btnEditar.$btnEliminar.'"
+                        "'.$btnDescargar.$btnEditar.$btnEliminar.'"
                     ],';
                 }
             }else{
@@ -57,7 +59,7 @@ class AjaxFormato{
             if($dir){
                 $filename = $codigoformato["codigo"]." ".$codigoformato["nombre"]." ".$respuesta["codigo"].".". pathinfo($this->archivo['name'], PATHINFO_EXTENSION); //concatenar función tiempo con el nombre de imagen
                 $muf=move_uploaded_file($this->archivo["tmp_name"], "../vistas/documents/".$respuesta["nombre_proyecto"]."/".$filename); //mover el fichero utilizando esta función
-                $file='/vistas/documents/'.$respuesta["nombre_proyecto"].'/'.$filename;
+                $file='vistas/documents/'.$respuesta["nombre_proyecto"].'/'.$filename;
                 if($muf){
                     $image_upload=true;
                 }else{
@@ -84,7 +86,7 @@ class AjaxFormato{
             if($dir){
                 $filename = $codigoformato["codigo"]." ".$codigoformato["nombre"]." ".$respuesta["codigo"].".". pathinfo($this->archivo['name'], PATHINFO_EXTENSION); //concatenar función tiempo con el nombre de imagen
                 $muf=move_uploaded_file($this->archivo["tmp_name"], "../vistas/documents/".$respuesta["nombre_proyecto"]."/".$filename); //mover el fichero utilizando esta función
-                $file='/vistas/documents/'.$respuesta["nombre_proyecto"].'/'.$filename;
+                $file='vistas/documents/'.$respuesta["nombre_proyecto"].'/'.$filename;
                 if($muf){
                     $image_upload=true;
                 }else{
@@ -97,8 +99,12 @@ class AjaxFormato{
         echo $objInser;
     }
     public function ajxEliminarFormato(){
-        $objEliminar = ControladorFormato::ctrEliminarFormato($this->id_formato);
+        $objEliminar = ControladorFormato::ctrEliminarFormato($this->idFormato);
         echo json_encode($objEliminar);
+    }
+    public function objBuscar(){
+        $objBuscar = ControladorFormato::ctrBuscarFormato($this->idFormato);
+        echo json_encode($objBuscar);
     }
    
 }
@@ -117,68 +123,24 @@ if(isset($_GET["a"])&&$_GET["a"]=="crear"){
 }
 if(isset($_GET["a"])&&$_GET["a"]=="editar"){
     $objFormato = new AjaxFormato();
-    $objFormato->idformato = $_POST["Idformato"];
+    $objFormato->idformato = $_POST["IdFormato"];
     $objFormato->idProyecto = $_POST["IdProyecto"];
     $objFormato->fecha = $_POST["Fecha"];
     $objFormato->idCodigo = $_POST["IdCodigo"];
-    $objFormato->archivo = $_FILES["Archivo"];
+    if(isset($_FILES["Archivo"]) && !empty($_FILES["Archivo"]["tmp_name"])){
+        $objFormato->archivo = $_FILES["Archivo"];
+    }else{
+        $objFormato->archivo = null;
+    }
     $objFormato->ajxEditarFormato();
 }
-
-// if(isset($_GET["a"])&&$_GET["a"]=="listaFormatos"){
-//     $objFormato = new AjaxFormato();
-//     $objFormato->idTarea = $_POST["IdTarea"];
-//     $objFormato->ajxListaFormatos();
-// }
-
 if(isset($_GET["a"])&&$_GET["a"]=="eliminar"){
     $objFormato = new AjaxFormato();
-    $objFormato->idFormato = $_POST["IdFormato"];
+    $objFormato->idFormato = $_GET["IdFormato"];
     $objFormato->ajxEliminarFormato();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // public function ajxEliminarFormato($idFormato){
-    //     $objElim = ControladorFormato::ctrEliminarFormato($idFormato);
-    // }
-    // public function ajxEditarFormato($idformato,$fecha,$archivo,$proyecto,$codigo){
-    //     $idformato=$this->idformato;
-    //     $fecha=$this->fecha;
-    //     $archivo=$this->archivo;
-    //     $proyecto=$this->proyecto;
-    //     $codigo=$this->codigo;
-    //     $objInser = ControladorFormato::ctrEditarFormato($idformato,$fecha,$archivo,$proyecto,$codigo);
-    //     echo $objInser;
-    // }
-// if(isset($_POST["idformato"])){
-//     $oBJECT_DATA = new AjaxFormato();
-//     $oBJECT_DATA->idformato=$_POST["idformato"];
-//     $oBJECT_DATA->fecha=$_POST["fecha"];
-//     $oBJECT_DATA->archivo=$_POST["archivo"];
-//     $oBJECT_DATA->proyecto=$_POST["proyecto"];
-//     $oBJECT_DATA->codigo=$_POST["codigo"];
-//     $oBJECT_DATA->ajxEditarFormato();
-// }
-// if(isset($_GET["d"])){
-//     $objElim = new AjaxFormato();
-//     $objElim->ajxEliminarFormato($_GET["d"]);
-// }
+if(isset($_GET["a"])&&$_GET["a"]=="buscar"){
+    $objFormato = new AjaxFormato();
+    $objFormato->idFormato = $_GET["IdFormato"];
+    $objFormato->objBuscar();
+}

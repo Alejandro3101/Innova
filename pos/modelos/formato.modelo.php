@@ -25,12 +25,12 @@ class ModeloFormato{
         $stmt = null;
     }
     static public function mdlEditarFormato($idformato,$fecha,$archivo,$proyecto,$codigo){
-        $stmt = Conexion::conectar()->prepare("UPDATE formato SET nombre = :nombre,codigo = :codigo,fecha = :fecha,archivo = :archivo WHERE id_formato = :id_formato");
-        $stmt->bindParam(":id_formato" ,$nombre, PDO::PARAM_STR);
-        $stmt->bindParam(":nombre" ,$nombre, PDO::PARAM_STR);
-        $stmt->bindParam(":codigo" ,$codigo, PDO::PARAM_STR);
+        $stmt = Conexion::conectar()->prepare("UPDATE formato SET fecha = :fecha,archivo = :archivo,id_proyecto = :proyecto,id_codigo_formato = :codigoformato WHERE id_formato = :id ");
+        $stmt->bindParam(":id" ,$idformato, PDO::PARAM_STR);
         $stmt->bindParam(":fecha" ,$fecha, PDO::PARAM_STR);
         $stmt->bindParam(":archivo" ,$archivo, PDO::PARAM_STR);
+        $stmt->bindParam(":proyecto" ,$proyecto, PDO::PARAM_STR);
+        $stmt->bindParam(":codigoformato" ,$codigo, PDO::PARAM_STR);
         return $stmt->execute();
         $stmt->close();
         $stmt = null;
@@ -42,5 +42,12 @@ class ModeloFormato{
         $stmt->close();
         $stmt = null;
     }
-
+    static public function mdlBuscarFormato($Id){
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM formato  WHERE id_formato = :id_formato");
+        $stmt->bindParam(":id_formato" ,$Id, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch();
+        $stmt->close();
+        $stmt = null;
+    }
 }

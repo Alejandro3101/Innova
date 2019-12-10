@@ -106,10 +106,11 @@ MODAL VER FORMATOS
                 CUERPO DEL MODAL
                 ======================================-->
                 <div class="modal-body">
+                    <button type="button" class="btn btn-primary btnAgregarFormato">Agregar Formato</button>
                     <!--=====================================
                         AGREGAR  FORMATOS
                     ======================================-->
-                    <div class="box-body">
+                    <div class="box-body nuevoFormato invisible">
                         <h4>Agregar Formato</h4>
                         <form role="form" id = "formFormatoCreate" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="nuevoFormatoProyecto" id = "nuevoFormatoProyecto">
@@ -138,10 +139,46 @@ MODAL VER FORMATOS
                             <button type="submit" class="btn btn-primary">Guardar Formato</button>
                         </form>
                         <div class="clearfix">
-                        <br>
+                            <br>
+                        </div>
                     </div>
-                    
-                    <table class="table table-bordered table-striped tablaFormato">
+                    <!--=====================================
+                        EDITAR  FORMATOS
+                    ======================================-->
+                    <div class="box-body editFormato invisible">
+                        <h4>Editar Formato</h4>
+                        <form role="form" id = "formFormatoEdit" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="editarFormatoProyecto" id = "editarFormatoProyecto">
+                            <input type="hidden" name="editarFormatoId" id = "editarFormatoId">
+                            <!-- ENTRADA PARA EL CODIGO -->
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <select name="editarFormatoCodigo"  id="editarFormatoCodigo" style = " width: 100%;" required>
+                                        <option value = "">Seleccione el Codigo</option>
+                                        <?php
+                                            $formato = ControladorCodigoFormato::ctrListaCodigoFormato();
+                                            foreach ($formato as $key => $form){
+                                                echo ' <option value = "'.$form["id_codigo_formato"].'">'.$form["codigo"]." ".$form["nombre"].'</option>' ;
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- ENTRADA PARA EL FORMATO -->
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="file" class="form-control input-lg" name="editarFormatoArchivo" id="editarFormatoArchivo" placeholder="Ingresar el Archivo" >
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Formato</button>
+                        </form>
+                        <div class="clearfix">
+                            <br>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-striped tablaFormato" style = " width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -151,7 +188,6 @@ MODAL VER FORMATOS
                             </tr>
                         </thead>
                     </table>
-                    </div>
                 </div>
                 <!--=====================================
                 PIE DEL MODAL
@@ -159,58 +195,6 @@ MODAL VER FORMATOS
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
                 </div>
-        </div>
-    </div>
-</div>
-<!--=====================================
-MODAL MODIFICAR FORMATO
-======================================-->
-<div id="ventana2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form role="form" method="POST" class="ModificarDatosFormato" enctype="multipart/form-data">
-                <!--=====================================
-                CABEZA DEL MODAL
-                ======================================-->
-                <div class="modal-header" style="background:#222d32; color:white">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modificar Formato</h4>
-                </div>
-                <!--=====================================
-                CUERPO DEL MODAL
-                ======================================-->
-                <div class="modal-body">
-                    <div class="box-body">
-                    <input type="hidden" name="EditarFormatoProyecto" id ="EditarFormatoProyecto">
-                        <!-- ENTRADA PARA EL CODIGO -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <select name="EditarFormatoCodigo"  id="EditarFormatoCodigo" style ="width:100%;" required>
-                                    <option value = "">Seleccione el Codigo</option>
-                                    <?php
-                                        $formato = ControladorCodigoFormato::ctrListaCodigoFormato();
-                                        foreach ($formato as $key => $form){
-                                            echo ' <option value = "'.$form["id_codigo_formato"].'">'.$form["codigo"]." ".$form["nombre"].'</option>' ;
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- ENTRADA PARA EL FORMATO -->
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input type="file" class="form-control input-lg" name="EditarFormatoArchivo" id="EditarFormatoArchivo" placeholder="Ingresar el Archivo" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btnModificaDatosFormato" id="btnModificarFormato" >Guardar Cambios</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>

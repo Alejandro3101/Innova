@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var miAuto = new Object();
+		miAuto.marca = "Ford";
+		miAuto.modelo = "Mustang";
+		miAuto.año = 1969;
+
+		function mostrarPropiedades(objeto, nombreObjeto) {
+		  var resultado = ``;
+		  for (var i in objeto) {
+		    //objeto.hasOwnProperty se usa para filtrar las propiedades del objeto
+		    if (objeto.hasOwnProperty(i)) {
+		        resultado += `&${i} = ${objeto[i]}`;
+		    }
+		  }
+		  return resultado;
+		}
+		console.log(mostrarPropiedades(miAuto, "perr") );
+	</script>
+</body>
+</html>
