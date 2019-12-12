@@ -176,7 +176,14 @@ MODAL Editar Actividad
                         <div class="form-group">
                             <div class="input-group">
                                 <?php
-                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                $idRol = $_SESSION["id_rol"];
+                                $OBJ_DATA = "";
+                                if($idRol==4){
+                                    $OBJ_DATA =  Conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                }else{
+                                    $id = $_SESSION["id_persona"];
+                                    $OBJ_DATA = Conexion::conectar()->prepare("SELECT p.* FROM proyectos p INNER JOIN integrantes i ON p.id_proyecto = i.id_proyecto INNER JOIN persona ps ON i.id_persona = ps.id_persona WHERE ps.id_persona = $id" );
+                                }
                                 $OBJ_DATA-> execute();
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>
@@ -313,7 +320,14 @@ MODAL AGREGAR Actividad
                         <div class="form-group">
                             <div class="input-group">
                                 <?php
-                                $OBJ_DATA = conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                $idRol = $_SESSION["id_rol"];
+                                $OBJ_DATA = "";
+                                if($idRol==4){
+                                    $OBJ_DATA =  Conexion::conectar()->prepare("SELECT * FROM proyectos");
+                                }else{
+                                    $id = $_SESSION["id_persona"];
+                                    $OBJ_DATA = Conexion::conectar()->prepare("SELECT p.* FROM proyectos p INNER JOIN integrantes i ON p.id_proyecto = i.id_proyecto INNER JOIN persona ps ON i.id_persona = ps.id_persona WHERE ps.id_persona = $id" );
+                                }
                                 $OBJ_DATA-> execute();
                                 $aVECT_DATA = $OBJ_DATA->fetchALL();
                                 ?>

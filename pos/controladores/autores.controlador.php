@@ -61,7 +61,13 @@ class autorescontroller{
 
         $autores = "autores";
 
-        $respuesta = ModeloAutor::mdlMostrarAutores($autores, $item, $valor);
+        $idRol = $_SESSION["id_rol"];
+        
+        if($idRol==4){
+            $respuesta = ModeloAutor::mdlMostrarAutores($autores, $item, $valor);
+        }else{
+            $respuesta = ModeloAutor::mdlMostrarAutoresLimitado($autores, $item, $valor);
+        }
 
         return $respuesta;
     }

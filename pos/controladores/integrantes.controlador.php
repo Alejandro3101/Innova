@@ -182,8 +182,14 @@ class integrantecontroller
     {
 
         $tabla = "integrantes";
+        $idRol = $_SESSION["id_rol"];
+        if($idRol==4){
+            $respuesta = ModeloIntegrantes::mdlMostrarIntegrantes($tabla, $item, $valor);
+        }else{
+            $respuesta = ModeloIntegrantes::mdlMostrarIntegrantesLimitado($tabla, $item, $valor);
+        }
 
-        $respuesta = ModeloIntegrantes::mdlMostrarIntegrantes($tabla, $item, $valor);
+        
 
         return $respuesta;
 

@@ -177,7 +177,13 @@ class actividadescontroller{
 
         $tabla = "actividades";
 
-        $respuesta = ModeloActividades::mdlMostrarActividades($tabla, $item, $valor);
+
+        $idRol = $_SESSION["id_rol"];
+        if($idRol==4){
+            $respuesta = ModeloActividades::mdlMostrarActividades($tabla, $item, $valor);
+        }else{
+            $respuesta = ModeloActividades::mdlMostrarActividadesLimitado($tabla, $item, $valor);
+        }
 
         return $respuesta;
     }

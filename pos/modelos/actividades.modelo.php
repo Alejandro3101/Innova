@@ -35,6 +35,38 @@ class ModeloActividades{
 
     }
 
+     /*=============================================
+        MOSTRAR Actividades CON ROL APRENDIZ O INSTRUCTOR
+    =============================================*/
+    static public function mdlMostrarActividadesLimitado($tabla, $item, $valor){
+
+        if($item != null){
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+            $stmt -> execute();
+
+            return $stmt -> fetch();
+
+        }else{
+
+            $id = $_SESSION["id_persona"];
+            $stmt = Conexion::conectar()->prepare("SELECT p.*,a.* FROM proyectos p INNER JOIN integrantes i ON p.id_proyecto = i.id_proyecto INNER JOIN persona ps ON i.id_persona = ps.id_persona INNER JOIN actividades a ON a.id_proyecto = p.id_proyecto WHERE ps.id_persona = $id ");
+            $stmt -> execute();
+
+            return $stmt -> fetchAll();
+
+        }
+
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
 
     /*=============================================
     REGISTRO DE Actividad

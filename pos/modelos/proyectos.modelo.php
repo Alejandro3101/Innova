@@ -1,6 +1,5 @@
 
 <?php
-
 require_once "conexion.php";
 
 class ModeloProyecto{
@@ -36,6 +35,39 @@ class ModeloProyecto{
         $stmt = null;
 
     }
+
+     /*=============================================
+        MOSTRAR Proyecto Instructor Aprendiz
+    =============================================*/
+    static public function mdlMostrarProyectoLimitado($tabla, $item, $valor){
+
+        if ($item != null) {
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+            $stmt->bindParam(":" . $item, $valor, PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            return $stmt->fetch();
+
+        } else {
+            $id = $_SESSION["id_persona"];
+            $stmt = Conexion::conectar()->prepare("SELECT p.* FROM proyectos p INNER JOIN integrantes i ON p.id_proyecto = i.id_proyecto INNER JOIN persona ps ON i.id_persona = ps.id_persona WHERE ps.id_persona = $id" );
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+
+        }
+
+
+        $stmt->close();
+
+        $stmt = null;
+
+    }
+
 
     /*=============================================
     REGISTRO DE PROYECTO

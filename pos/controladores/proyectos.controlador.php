@@ -143,11 +143,13 @@ class Proyectocontroller
 
     static public function ctrMostrarproyecto($item, $valor)
     {
-
         $tabla = "proyectos";
-
-        $respuesta = ModeloProyecto::mdlMostrarProyecto($tabla, $item, $valor);
-
+        $idRol = $_SESSION["id_rol"];
+        if($idRol==4){
+            $respuesta = ModeloProyecto::mdlMostrarProyecto($tabla, $item, $valor);
+        }else{
+            $respuesta = ModeloProyecto::mdlMostrarProyectoLimitado($tabla, $item, $valor);
+        }
         return $respuesta;
     }
 

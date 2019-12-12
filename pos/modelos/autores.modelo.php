@@ -13,13 +13,35 @@ class ModeloAutor{
             $stmt -> execute();
             return $stmt -> fetch();
         }else{
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $autores");
+            $stmt = Conexion::conectar()->prepare("SELECT p.*,a.* FROM proyectos p INNER JOIN autores a ON a.id_proyecto = p.id_proyecto");
             $stmt -> execute();
             return $stmt -> fetchAll();
         }
         $stmt -> close();
         $stmt = null;
     }
+
+    /*=============================================
+    MOSTRAR AUTORES PARA INSTRUCTO Y APRENDIZ   
+    =============================================*/
+
+    static public function mdlMostrarAutoresLimitado($autores, $item, $valor){
+        if($item != null){
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $autores WHERE $item = :$item");
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+            $stmt -> execute();
+            return $stmt -> fetch();
+        }else{
+            $id = $_SESSION["id_persona"];
+            $stmt = Conexion::conectar()->prepare("SELECT p.*,a.* FROM proyectos p INNER JOIN integrantes i ON p.id_proyecto = i.id_proyecto INNER JOIN persona ps ON i.id_persona = ps.id_persona INNER JOIN autores a ON a.id_proyecto = p.id_proyecto WHERE ps.id_persona = $id ");
+            $stmt -> execute();
+            return $stmt -> fetchAll();
+        }
+        $stmt -> close();
+        $stmt = null;
+    }
+
+
 
     /*=============================================
     REGISTRO DE AUTORES
