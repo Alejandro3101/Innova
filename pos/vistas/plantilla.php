@@ -156,26 +156,27 @@ CUERPO DOCUMENTO
     if(isset($_GET["ruta"])){
 
       if($_GET["ruta"] == "inicio" ||
-         $_GET["ruta"] == "usuarios" ||
-         $_GET["ruta"] == "rol" ||
-         $_GET["ruta"] == "actividades" ||
-         $_GET["ruta"] == "categorias" ||
-          $_GET["ruta"] == "recurso" ||
-          $_GET["ruta"] == "evidencia" ||
-          $_GET["ruta"] == "autor" ||
-          $_GET["ruta"] == "tarea" ||
-         $_GET["ruta"] == "productos" ||
-         $_GET["ruta"] == "clientes" ||
-          $_GET["ruta"] == "empresas" ||
-          $_GET["ruta"] == "gasto" ||
-          $_GET["ruta"] == "proyecto" ||
-          $_GET["ruta"] == "integrante" ||
-          $_GET["ruta"] == "programa" ||
-         $_GET["ruta"] == "ventas" ||
-          $_GET["ruta"] == "crear-venta" ||
-         $_GET["ruta"] == "reportes" ||
-         $_GET["ruta"] == "proyectoAprendiz" ||
-         $_GET["ruta"] == "salir"){
+        $_GET["ruta"] == "usuarios" ||
+        $_GET["ruta"] == "rol" ||
+        $_GET["ruta"] == "actividades" ||
+        $_GET["ruta"] == "categorias" ||
+        $_GET["ruta"] == "recurso" ||
+        $_GET["ruta"] == "evidencia" ||
+        $_GET["ruta"] == "autor" ||
+        $_GET["ruta"] == "tarea" ||
+        $_GET["ruta"] == "productos" ||
+        $_GET["ruta"] == "clientes" ||
+        $_GET["ruta"] == "empresas" ||
+        $_GET["ruta"] == "gasto" ||
+        $_GET["ruta"] == "proyecto" ||
+        $_GET["ruta"] == "integrante" ||
+        $_GET["ruta"] == "programa" ||
+        $_GET["ruta"] == "ventas" ||
+        $_GET["ruta"] == "crear-venta" ||
+        $_GET["ruta"] == "reportes" ||
+        $_GET["ruta"] == "proyectoAprendiz" ||
+        $_GET["ruta"] == "integranteA" ||
+        $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
 

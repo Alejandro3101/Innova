@@ -102,7 +102,7 @@
 
                     <a href="programa">
 
-                        <i class="fa fa-plus"></i>
+                        <i class="fa fa-calendar"></i>
                         <span>Programas</span>
 
                     </a>
@@ -176,7 +176,7 @@
                 </li>
                 <li>
 
-                    <a href="integrante">
+                    <a href="integranteA">
 
                         <i class="fa fa-users"></i>
                         <span>Integrantes</span>
@@ -252,7 +252,7 @@
                     </li>
                     <li>
 
-                        <a href="integrante">
+                        <a href="integranteA">
 
                             <i class="fa fa-users"></i>
                             <span>Integrantes</span>

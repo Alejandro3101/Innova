@@ -75,11 +75,11 @@
 
                         echo '
                     <td>'.$value["rol"].'</td>   
+                    <td>'.$value["estado_integrante"].'</td>   
                                     
-                      
+                    
                           
                                 
-               <td><button class="btn btn-success btn-xs">Activo</button></td>
               
                <td>
                    <i class="btn-group">

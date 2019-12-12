@@ -34,7 +34,6 @@
                         <th>Tipo</th>
                         <th>Codigo</th>
                         <th>Clasificacion</th>
-                        <th>Profesion</th>
                         <th>Estado</th>
                         <th>Fecha_cierre</th>
                     </tr>
@@ -53,8 +52,7 @@
                                 echo '
                                     <td>'.$value["codigo"].'</td>   
                                     <td>'.$value["clasificacion"].'</td>  
-                                    <td>'.$value["estado_proyecto"].'</td> 
-                                    <td><button class="btn btn-success btn-xs">Activo</button></td>
+                                    <td>'.$value["estado_proyecto"].'</td>  
                                     <td>'.$value["fecha_cierre"].'</td> 
                                     </tr>';
                             }

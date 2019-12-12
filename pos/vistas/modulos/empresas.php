@@ -52,7 +52,6 @@
                             <th>Encargado</th>
                             <th>Celular</th>
                             <th>Sector</th>
-                            <th>Estado</th>
                             <th>Acciones</th>
 
 
@@ -86,10 +85,6 @@
                         <td>'.$value["celular"].'</td> 
                         <td>'.$value["sector"].'</td> 
            
-           
-           
-           
-                        <td><button class="btn btn-success btn-xs">Activo</button></td>
                         <td>
                             <i class="btn-group">    
 
